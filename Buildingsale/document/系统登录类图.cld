@@ -45,8 +45,8 @@
       <stereoType></stereoType>
       <name>CoomonAction</name>
       <constraint>
-        <x>220</x>
-        <y>42</y>
+        <x>436</x>
+        <y>8</y>
         <width>-1</width>
         <height>-1</height>
       </constraint>
@@ -89,8 +89,8 @@
             <stereoType></stereoType>
             <name>IimpowerService</name>
             <constraint>
-              <x>24</x>
-              <y>172</y>
+              <x>277</x>
+              <y>83</y>
               <width>-1</width>
               <height>-1</height>
             </constraint>
@@ -140,8 +140,8 @@
                   <stereoType></stereoType>
                   <name>ImpowerService</name>
                   <constraint>
-                    <x>66</x>
-                    <y>272</y>
+                    <x>313</x>
+                    <y>181</y>
                     <width>-1</width>
                     <height>-1</height>
                   </constraint>
@@ -186,8 +186,8 @@
                         <stereoType></stereoType>
                         <name>IMenuDao</name>
                         <constraint>
-                          <x>74</x>
-                          <y>375</y>
+                          <x>309</x>
+                          <y>292</y>
                           <width>-1</width>
                           <height>-1</height>
                         </constraint>
@@ -236,8 +236,8 @@
                               <stereoType></stereoType>
                               <name>IMenuDao</name>
                               <constraint>
-                                <x>164</x>
-                                <y>489</y>
+                                <x>380</x>
+                                <y>439</y>
                                 <width>-1</width>
                                 <height>-1</height>
                               </constraint>
@@ -286,8 +286,8 @@
                                     <stereoType></stereoType>
                                     <name>CommonDao</name>
                                     <constraint>
-                                      <x>256</x>
-                                      <y>384</y>
+                                      <x>484</x>
+                                      <y>285</y>
                                       <width>-1</width>
                                       <height>-1</height>
                                     </constraint>
@@ -337,8 +337,8 @@
                                           <stereoType></stereoType>
                                           <name>EmployeeDao</name>
                                           <constraint>
-                                            <x>383</x>
-                                            <y>508</y>
+                                            <x>605</x>
+                                            <y>434</y>
                                             <width>-1</width>
                                             <height>-1</height>
                                           </constraint>
@@ -382,8 +382,8 @@
                                                 <stereoType></stereoType>
                                                 <name>IEmployeeDao</name>
                                                 <constraint>
-                                                  <x>451</x>
-                                                  <y>382</y>
+                                                  <x>639</x>
+                                                  <y>287</y>
                                                   <width>-1</width>
                                                   <height>-1</height>
                                                 </constraint>
@@ -434,8 +434,8 @@
                                                       <stereoType></stereoType>
                                                       <name>EmplyeeService</name>
                                                       <constraint>
-                                                        <x>445</x>
-                                                        <y>268</y>
+                                                        <x>629</x>
+                                                        <y>179</y>
                                                         <width>-1</width>
                                                         <height>-1</height>
                                                       </constraint>
@@ -478,8 +478,8 @@
                                                             <stereoType></stereoType>
                                                             <name>IempService</name>
                                                             <constraint>
-                                                              <x>311</x>
-                                                              <y>170</y>
+                                                              <x>522</x>
+                                                              <y>84</y>
                                                               <width>-1</width>
                                                               <height>-1</height>
                                                             </constraint>
@@ -649,19 +649,7 @@
                                           </listeners>
                                         </source>
                                         <target class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
-                                        <bendpoints>
-                                          <net.java.amateras.uml.editpart.ConnectionBendpoint>
-                                            <weight>0.5</weight>
-                                            <d1>
-                                              <width>-51</width>
-                                              <height>-134</height>
-                                            </d1>
-                                            <d2>
-                                              <width>100</width>
-                                              <height>-1</height>
-                                            </d2>
-                                          </net.java.amateras.uml.editpart.ConnectionBendpoint>
-                                        </bendpoints>
+                                        <bendpoints/>
                                         <showIcon>true</showIcon>
                                         <listeners serialization="custom">
                                           <java.beans.PropertyChangeSupport>
@@ -690,19 +678,7 @@
                                       </java.beans.PropertyChangeSupport>
                                     </listeners>
                                   </target>
-                                  <bendpoints>
-                                    <net.java.amateras.uml.editpart.ConnectionBendpoint>
-                                      <weight>0.5</weight>
-                                      <d1>
-                                        <width>-5</width>
-                                        <height>-111</height>
-                                      </d1>
-                                      <d2>
-                                        <width>-92</width>
-                                        <height>-6</height>
-                                      </d2>
-                                    </net.java.amateras.uml.editpart.ConnectionBendpoint>
-                                  </bendpoints>
+                                  <bendpoints/>
                                   <showIcon>true</showIcon>
                                   <listeners serialization="custom">
                                     <java.beans.PropertyChangeSupport>
