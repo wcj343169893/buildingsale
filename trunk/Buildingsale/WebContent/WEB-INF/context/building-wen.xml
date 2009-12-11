@@ -84,7 +84,7 @@
 				</value></list>
 		</property></bean>
 	<bean id="ShopInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.ShopInfoDAO">
+		class="com.zuxia.buildingsale.house.entity.ShopInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -96,25 +96,25 @@
 		</property>
 	</bean>
 	<bean id="RoleMenuDAO"
-		class="com.zuxia.buildingsale.dao.impl.RoleMenuDAO">
+		class="com.zuxia.buildingsale.sys.dao.impl.RoleMenuDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="DataDictDAO"
-		class="com.zuxia.buildingsale.dao.impl.DataDictDAO">
+		class="com.zuxia.buildingsale.business.dao.DataDictDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="DealInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.DealInfoDAO">
+		class="com.zuxia.buildingsale.business.dao.DealInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="EmpRoleDAO"
-		class="com.zuxia.buildingsale.dao.impl.EmpRoleDAO">
+		class="com.zuxia.buildingsale.sys.dao.impl.EmpRoleDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -126,61 +126,61 @@
 		</property>
 	</bean>
 	<bean id="RoleInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.RoleInfoDAO">
+		class="com.zuxia.buildingsale.sys.dao.impl.RoleInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="DataDictTypeDAO"
-		class="com.zuxia.buildingsale.dao.impl.DataDictTypeDAO">
+		class="com.zuxia.buildingsale.business.dao.DataDictTypeDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="LoftInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.LoftInfoDAO">
+		class="com.zuxia.buildingsale.house.entity.LoftInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="ClientInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.ClientInfoDAO">
+		class="com.zuxia.buildingsale.business.dao.ClientInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="HouseTypeDAO"
-		class="com.zuxia.buildingsale.dao.impl.HouseTypeDAO">
+		class="com.zuxia.buildingsale.house.entity.HouseTypeDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="EmpMenuDAO"
-		class="com.zuxia.buildingsale.dao.impl.EmpMenuDAO">
+		class="com.zuxia.buildingsale.sys.dao.impl.EmpMenuDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="HouseInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.HouseInfoDAO">
+		class="com.zuxia.buildingsale.house.entity.HouseInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="MenuItemDAO"
-		class="com.zuxia.buildingsale.dao.impl.MenuItemDAO">
+		class="com.zuxia.buildingsale.sys.dao.impl.MenuItemDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="UnitInfoDAO"
-		class="com.zuxia.buildingsale.dao.impl.UnitInfoDAO">
+		class="com.zuxia.buildingsale.house.entity.UnitInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="LoftShopDAO"
-		class="com.zuxia.buildingsale.dao.impl.LoftShopDAO">
+		class="com.zuxia.buildingsale.house.entity.LoftShopDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
