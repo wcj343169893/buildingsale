@@ -10,7 +10,7 @@
             <column name="deal_id" />
             <generator class="native" />
         </id>
-        <many-to-one name="clientInfo" class="com.zuxia.buildingsale.entity.ClientInfo" fetch="select">
+        <many-to-one name="clientInfo" class="com.zuxia.buildingsale.business.entity.ClientInfo" fetch="select">
             <column name="client_id" not-null="true" unique="true">
                 <comment>客户编号(引用client_info的client_id)</comment>
             </column>
@@ -25,7 +25,7 @@
                 <comment>员工编号(引用employye表emp_id)</comment>
             </column>
         </many-to-one>
-        <many-to-one name="houseInfo" class="com.zuxia.buildingsale.entity.HouseInfo" fetch="select">
+        <many-to-one name="houseInfo" class="com.zuxia.buildingsale.house.entity.HouseInfo" fetch="select">
             <column name="house_id" not-null="true" unique="true">
                 <comment>房子类型(引用house_info表的house_id)</comment>
             </column>

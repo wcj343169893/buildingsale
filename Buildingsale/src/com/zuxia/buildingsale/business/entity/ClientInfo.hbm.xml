@@ -76,7 +76,7 @@
                     <comment>客户编号(引用client_info的client_id)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.DealInfo" />
+            <one-to-many class="com.zuxia.buildingsale.business.entity.DealInfo" />
         </set>
     </class>
 </hibernate-mapping>

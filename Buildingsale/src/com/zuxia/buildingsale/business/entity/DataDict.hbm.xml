@@ -10,7 +10,7 @@
             <column name="dd_id" />
             <generator class="native" />
         </id>
-        <many-to-one name="dataDictType" class="com.zuxia.buildingsale.entity.DataDictType" fetch="select">
+        <many-to-one name="dataDictType" class="com.zuxia.buildingsale.business.entity.DataDictType" fetch="select">
             <column name="dd_tye" not-null="true" unique="true">
                 <comment>引用data_dict_type表的ddt_id</comment>
             </column>
@@ -31,7 +31,7 @@
                     <comment>房子状态(引用data_dic表的dd_id)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.HouseInfo" />
+            <one-to-many class="com.zuxia.buildingsale.house.entity.HouseInfo" />
         </set>
         <set name="loftInfosForLoftBuildType" inverse="true">
             <key>
@@ -39,7 +39,7 @@
                     <comment>id编号(自动增长)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.LoftInfo" />
+            <one-to-many class="com.zuxia.buildingsale.house.entity.LoftInfo" />
         </set>
         <set name="clientInfos" inverse="true">
             <key>
@@ -47,7 +47,7 @@
                     <comment>状态(引用date_dict表的dd_id)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.ClientInfo" />
+            <one-to-many class="com.zuxia.buildingsale.business.entity.ClientInfo" />
         </set>
         <set name="dealInfosForDealState" inverse="true">
             <key>
@@ -55,7 +55,7 @@
                     <comment>交易状态(引用data_dict表dd_id)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.DealInfo" />
+            <one-to-many class="com.zuxia.buildingsale.business.entity.DealInfo" />
         </set>
         <set name="employees" inverse="true">
             <key>
@@ -71,7 +71,7 @@
                     <comment>id编号(自动增长)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.LoftInfo" />
+            <one-to-many class="com.zuxia.buildingsale.house.entity.LoftInfo" />
         </set>
         <set name="dealInfosForDealPayStyle" inverse="true">
             <key>
@@ -79,7 +79,7 @@
                     <comment>付款方式(引用data_dict表的dd_id)</comment>
                 </column>
             </key>
-            <one-to-many class="com.zuxia.buildingsale.entity.DealInfo" />
+            <one-to-many class="com.zuxia.buildingsale.business.entity.DealInfo" />
         </set>
     </class>
 </hibernate-mapping>
