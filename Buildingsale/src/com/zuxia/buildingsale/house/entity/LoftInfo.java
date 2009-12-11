@@ -6,10 +6,13 @@ import java.util.Set;
 
 import com.zuxia.buildingsale.business.entity.DataDict;
 
-/**
- * LoftInfo entity. @author MyEclipse Persistence Tools
- */
 
+/**
+ * LoftInfo概要说明 楼盘信息
+ * 
+ *
+ * @author zcq100 chaojun
+ */
 public class LoftInfo implements java.io.Serializable {
 
 	// Fields
