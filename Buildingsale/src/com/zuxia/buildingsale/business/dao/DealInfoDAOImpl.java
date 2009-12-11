@@ -22,8 +22,8 @@ import com.zuxia.buildingsale.business.entity.DealInfo;
  * @author MyEclipse Persistence Tools
  */
 
-public class DealInfoDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(DealInfoDAO.class);
+public class DealInfoDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(DealInfoDAOImpl.class);
 	// property constants
 	public static final String DEAL_HOUSE_PRICE = "dealHousePrice";
 	public static final String DEAL_DEED_TAX = "dealDeedTax";
@@ -196,7 +196,7 @@ public class DealInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static DealInfoDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (DealInfoDAO) ctx.getBean("DealInfoDAO");
+	public static DealInfoDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (DealInfoDAOImpl) ctx.getBean("DealInfoDAO");
 	}
 }

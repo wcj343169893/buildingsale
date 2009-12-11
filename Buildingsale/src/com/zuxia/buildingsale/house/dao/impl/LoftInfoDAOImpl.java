@@ -1,4 +1,4 @@
-package com.zuxia.buildingsale.house.entity;
+package com.zuxia.buildingsale.house.dao.impl;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -8,6 +8,8 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.zuxia.buildingsale.house.entity.LoftInfo;
 
 
 /**
@@ -22,8 +24,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * @author MyEclipse Persistence Tools
  */
 
-public class LoftInfoDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(LoftInfoDAO.class);
+public class LoftInfoDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(LoftInfoDAOImpl.class);
 	// property constants
 	public static final String LOFT_NO = "loftNo";
 	public static final String LOFT_NAME = "loftName";
@@ -186,7 +188,7 @@ public class LoftInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static LoftInfoDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (LoftInfoDAO) ctx.getBean("LoftInfoDAO");
+	public static LoftInfoDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (LoftInfoDAOImpl) ctx.getBean("LoftInfoDAO");
 	}
 }

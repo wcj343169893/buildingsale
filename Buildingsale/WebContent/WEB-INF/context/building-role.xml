@@ -84,7 +84,7 @@
 				</value></list>
 		</property></bean>
 	<bean id="ShopInfoDAO"
-		class="com.zuxia.buildingsale.house.entity.ShopInfoDAO">
+		class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -138,7 +138,7 @@
 		</property>
 	</bean>
 	<bean id="LoftInfoDAO"
-		class="com.zuxia.buildingsale.house.entity.LoftInfoDAO">
+		class="com.zuxia.buildingsale.house.dao.impl.LoftInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -150,7 +150,7 @@
 		</property>
 	</bean>
 	<bean id="HouseTypeDAO"
-		class="com.zuxia.buildingsale.house.entity.HouseTypeDAO">
+		class="com.zuxia.buildingsale.house.dao.impl.HouseTypeDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -162,7 +162,7 @@
 		</property>
 	</bean>
 	<bean id="HouseInfoDAO"
-		class="com.zuxia.buildingsale.house.entity.HouseInfoDAO">
+		class="com.zuxia.buildingsale.house.dao.impl.HouseInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -174,13 +174,13 @@
 		</property>
 	</bean>
 	<bean id="UnitInfoDAO"
-		class="com.zuxia.buildingsale.house.entity.UnitInfoDAO">
+		class="com.zuxia.buildingsale.house.dao.impl.UnitInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="LoftShopDAO"
-		class="com.zuxia.buildingsale.house.entity.LoftShopDAO">
+		class="com.zuxia.buildingsale.house.dao.impl.LoftShopDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

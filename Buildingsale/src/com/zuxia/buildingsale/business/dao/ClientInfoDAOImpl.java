@@ -23,8 +23,8 @@ import com.zuxia.buildingsale.business.entity.ClientInfo;
  * @author MyEclipse Persistence Tools
  */
 
-public class ClientInfoDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(ClientInfoDAO.class);
+public class ClientInfoDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(ClientInfoDAOImpl.class);
 	// property constants
 	public static final String CLIENT_NAME = "clientName";
 	public static final String CLIENT_SEX = "clientSex";
@@ -182,7 +182,7 @@ public class ClientInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static ClientInfoDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (ClientInfoDAO) ctx.getBean("ClientInfoDAO");
+	public static ClientInfoDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (ClientInfoDAOImpl) ctx.getBean("ClientInfoDAO");
 	}
 }
