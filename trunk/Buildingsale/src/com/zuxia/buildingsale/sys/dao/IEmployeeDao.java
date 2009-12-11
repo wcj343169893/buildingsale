@@ -12,12 +12,12 @@
  *  zcq100
  *******************************************************************************
  */
-package com.zuxia.buildingsale.sys.dao.impl;
+package com.zuxia.buildingsale.sys.dao;
 
 import java.util.List;
 
+import com.zuxia.buildingsale.common.IBaseCRUD;
 import com.zuxia.buildingsale.common.Page;
-import com.zuxia.buildingsale.dao.IBaseCRUD;
 import com.zuxia.buildingsale.sys.entity.Employee;
 
 /**

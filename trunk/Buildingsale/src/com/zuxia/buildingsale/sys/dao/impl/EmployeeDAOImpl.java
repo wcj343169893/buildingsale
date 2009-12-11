@@ -4,10 +4,9 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.LockMode;
-import org.springframework.context.ApplicationContext;
 import com.zuxia.buildingsale.common.BaseDao;
 import com.zuxia.buildingsale.common.Page;
+import com.zuxia.buildingsale.sys.dao.IEmployeeDao;
 import com.zuxia.buildingsale.sys.entity.Employee;
 
 
