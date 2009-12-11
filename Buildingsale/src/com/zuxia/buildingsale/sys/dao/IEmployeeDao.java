@@ -27,5 +27,23 @@ import com.zuxia.buildingsale.sys.entity.Employee;
  * @author zcq100
  */
 public interface IEmployeeDao extends IBaseCRUD<Employee> {
+	/**
+	 * 
+	 * findAll方法概述
+	 * 分页查找所有的雇员
+	 *
+	 * @param page 分页信息
+	 * @return 员工集合
+	 */
 	List<Employee> findAll(Page page);
+	
+	/**
+	 * 
+	 * findByEmployeeAccount方法概述
+	 * 根据员工账号的道员工信息
+	 *
+	 * @param account	员工账户
+	 * @return	员工信息
+	 */
+	Employee findByEmployeeAccount(String account);
 }
