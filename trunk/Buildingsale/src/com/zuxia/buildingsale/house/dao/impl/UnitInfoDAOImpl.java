@@ -1,36 +1,43 @@
-package com.zuxia.buildingsale.house.entity;
+package com.zuxia.buildingsale.house.dao.impl;
 
 import java.util.List;
+import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.zuxia.buildingsale.house.entity.UnitInfo;
+
 
 /**
  * A data access object (DAO) providing persistence and search support for
- * LoftShop entities. Transaction control of the save(), update() and delete()
+ * UnitInfo entities. Transaction control of the save(), update() and delete()
  * operations can directly support Spring container-managed transactions or they
  * can be augmented to handle user-managed Spring transactions. Each of these
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see com.zuxia.buildingsale.house.entity.LoftShop
+ * @see com.zuxia.buildingsale.house.entity.UnitInfo
  * @author MyEclipse Persistence Tools
  */
 
-public class LoftShopDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(LoftShopDAO.class);
-
+public class UnitInfoDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(UnitInfoDAOImpl.class);
 	// property constants
+	public static final String UNIT_NO = "unitNo";
+	public static final String UNIT_NAME = "unitName";
+	public static final String UNIT_HOUSE_NUMBER = "unitHouseNumber";
+	public static final String UNIT_FLOOR_NUMBER = "unitFloorNumber";
+	public static final String UNIT_TERM = "unitTerm";
 
 	protected void initDao() {
 		// do nothing
 	}
 
-	public void save(LoftShop transientInstance) {
-		log.debug("saving LoftShop instance");
+	public void save(UnitInfo transientInstance) {
+		log.debug("saving UnitInfo instance");
 		try {
 			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
@@ -40,8 +47,8 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void delete(LoftShop persistentInstance) {
-		log.debug("deleting LoftShop instance");
+	public void delete(UnitInfo persistentInstance) {
+		log.debug("deleting UnitInfo instance");
 		try {
 			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
@@ -51,11 +58,11 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public LoftShop findById(java.lang.Integer id) {
-		log.debug("getting LoftShop instance with id: " + id);
+	public UnitInfo findById(java.lang.Integer id) {
+		log.debug("getting UnitInfo instance with id: " + id);
 		try {
-			LoftShop instance = (LoftShop) getHibernateTemplate().get(
-					"com.zuxia.buildingsale.entity.LoftShop", id);
+			UnitInfo instance = (UnitInfo) getHibernateTemplate().get(
+					"com.zuxia.buildingsale.entity.UnitInfo", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -63,8 +70,8 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByExample(LoftShop instance) {
-		log.debug("finding LoftShop instance by example");
+	public List findByExample(UnitInfo instance) {
+		log.debug("finding UnitInfo instance by example");
 		try {
 			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
@@ -77,10 +84,10 @@ public class LoftShopDAO extends HibernateDaoSupport {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding LoftShop instance with property: " + propertyName
+		log.debug("finding UnitInfo instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from LoftShop as model where model."
+			String queryString = "from UnitInfo as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
@@ -89,10 +96,30 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
+	public List findByUnitNo(Object unitNo) {
+		return findByProperty(UNIT_NO, unitNo);
+	}
+
+	public List findByUnitName(Object unitName) {
+		return findByProperty(UNIT_NAME, unitName);
+	}
+
+	public List findByUnitHouseNumber(Object unitHouseNumber) {
+		return findByProperty(UNIT_HOUSE_NUMBER, unitHouseNumber);
+	}
+
+	public List findByUnitFloorNumber(Object unitFloorNumber) {
+		return findByProperty(UNIT_FLOOR_NUMBER, unitFloorNumber);
+	}
+
+	public List findByUnitTerm(Object unitTerm) {
+		return findByProperty(UNIT_TERM, unitTerm);
+	}
+
 	public List findAll() {
-		log.debug("finding all LoftShop instances");
+		log.debug("finding all UnitInfo instances");
 		try {
-			String queryString = "from LoftShop";
+			String queryString = "from UnitInfo";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -100,10 +127,10 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public LoftShop merge(LoftShop detachedInstance) {
-		log.debug("merging LoftShop instance");
+	public UnitInfo merge(UnitInfo detachedInstance) {
+		log.debug("merging UnitInfo instance");
 		try {
-			LoftShop result = (LoftShop) getHibernateTemplate().merge(
+			UnitInfo result = (UnitInfo) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -113,8 +140,8 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachDirty(LoftShop instance) {
-		log.debug("attaching dirty LoftShop instance");
+	public void attachDirty(UnitInfo instance) {
+		log.debug("attaching dirty UnitInfo instance");
 		try {
 			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -124,8 +151,8 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachClean(LoftShop instance) {
-		log.debug("attaching clean LoftShop instance");
+	public void attachClean(UnitInfo instance) {
+		log.debug("attaching clean UnitInfo instance");
 		try {
 			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
@@ -135,7 +162,7 @@ public class LoftShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static LoftShopDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (LoftShopDAO) ctx.getBean("LoftShopDAO");
+	public static UnitInfoDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (UnitInfoDAOImpl) ctx.getBean("UnitInfoDAO");
 	}
 }

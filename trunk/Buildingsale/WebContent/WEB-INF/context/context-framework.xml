@@ -26,60 +26,60 @@
 		<property name="mappingResources">
 			<list>
 				<value>
-					com/zuxia/buildingsale/entity/ShopInfo.hbm.xml
+					com/zuxia/buildingsale/house/entity/ShopInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/MenuInfo.hbm.xml
+					com/zuxia/buildingsale/sys/entity/MenuInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/RoleMenu.hbm.xml
+					com/zuxia/buildingsale/sys/entity/RoleMenu.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/DataDict.hbm.xml
+					com/zuxia/buildingsale/business/entity/DataDict.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/DealInfo.hbm.xml
+					com/zuxia/buildingsale/business/entity/DealInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/EmpRole.hbm.xml
+					com/zuxia/buildingsale/sys/entity/EmpRole.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/Employee.hbm.xml
+					com/zuxia/buildingsale/sys/entity/Employee.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/RoleInfo.hbm.xml
+					com/zuxia/buildingsale/sys/entity/RoleInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/DataDictType.hbm.xml
+					com/zuxia/buildingsale/business/entity/DataDictType.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/LoftInfo.hbm.xml
+					com/zuxia/buildingsale/house/entity/LoftInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/ClientInfo.hbm.xml
+					com/zuxia/buildingsale/business/entity/ClientInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/HouseType.hbm.xml
+					com/zuxia/buildingsale/house/entity/HouseType.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/EmpMenu.hbm.xml
+					com/zuxia/buildingsale/sys/entity/EmpMenu.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/HouseInfo.hbm.xml
+					com/zuxia/buildingsale/house/entity/HouseInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/MenuItem.hbm.xml
+					com/zuxia/buildingsale/sys/entity/MenuItem.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/UnitInfo.hbm.xml
+					com/zuxia/buildingsale/house/entity/UnitInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/entity/LoftShop.hbm.xml
+					com/zuxia/buildingsale/house/entity/LoftShop.hbm.xml
 				</value>
 			</list>
 		</property>
 	</bean>
-	<bean id="ShopInfoDAO" class="com.zuxia.buildingsale.house.entity.ShopInfoDAO">
+	<bean id="ShopInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -124,7 +124,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="LoftInfoDAO" class="com.zuxia.buildingsale.house.entity.LoftInfoDAO">
+	<bean id="LoftInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.LoftInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -134,7 +134,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="HouseTypeDAO" class="com.zuxia.buildingsale.house.entity.HouseTypeDAO">
+	<bean id="HouseTypeDAO" class="com.zuxia.buildingsale.house.dao.impl.HouseTypeDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -144,7 +144,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="HouseInfoDAO" class="com.zuxia.buildingsale.house.entity.HouseInfoDAO">
+	<bean id="HouseInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.HouseInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -154,12 +154,12 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="UnitInfoDAO" class="com.zuxia.buildingsale.house.entity.UnitInfoDAO">
+	<bean id="UnitInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.UnitInfoDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="LoftShopDAO" class="com.zuxia.buildingsale.house.entity.LoftShopDAO">
+	<bean id="LoftShopDAO" class="com.zuxia.buildingsale.house.dao.impl.LoftShopDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

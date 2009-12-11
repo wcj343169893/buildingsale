@@ -22,8 +22,8 @@ import com.zuxia.buildingsale.business.entity.DataDictType;
  * @author MyEclipse Persistence Tools
  */
 
-public class DataDictTypeDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(DataDictTypeDAO.class);
+public class DataDictTypeDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(DataDictTypeDAOImpl.class);
 	// property constants
 	public static final String DDT_TYPE = "ddtType";
 	public static final String DDT_NAME = "ddtName";
@@ -146,8 +146,8 @@ public class DataDictTypeDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static DataDictTypeDAO getFromApplicationContext(
+	public static DataDictTypeDAOImpl getFromApplicationContext(
 			ApplicationContext ctx) {
-		return (DataDictTypeDAO) ctx.getBean("DataDictTypeDAO");
+		return (DataDictTypeDAOImpl) ctx.getBean("DataDictTypeDAO");
 	}
 }

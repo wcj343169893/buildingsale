@@ -1,4 +1,4 @@
-package com.zuxia.buildingsale.house.entity;
+package com.zuxia.buildingsale.house.dao.impl;
 
 import java.util.List;
 import java.util.Set;
@@ -7,6 +7,8 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.zuxia.buildingsale.house.entity.ShopInfo;
 
 
 /**
@@ -21,8 +23,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * @author MyEclipse Persistence Tools
  */
 
-public class ShopInfoDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(ShopInfoDAO.class);
+public class ShopInfoDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(ShopInfoDAOImpl.class);
 	// property constants
 	public static final String SHOP_NO = "shopNo";
 	public static final String SHOP_NAME = "shopName";
@@ -175,7 +177,7 @@ public class ShopInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static ShopInfoDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (ShopInfoDAO) ctx.getBean("ShopInfoDAO");
+	public static ShopInfoDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (ShopInfoDAOImpl) ctx.getBean("ShopInfoDAO");
 	}
 }

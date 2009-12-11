@@ -1,4 +1,4 @@
-package com.zuxia.buildingsale.house.entity;
+package com.zuxia.buildingsale.house.dao.impl;
 
 import java.util.List;
 import java.util.Set;
@@ -7,6 +7,8 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.zuxia.buildingsale.house.entity.HouseInfo;
 
 
 /**
@@ -21,8 +23,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * @author MyEclipse Persistence Tools
  */
 
-public class HouseInfoDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(HouseInfoDAO.class);
+public class HouseInfoDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(HouseInfoDAOImpl.class);
 	// property constants
 	public static final String HOUSE_FLOORS = "houseFloors";
 	public static final String HOUSE_NO = "houseNo";
@@ -185,7 +187,7 @@ public class HouseInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static HouseInfoDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (HouseInfoDAO) ctx.getBean("HouseInfoDAO");
+	public static HouseInfoDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (HouseInfoDAOImpl) ctx.getBean("HouseInfoDAO");
 	}
 }
