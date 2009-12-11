@@ -1,39 +1,37 @@
 package com.zuxia.buildingsale.sys.dao.impl;
 
 import java.util.List;
-import java.util.Set;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.zuxia.buildingsale.sys.entity.RoleInfo;
+import com.zuxia.buildingsale.sys.entity.EmpMenu;
 
 /**
  * A data access object (DAO) providing persistence and search support for
- * RoleInfo entities. Transaction control of the save(), update() and delete()
+ * EmpMenu entities. Transaction control of the save(), update() and delete()
  * operations can directly support Spring container-managed transactions or they
  * can be augmented to handle user-managed Spring transactions. Each of these
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see com.zuxia.buildingsale.sys.entity.RoleInfo
+ * @see com.zuxia.buildingsale.sys.entity.EmpMenu
  * @author MyEclipse Persistence Tools
  */
 
-public class RoleInfoDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(RoleInfoDAO.class);
+public class EmpMenuDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(EmpMenuDAOImpl.class);
+
 	// property constants
-	public static final String ROLE_NAME = "roleName";
-	public static final String ROLE_REMARK = "roleRemark";
 
 	protected void initDao() {
 		// do nothing
 	}
 
-	public void save(RoleInfo transientInstance) {
-		log.debug("saving RoleInfo instance");
+	public void save(EmpMenu transientInstance) {
+		log.debug("saving EmpMenu instance");
 		try {
 			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
@@ -43,8 +41,8 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void delete(RoleInfo persistentInstance) {
-		log.debug("deleting RoleInfo instance");
+	public void delete(EmpMenu persistentInstance) {
+		log.debug("deleting EmpMenu instance");
 		try {
 			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
@@ -54,11 +52,11 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public RoleInfo findById(java.lang.Integer id) {
-		log.debug("getting RoleInfo instance with id: " + id);
+	public EmpMenu findById(java.lang.Integer id) {
+		log.debug("getting EmpMenu instance with id: " + id);
 		try {
-			RoleInfo instance = (RoleInfo) getHibernateTemplate().get(
-					"com.zuxia.buildingsale.entity.RoleInfo", id);
+			EmpMenu instance = (EmpMenu) getHibernateTemplate().get(
+					"com.zuxia.buildingsale.entity.EmpMenu", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -66,8 +64,8 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByExample(RoleInfo instance) {
-		log.debug("finding RoleInfo instance by example");
+	public List findByExample(EmpMenu instance) {
+		log.debug("finding EmpMenu instance by example");
 		try {
 			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
@@ -80,10 +78,10 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding RoleInfo instance with property: " + propertyName
+		log.debug("finding EmpMenu instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from RoleInfo as model where model."
+			String queryString = "from EmpMenu as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
@@ -92,18 +90,10 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByRoleName(Object roleName) {
-		return findByProperty(ROLE_NAME, roleName);
-	}
-
-	public List findByRoleRemark(Object roleRemark) {
-		return findByProperty(ROLE_REMARK, roleRemark);
-	}
-
 	public List findAll() {
-		log.debug("finding all RoleInfo instances");
+		log.debug("finding all EmpMenu instances");
 		try {
-			String queryString = "from RoleInfo";
+			String queryString = "from EmpMenu";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -111,10 +101,10 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public RoleInfo merge(RoleInfo detachedInstance) {
-		log.debug("merging RoleInfo instance");
+	public EmpMenu merge(EmpMenu detachedInstance) {
+		log.debug("merging EmpMenu instance");
 		try {
-			RoleInfo result = (RoleInfo) getHibernateTemplate().merge(
+			EmpMenu result = (EmpMenu) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -124,8 +114,8 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachDirty(RoleInfo instance) {
-		log.debug("attaching dirty RoleInfo instance");
+	public void attachDirty(EmpMenu instance) {
+		log.debug("attaching dirty EmpMenu instance");
 		try {
 			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -135,8 +125,8 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachClean(RoleInfo instance) {
-		log.debug("attaching clean RoleInfo instance");
+	public void attachClean(EmpMenu instance) {
+		log.debug("attaching clean EmpMenu instance");
 		try {
 			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
@@ -146,7 +136,7 @@ public class RoleInfoDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static RoleInfoDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (RoleInfoDAO) ctx.getBean("RoleInfoDAO");
+	public static EmpMenuDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (EmpMenuDAOImpl) ctx.getBean("EmpMenuDAO");
 	}
 }

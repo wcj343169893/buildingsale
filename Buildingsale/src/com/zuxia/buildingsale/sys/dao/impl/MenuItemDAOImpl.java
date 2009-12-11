@@ -7,31 +7,32 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.zuxia.buildingsale.sys.entity.RoleMenu;
+import com.zuxia.buildingsale.sys.entity.MenuItem;
 
 /**
  * A data access object (DAO) providing persistence and search support for
- * RoleMenu entities. Transaction control of the save(), update() and delete()
+ * MenuItem entities. Transaction control of the save(), update() and delete()
  * operations can directly support Spring container-managed transactions or they
  * can be augmented to handle user-managed Spring transactions. Each of these
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see com.zuxia.buildingsale.sys.entity.RoleMenu
+ * @see com.zuxia.buildingsale.sys.entity.MenuItem
  * @author MyEclipse Persistence Tools
  */
 
-public class RoleMenuDAO extends HibernateDaoSupport {
-	private static final Log log = LogFactory.getLog(RoleMenuDAO.class);
-
+public class MenuItemDAOImpl extends HibernateDaoSupport {
+	private static final Log log = LogFactory.getLog(MenuItemDAOImpl.class);
 	// property constants
+	public static final String MI_URL = "miUrl";
+	public static final String MI_REMARK = "miRemark";
 
 	protected void initDao() {
 		// do nothing
 	}
 
-	public void save(RoleMenu transientInstance) {
-		log.debug("saving RoleMenu instance");
+	public void save(MenuItem transientInstance) {
+		log.debug("saving MenuItem instance");
 		try {
 			getHibernateTemplate().save(transientInstance);
 			log.debug("save successful");
@@ -41,8 +42,8 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void delete(RoleMenu persistentInstance) {
-		log.debug("deleting RoleMenu instance");
+	public void delete(MenuItem persistentInstance) {
+		log.debug("deleting MenuItem instance");
 		try {
 			getHibernateTemplate().delete(persistentInstance);
 			log.debug("delete successful");
@@ -52,11 +53,11 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public RoleMenu findById(java.lang.Integer id) {
-		log.debug("getting RoleMenu instance with id: " + id);
+	public MenuItem findById(java.lang.Integer id) {
+		log.debug("getting MenuItem instance with id: " + id);
 		try {
-			RoleMenu instance = (RoleMenu) getHibernateTemplate().get(
-					"com.zuxia.buildingsale.entity.RoleMenu", id);
+			MenuItem instance = (MenuItem) getHibernateTemplate().get(
+					"com.zuxia.buildingsale.entity.MenuItem", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -64,8 +65,8 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public List findByExample(RoleMenu instance) {
-		log.debug("finding RoleMenu instance by example");
+	public List findByExample(MenuItem instance) {
+		log.debug("finding MenuItem instance by example");
 		try {
 			List results = getHibernateTemplate().findByExample(instance);
 			log.debug("find by example successful, result size: "
@@ -78,10 +79,10 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding RoleMenu instance with property: " + propertyName
+		log.debug("finding MenuItem instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from RoleMenu as model where model."
+			String queryString = "from MenuItem as model where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
@@ -90,10 +91,18 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
+	public List findByMiUrl(Object miUrl) {
+		return findByProperty(MI_URL, miUrl);
+	}
+
+	public List findByMiRemark(Object miRemark) {
+		return findByProperty(MI_REMARK, miRemark);
+	}
+
 	public List findAll() {
-		log.debug("finding all RoleMenu instances");
+		log.debug("finding all MenuItem instances");
 		try {
-			String queryString = "from RoleMenu";
+			String queryString = "from MenuItem";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -101,10 +110,10 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public RoleMenu merge(RoleMenu detachedInstance) {
-		log.debug("merging RoleMenu instance");
+	public MenuItem merge(MenuItem detachedInstance) {
+		log.debug("merging MenuItem instance");
 		try {
-			RoleMenu result = (RoleMenu) getHibernateTemplate().merge(
+			MenuItem result = (MenuItem) getHibernateTemplate().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -114,8 +123,8 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachDirty(RoleMenu instance) {
-		log.debug("attaching dirty RoleMenu instance");
+	public void attachDirty(MenuItem instance) {
+		log.debug("attaching dirty MenuItem instance");
 		try {
 			getHibernateTemplate().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -125,8 +134,8 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public void attachClean(RoleMenu instance) {
-		log.debug("attaching clean RoleMenu instance");
+	public void attachClean(MenuItem instance) {
+		log.debug("attaching clean MenuItem instance");
 		try {
 			getHibernateTemplate().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
@@ -136,7 +145,7 @@ public class RoleMenuDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static RoleMenuDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (RoleMenuDAO) ctx.getBean("RoleMenuDAO");
+	public static MenuItemDAOImpl getFromApplicationContext(ApplicationContext ctx) {
+		return (MenuItemDAOImpl) ctx.getBean("MenuItemDAO");
 	}
 }
