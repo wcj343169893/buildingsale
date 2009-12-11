@@ -1,5 +1,4 @@
 package com.zuxia.buildingsale.common;
-
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -7,13 +6,17 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+/**
+ * 
+ * BaseDao概要说明<br/>
+ * 该类封装了基本的dao方法<br/>
+ * 提供了基本的查询<br/>
+ * 支持分页
+ * @author zcq100
+ */
 public class BaseDao extends HibernateDaoSupport {
-	/**
-	 * BaseDAO构造方法
-	 */
-	public BaseDao() {
 
-	}
+	
 	/**  
 	* 功能：根据hql语句修改
 	*   
@@ -66,21 +69,21 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public int getTotalCount(String strhql) {
-		List list = this.getHibernateTemplate().find(strhql);
-		return list.size();
+		List list = this.getHibernateTemplate().find("select count(*) "+strhql);
+		return Integer.valueOf(list.get(0).toString());
 	}
 
 	/**  
 	* 功能：根据hql语句得到记录总数  
 	*   
-	* @param strhql  
-	* @param obj  
-	* @return int  
+	* @param strhql  select count(*) from 对象
+	* @param obj 
+	* @return int	记录的条数  
 	*/
 	@SuppressWarnings("unchecked")
 	public int getTotalCount(String strhql, Object obj) {
-		List list = this.getHibernateTemplate().find(strhql,obj);
-		return list.size();
+		List list = this.getHibernateTemplate().find("select count(*) "+strhql,obj);
+		return Integer.valueOf(list.get(0).toString());
 	}
 
 	/**  
@@ -92,8 +95,8 @@ public class BaseDao extends HibernateDaoSupport {
 	@SuppressWarnings("unchecked")
 	public int getTotalCount(String strhql, List<Object> params) {
 		
-		List list = this.getHibernateTemplate().find(strhql,params.toArray());
-		return list.size();
+		List list = this.getHibernateTemplate().find("select count(*) "+strhql,params.toArray());
+		return Integer.valueOf(list.get(0).toString());
 	}
 
 	/**  
@@ -102,10 +105,9 @@ public class BaseDao extends HibernateDaoSupport {
 	* @param params  
 	* @return int  
 	*/
-	@SuppressWarnings("unchecked")
 	public int getRecordCount(String hql,List params){
 		
-		Query query=this.getSession().createQuery(hql);
+		Query query=this.getSession().createQuery("select count(*) "+hql);
 		Object param=null;
 		for(int i=0;i<params.size();i++)
 		{
@@ -115,7 +117,7 @@ public class BaseDao extends HibernateDaoSupport {
 			}
 		}
 		List list=query.list();
-		return list.size();
+		return Integer.valueOf(list.get(0).toString());
 	}
 	
 	
@@ -127,8 +129,8 @@ public class BaseDao extends HibernateDaoSupport {
 	 */
 	@SuppressWarnings("unchecked")
 	public int getTotalCountBySql(String strsql) {
-		List list =  this.getSession().createSQLQuery(strsql).list();
-		return list.size();
+		List list =  this.getSession().createSQLQuery("select count(*) "+strsql).list();
+		return Integer.valueOf(list.get(0).toString());
 	}
 
 	/**  
@@ -140,12 +142,12 @@ public class BaseDao extends HibernateDaoSupport {
 	
 	@SuppressWarnings("unchecked")
 	public int getTotalCountBySql(String strsql, List<String> params) {
-		SQLQuery sqlQuery = this.getSession().createSQLQuery(strsql);
+		SQLQuery sqlQuery = this.getSession().createSQLQuery("select count(*) "+strsql);
 		 for(int i=0;i<params.size();i++){
 			 sqlQuery.setParameter(i+1, params.get(i));
 		 }
 		List list = sqlQuery.list();
-		return list.size();
+		return Integer.valueOf(list.get(0).toString());
 	}
 
 	/**  
@@ -205,8 +207,7 @@ public class BaseDao extends HibernateDaoSupport {
 			this.getHibernateTemplate().delete(this.getHibernateTemplate().get(clazz, id[i]));
 		}
 	}
-    @SuppressWarnings("unchecked")
-	public void batchDelete(Class clazz,int[] id)
+    public void batchDelete(Class clazz,int[] id)
     {
     	for(int i=0;i<id.length;i++){
 			System.out.println(this.getHibernateTemplate().get(clazz, id[i]));
@@ -280,8 +281,7 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public Object loadByPk(Class clazz, String keyName, Object keyValue) {
-		//不晓得
-		return null;
+		return this.getHibernateTemplate().find("from "+clazz.getName()+" where "+keyName+"= "+keyValue);
 	}
 
 	/**  
@@ -370,7 +370,10 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public List query(Page page,String strhql) {
-		// TODO;
+		//得到记录总数
+		int totalcount=getTotalCount(strhql);
+		//设置page对象的记录总数
+		page.setTotalRecordCount(totalcount);	
 		List list=null;
 		//创建查询
 		Query query = this.getSession().createQuery(strhql);
@@ -396,7 +399,10 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public List query(Page page, String strhql, Object obj) {
-		// TODO;
+		//得到记录总数
+		int totalcount=getTotalCount(strhql,obj);
+		//设置page对象的记录总数
+		page.setTotalRecordCount(totalcount);	
 		List list=null;
 		//创建查询
 		Query query = this.getSession().createQuery(strhql);
@@ -423,7 +429,10 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public List query(Page page, String strhql, List params) {
-		// TODO;
+		//得到记录总数
+		int totalcount=getTotalCount(strhql,params);
+		//设置page对象的记录总数
+		page.setTotalRecordCount(totalcount);	
 		List list=null;
 		//创建查询
 		Query query = this.getSession().createQuery(strhql);
@@ -452,7 +461,10 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public List queryBySql(Page page, String strsql) {
-		// TODO;
+		//得到记录总数
+		int totalcount=getTotalCountBySql(strsql);
+		//设置page对象的记录总数
+		page.setTotalRecordCount(totalcount);	
 		List list=null;
 		//创建查询
 		Query query = this.getSession().createSQLQuery(strsql);
@@ -477,7 +489,10 @@ public class BaseDao extends HibernateDaoSupport {
 	*/
 	@SuppressWarnings("unchecked")
 	public List queryBySql(Page page, String strsql, List params) {
-		// TODO;
+		//得到记录总数
+		int totalcount=getTotalCountBySql(strsql,params);
+		//设置page对象的记录总数
+		page.setTotalRecordCount(totalcount);
 		List list=null;
 		//创建查询
 		Query query = this.getSession().createSQLQuery(strsql);
@@ -501,6 +516,7 @@ public class BaseDao extends HibernateDaoSupport {
 	*   
 	* @param strsql  
 	*/
+	@SuppressWarnings("unchecked")
 	public int excuteSql(String strsql,Object[] val) {
 		return this.getHibernateTemplate().bulkUpdate(strsql,val);
 	}
@@ -520,7 +536,6 @@ public class BaseDao extends HibernateDaoSupport {
 	 * <dd>@return               int
 	 * </dl>
 	*/
-	@SuppressWarnings("unchecked")
 	public int batchDelete(Class cls,String keyProperty,String idStr){
 		int res=0;
 		StringBuffer sbHql=new StringBuffer("delete from");

@@ -84,7 +84,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="MenuInfoDAOImpl" class="com.zuxia.buildingsale.dao.impl.MenuInfoDAOImpl">
+	<bean id="MenuInfoDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.MenuInfoDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -109,7 +109,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="EmployeeDAOImpl" class="com.zuxia.buildingsale.dao.impl.EmployeeDAOImpl">
+	<bean id="EmployeeDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.EmployeeDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

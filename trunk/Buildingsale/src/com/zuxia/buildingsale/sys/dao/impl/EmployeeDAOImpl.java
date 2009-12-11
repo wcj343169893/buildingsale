@@ -40,8 +40,7 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public List<Employee> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		return query(page, "from Employee modle1 order by modle1.empNo asc");
 	}
 	/** 
 	 * （重写方法）
@@ -53,8 +52,12 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public int delete(Employee obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 	/** 
 	 * （重写方法）
@@ -66,8 +69,7 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public Employee findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (Employee) getByPk(this.getClass(), id);
 	}
 	/** 
 	 * （重写方法）
@@ -79,8 +81,12 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public int merge(Employee obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 	/** 
 	 * （重写方法）
@@ -92,8 +98,27 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public int save(Employee obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+	/** 
+	 * （重写方法）
+	 * findByEmployeeAccount方法概述
+	 * 
+	 *
+	 * @param account
+	 * @return
+	 */
+	@Override
+	public Employee findByEmployeeAccount(String account) {
+		List list=find("from Employee where empAccount=?", account);
+		if(list.size()>0)
+			return (Employee) list.get(0);
+		return null;
 	}
 	
 }
