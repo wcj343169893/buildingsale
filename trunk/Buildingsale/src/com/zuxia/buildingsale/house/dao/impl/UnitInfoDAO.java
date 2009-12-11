@@ -97,4 +97,18 @@ public class UnitInfoDAO extends BaseDao implements IUnitInfoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	/** 
+	 * （重写方法）
+	 * findAll方法概述
+	 * 
+	 *
+	 * @param page
+	 * @return
+	 */
+	@Override
+	public List<UnitInfo> findAll(Page page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

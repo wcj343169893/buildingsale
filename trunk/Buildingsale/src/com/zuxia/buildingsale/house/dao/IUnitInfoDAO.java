@@ -32,4 +32,14 @@ public interface IUnitInfoDAO extends IBaseCRUD<UnitInfo> {
 	 * @return List
 	 */
 	public List<UnitInfo> findByLoft(Page page, int loftId);
+
+	/**
+	 * findAll方法概述 查询全部单元信息
+	 * 
+	 * 
+	 * @param page
+	 *            分页信息
+	 * @return List
+	 */
+	public List<UnitInfo> findAll(Page page);
 }

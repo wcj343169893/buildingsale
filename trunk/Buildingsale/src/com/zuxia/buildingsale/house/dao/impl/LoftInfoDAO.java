@@ -120,5 +120,18 @@ public class LoftInfoDAO extends BaseDao implements ILoftInfoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/** 
+	 * （重写方法）
+	 * findAll方法概述
+	 * 
+	 *
+	 * @param page
+	 * @return
+	 */
+	@Override
+	public List<LoftInfo> findAll(Page page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -36,7 +36,7 @@ public interface IHouseInfoDAO extends IBaseCRUD<HouseInfo> {
 	 * @param unitId 单元id
 	 * @return List<HouseInfo> 
 	 */
-	public List<HouseInfo> findHouseInfoByUnit(Page page,int unitId);
+	public List<HouseInfo> findByUnit(Page page,int unitId);
 	/**
 	 * findHouseInfoByHouseTypeCd方法概述 根据房屋类型查询房屋
 	 * 
@@ -45,7 +45,7 @@ public interface IHouseInfoDAO extends IBaseCRUD<HouseInfo> {
 	 * @param houseType 房屋类型
 	 * @return List
 	 */
-	public List<HouseInfo> findHouseInfoByType(Page page,int houseType);
+	public List<HouseInfo> findByType(Page page,int houseType);
 	/**
 	 * findHouseInfoByDataDict方法概述 根据房屋状态类型查询
 	 * 
@@ -54,5 +54,13 @@ public interface IHouseInfoDAO extends IBaseCRUD<HouseInfo> {
 	 * @param houseType 房屋状态
 	 * @return List
 	 */
-	public List<HouseInfo> findHouseInfoByState(Page page ,int houseType);
+	public List<HouseInfo> findByState(Page page ,int houseType);
+	/**
+	 * findAll方法概述 查询所有房屋
+	 * 
+	 *
+	 * @param page page 分页信息
+	 * @return List
+	 */
+	public List<HouseInfo> findAll(Page page);
 }

@@ -31,19 +31,33 @@ public interface ILoftInfoDAO extends IBaseCRUD<LoftInfo> {
 	/**
 	 * findByComtyType方法概述 根据物业类型查询
 	 * 
-	 *
-	 * @param page 分页信息
-	 * @param loftComtyType 物业类型
+	 * 
+	 * @param page
+	 *            分页信息
+	 * @param loftComtyType
+	 *            物业类型
 	 * @return List
 	 */
-	public List<LoftInfo> findByComtyType(Page page,int loftComtyType);
+	public List<LoftInfo> findByComtyType(Page page, int loftComtyType);
+
 	/**
 	 * findByBuildType方法概述 根据建筑类型查询楼盘
 	 * 
-	 *
-	 * @param page 分页信息
-	 * @param loftBuildType 楼盘类型
+	 * 
+	 * @param page
+	 *            分页信息
+	 * @param loftBuildType
+	 *            楼盘类型
 	 * @return List
 	 */
-	public List<LoftInfo> findByBuildType(Page page,int loftBuildType);
+	public List<LoftInfo> findByBuildType(Page page, int loftBuildType);
+
+	/**
+	 * findAll方法概述 查询所有楼盘信息
+	 * 
+	 *
+	 * @param page  分页信息
+	 * @return List
+	 */
+	public List<LoftInfo> findAll(Page page);
 }
