@@ -8,7 +8,6 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import com.zuxia.buildingsale.common.BaseDao;
 import com.zuxia.buildingsale.common.Page;
-import com.zuxia.buildingsale.dao.IEmployeeDao;
 import com.zuxia.buildingsale.sys.entity.Employee;
 
 
@@ -47,26 +46,27 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	}
 	/** 
 	 * （重写方法）
-	 * del方法概述
+	 * delete方法概述
 	 * 
 	 *
 	 * @param obj
+	 * @return
 	 */
 	@Override
-	public void del(Employee obj) {
+	public int delete(Employee obj) {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 	/** 
 	 * （重写方法）
-	 * findById方法概述
+	 * findByid方法概述
 	 * 
 	 *
 	 * @param id
 	 * @return
 	 */
 	@Override
-	public Employee findById(Integer id) {
+	public Employee findByid(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -79,9 +79,9 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 * @return
 	 */
 	@Override
-	public Employee merge(Employee obj) {
+	public int merge(Employee obj) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 	/** 
 	 * （重写方法）
@@ -89,12 +89,12 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 * 
 	 *
 	 * @param obj
+	 * @return
 	 */
 	@Override
-	public void save(Employee obj) {
+	public int save(Employee obj) {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 	
-
 }
