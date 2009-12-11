@@ -23,53 +23,53 @@ public class HouseInfoDAO extends BaseDao implements IHouseInfoDAO {
 	public static final String HOUSE_DEAL_USE_PRICE = "houseDealUsePrice";
 	public static final String HOUSE_DEAL_PRICE = "houseDealPrice";
 	public static final String HOUSE_DECORATION = "houseDecoration";
-	/** 
-	 * （重写方法）
-	 * findHouseInfoByState方法概述
+
+	/**
+	 * （重写方法） findHouseInfoByState方法概述
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @param houseType
 	 * @return
 	 */
 	@Override
-	public List<HouseInfo> findHouseInfoByState(Page page, int houseType) {
+	public List<HouseInfo> findByState(Page page, int houseType) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/** 
-	 * （重写方法）
-	 * findHouseInfoByType方法概述
+
+	/**
+	 * （重写方法） findHouseInfoByType方法概述
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @param houseType
 	 * @return
 	 */
 	@Override
-	public List<HouseInfo> findHouseInfoByType(Page page, int houseType) {
+	public List<HouseInfo> findByType(Page page, int houseType) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/** 
-	 * （重写方法）
-	 * findHouseInfoByUnit方法概述
+
+	/**
+	 * （重写方法） findHouseInfoByUnit方法概述
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @param unitId
 	 * @return
 	 */
 	@Override
-	public List<HouseInfo> findHouseInfoByUnit(Page page, int unitId) {
+	public List<HouseInfo> findByUnit(Page page, int unitId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/** 
-	 * （重写方法）
-	 * delete方法概述
+
+	/**
+	 * （重写方法） delete方法概述
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
@@ -78,11 +78,11 @@ public class HouseInfoDAO extends BaseDao implements IHouseInfoDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/** 
-	 * （重写方法）
-	 * findByid方法概述
+
+	/**
+	 * （重写方法） findByid方法概述
 	 * 
-	 *
+	 * 
 	 * @param id
 	 * @return
 	 */
@@ -91,11 +91,11 @@ public class HouseInfoDAO extends BaseDao implements IHouseInfoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	/** 
-	 * （重写方法）
-	 * merge方法概述
+
+	/**
+	 * （重写方法） merge方法概述
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
@@ -104,11 +104,11 @@ public class HouseInfoDAO extends BaseDao implements IHouseInfoDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/** 
-	 * （重写方法）
-	 * save方法概述
+
+	/**
+	 * （重写方法） save方法概述
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
@@ -118,6 +118,17 @@ public class HouseInfoDAO extends BaseDao implements IHouseInfoDAO {
 		return 0;
 	}
 
-	
+	/**
+	 * （重写方法） findAll方法概述
+	 * 
+	 * 
+	 * @param page
+	 * @return
+	 */
+	@Override
+	public List<HouseInfo> findAll(Page page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
