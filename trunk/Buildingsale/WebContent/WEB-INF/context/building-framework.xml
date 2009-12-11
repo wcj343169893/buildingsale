@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/loupan"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>
+					com/zuxia/buildingsale/house/entity/ShopInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/MenuInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/RoleMenu.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/business/entity/DataDict.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/business/entity/DealInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/EmpRole.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/Employee.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/RoleInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/business/entity/DataDictType.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/house/entity/LoftInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/business/entity/ClientInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/house/entity/HouseType.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/EmpMenu.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/house/entity/HouseInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/sys/entity/MenuItem.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/house/entity/UnitInfo.hbm.xml
+				</value>
+				<value>
+					com/zuxia/buildingsale/house/entity/LoftShop.hbm.xml
+				</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="ShopInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MenuInfoDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.MenuInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RoleMenuDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.RoleMenuDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DataDictDAOImpl" class="com.zuxia.buildingsale.business.dao.DataDictDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DealInfoDAOImpl" class="com.zuxia.buildingsale.business.dao.DealInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EmpRoleDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.EmpRoleDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EmployeeDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.EmployeeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RoleInfoDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.RoleInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DataDictTypeDAOImpl" class="com.zuxia.buildingsale.business.dao.DataDictTypeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LoftInfoDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.LoftInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ClientInfoDAOImpl" class="com.zuxia.buildingsale.business.dao.ClientInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="HouseTypeDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.HouseTypeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EmpMenuDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.EmpMenuDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="HouseInfoDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.HouseInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MenuItemDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.MenuItemDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UnitInfoDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.UnitInfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LoftShopDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.LoftShopDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>
