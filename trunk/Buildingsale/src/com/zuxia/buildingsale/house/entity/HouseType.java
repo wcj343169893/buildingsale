@@ -3,10 +3,13 @@ package com.zuxia.buildingsale.house.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * HouseType entity. @author MyEclipse Persistence Tools
- */
 
+/**
+ * HouseType概要说明 房间类型信息
+ * 
+ *
+ * @author zcq100 chaojun
+ */
 public class HouseType implements java.io.Serializable {
 
 	// Fields

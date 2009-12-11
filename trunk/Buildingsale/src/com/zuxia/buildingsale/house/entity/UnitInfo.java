@@ -4,9 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * UnitInfo entity. @author MyEclipse Persistence Tools
+ * UnitInfo概要说明 单元信息
+ * 
+ * 
+ * @author zcq100 chaojun
  */
-
 public class UnitInfo implements java.io.Serializable {
 
 	// Fields

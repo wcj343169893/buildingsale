@@ -1,9 +1,12 @@
 package com.zuxia.buildingsale.house.entity;
 
 /**
- * LoftShop entity. @author MyEclipse Persistence Tools
+ * LoftShop概要说明 楼盘和售楼部关系
+ * 
+ * 
+ * 
+ * @author zcq100 chaojun
  */
-
 public class LoftShop implements java.io.Serializable {
 
 	// Fields

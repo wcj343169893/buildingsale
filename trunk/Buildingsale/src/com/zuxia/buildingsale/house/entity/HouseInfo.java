@@ -5,10 +5,14 @@ import java.util.Set;
 
 import com.zuxia.buildingsale.business.entity.DataDict;
 
-/**
- * HouseInfo entity. @author MyEclipse Persistence Tools
- */
 
+
+/**
+ * HouseInfo 房间信息
+ * 
+ *
+ * @author zcq100 chaojun
+ */
 public class HouseInfo implements java.io.Serializable {
 
 	// Fields

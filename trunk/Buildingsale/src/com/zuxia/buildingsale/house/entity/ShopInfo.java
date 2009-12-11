@@ -4,9 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * ShopInfo entity. @author MyEclipse Persistence Tools
+ * ShopInfo概要说明 售楼部信息
+ * 
+ *
+ * @author zcq100 chaojun
  */
-
 public class ShopInfo implements java.io.Serializable {
 
 	// Fields
