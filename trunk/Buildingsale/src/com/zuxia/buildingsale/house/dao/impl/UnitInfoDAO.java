@@ -1,9 +1,12 @@
 package com.zuxia.buildingsale.house.dao.impl;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.IUnitInfoDAO;
 import com.zuxia.buildingsale.house.entity.UnitInfo;
 
@@ -78,5 +81,20 @@ public class UnitInfoDAO extends BaseDao implements IUnitInfoDAO {
 	public int save(UnitInfo obj) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	/** 
+	 * （重写方法）
+	 * findByLoft方法概述
+	 * 
+	 *
+	 * @param page
+	 * @param loftId
+	 * @return
+	 */
+	@Override
+	public List<UnitInfo> findByLoft(Page page, int loftId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

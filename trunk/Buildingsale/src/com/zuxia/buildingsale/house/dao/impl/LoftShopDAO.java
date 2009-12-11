@@ -8,7 +8,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.ILoftInfoDAO;
+import com.zuxia.buildingsale.house.dao.ILoftShopDAO;
 import com.zuxia.buildingsale.house.entity.LoftInfo;
 import com.zuxia.buildingsale.house.entity.LoftShop;
 
@@ -25,7 +27,7 @@ import com.zuxia.buildingsale.house.entity.LoftShop;
  * @author MyEclipse Persistence Tools
  */
 
-public class LoftShopDAO extends BaseDao implements ILoftInfoDAO {
+public class LoftShopDAO extends BaseDao implements ILoftShopDAO {
 	private static final Log log = LogFactory.getLog(LoftShopDAO.class);
 
 	/** 
@@ -37,7 +39,7 @@ public class LoftShopDAO extends BaseDao implements ILoftInfoDAO {
 	 * @return
 	 */
 	@Override
-	public int delete(LoftInfo obj) {
+	public int delete(LoftShop obj) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -51,7 +53,7 @@ public class LoftShopDAO extends BaseDao implements ILoftInfoDAO {
 	 * @return
 	 */
 	@Override
-	public LoftInfo findByid(Integer id) {
+	public LoftShop findByid(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -65,7 +67,7 @@ public class LoftShopDAO extends BaseDao implements ILoftInfoDAO {
 	 * @return
 	 */
 	@Override
-	public int merge(LoftInfo obj) {
+	public int merge(LoftShop obj) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -79,9 +81,10 @@ public class LoftShopDAO extends BaseDao implements ILoftInfoDAO {
 	 * @return
 	 */
 	@Override
-	public int save(LoftInfo obj) {
+	public int save(LoftShop obj) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	
 }
