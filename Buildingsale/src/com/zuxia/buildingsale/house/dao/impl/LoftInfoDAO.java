@@ -10,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.ILoftInfoDAO;
 import com.zuxia.buildingsale.house.entity.LoftInfo;
 
@@ -90,6 +91,34 @@ public class LoftInfoDAO extends BaseDao implements ILoftInfoDAO {
 	public int save(LoftInfo obj) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	/** 
+	 * （重写方法）
+	 * findByBuildType方法概述
+	 * 
+	 *
+	 * @param page
+	 * @param loftBuildType
+	 * @return
+	 */
+	@Override
+	public List<LoftInfo> findByBuildType(Page page, int loftBuildType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/** 
+	 * （重写方法）
+	 * findByComtyType方法概述
+	 * 
+	 *
+	 * @param page
+	 * @param loftComtyType
+	 * @return
+	 */
+	@Override
+	public List<LoftInfo> findByComtyType(Page page, int loftComtyType) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

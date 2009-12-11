@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.IShopInfoDAO;
 import com.zuxia.buildingsale.house.entity.ShopInfo;
 
@@ -87,5 +88,18 @@ public class ShopInfoDAO extends BaseDao implements IShopInfoDAO{
 	public int save(ShopInfo obj) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	/** 
+	 * （重写方法）
+	 * findAll方法概述
+	 * 
+	 *
+	 * @param page
+	 * @return
+	 */
+	@Override
+	public List<ShopInfo> findAll(Page page) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
