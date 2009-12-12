@@ -25,49 +25,52 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	public static final String HOUSE_DECORATION = "houseDecoration";
 
 	/**
-	 * （重写方法） findHouseInfoByState方法概述
+	 * （重写方法） findHouseInfoByState方法概述 房屋状态查询
 	 * 
 	 * 
 	 * @param page
-	 * @param houseType
+	 * @param houseType 房屋状态
 	 * @return
 	 */
 	@Override
-	public List<HouseInfo> findByState(Page page, int houseType) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<HouseInfo> findByState(Page page, int houseState) {
+		String hql = "from HouseInfo where dataDict.ddtId=?";
+		List<HouseInfo> list = query(page, hql, houseState);
+		return list;
 	}
 
 	/**
-	 * （重写方法） findHouseInfoByType方法概述
+	 * （重写方法） findHouseInfoByType方法概述 房屋类型查询
 	 * 
 	 * 
 	 * @param page
-	 * @param houseType
+	 * @param houseType 房屋类型
 	 * @return
 	 */
 	@Override
 	public List<HouseInfo> findByType(Page page, int houseType) {
-		// TODO Auto-generated method stub
-		return null;
+		List<HouseInfo> list = query(page,
+				"from HouseInfo where houseType.htId=?", houseType);
+		return list;
 	}
 
 	/**
-	 * （重写方法） findHouseInfoByUnit方法概述
+	 * （重写方法） findHouseInfoByUnit方法概述 单元
 	 * 
 	 * 
 	 * @param page
-	 * @param unitId
+	 * @param unitId 单元
 	 * @return
 	 */
 	@Override
 	public List<HouseInfo> findByUnit(Page page, int unitId) {
-		// TODO Auto-generated method stub
-		return null;
+		List<HouseInfo> list = query(page, "from HouseInfo where unitId=?",
+				unitId);
+		return list;
 	}
 
 	/**
-	 * （重写方法） delete方法概述
+	 * （重写方法） delete方法概述 删除
 	 * 
 	 * 
 	 * @param obj
@@ -75,12 +78,16 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	 */
 	@Override
 	public int delete(HouseInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/**
-	 * （重写方法） findByid方法概述
+	 * （重写方法） findByid方法概述 根据房屋id查询
 	 * 
 	 * 
 	 * @param id
@@ -88,12 +95,11 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	 */
 	@Override
 	public HouseInfo findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (HouseInfo) getByPk(HouseInfo.class, id);
 	}
 
 	/**
-	 * （重写方法） merge方法概述
+	 * （重写方法） merge方法概述 修改
 	 * 
 	 * 
 	 * @param obj
@@ -101,25 +107,33 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	 */
 	@Override
 	public int merge(HouseInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/**
-	 * （重写方法） save方法概述
-	 * 
+	 * （重写方法） save方法概述 保存
+	 *  
 	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int save(HouseInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/**
-	 * （重写方法） findAll方法概述
+	/** 
+	 * （重写方法） findAll方法概述 查询所有
 	 * 
 	 * 
 	 * @param page
@@ -127,8 +141,8 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	 */
 	@Override
 	public List<HouseInfo> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		List<HouseInfo> houseInfoList = query(page, "from HouseInfo");
+		return houseInfoList;
 	}
 
 }

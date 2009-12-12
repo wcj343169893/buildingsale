@@ -14,7 +14,6 @@ import com.zuxia.buildingsale.house.dao.ILoftShopDAO;
 import com.zuxia.buildingsale.house.entity.LoftInfo;
 import com.zuxia.buildingsale.house.entity.LoftShop;
 
-
 /**
  * A data access object (DAO) providing persistence and search support for
  * LoftShop entities. Transaction control of the save(), update() and delete()
@@ -30,61 +29,67 @@ import com.zuxia.buildingsale.house.entity.LoftShop;
 public class LoftShopDAOImpl extends BaseDao implements ILoftShopDAO {
 	private static final Log log = LogFactory.getLog(LoftShopDAOImpl.class);
 
-	/** 
-	 * （重写方法）
-	 * delete方法概述
+	/**
+	 * （重写方法） delete方法概述 删除
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int delete(LoftShop obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/** 
-	 * （重写方法）
-	 * findByid方法概述
+	/**
+	 * （重写方法） findByid方法概述 根据id查询
 	 * 
-	 *
+	 * 
 	 * @param id
 	 * @return
 	 */
 	@Override
 	public LoftShop findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (LoftShop)getByPk(LoftShop.class,id);
 	}
 
-	/** 
-	 * （重写方法）
-	 * merge方法概述
+	/**
+	 * （重写方法） merge方法概述 修改
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int merge(LoftShop obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/** 
-	 * （重写方法）
-	 * save方法概述
+	/**
+	 * （重写方法） save方法概述 保存
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int save(LoftShop obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	
 }

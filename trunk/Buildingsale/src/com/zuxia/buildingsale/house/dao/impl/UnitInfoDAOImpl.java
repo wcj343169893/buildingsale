@@ -32,7 +32,7 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	public static final String UNIT_TERM = "unitTerm";
 
 	/**
-	 * （重写方法） delete方法概述
+	 * （重写方法） delete方法概述 删除
 	 * 
 	 * 
 	 * @param obj
@@ -40,12 +40,16 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	 */
 	@Override
 	public int delete(UnitInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/**
-	 * （重写方法） findByid方法概述
+	 * （重写方法） findByid方法概述 根据id查询
 	 * 
 	 * 
 	 * @param id
@@ -53,12 +57,11 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	 */
 	@Override
 	public UnitInfo findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (UnitInfo) getByPk(UnitInfo.class, id);
 	}
 
 	/**
-	 * （重写方法） merge方法概述
+	 * （重写方法） merge方法概述 修改
 	 * 
 	 * 
 	 * @param obj
@@ -66,12 +69,16 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	 */
 	@Override
 	public int merge(UnitInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/**
-	 * （重写方法） save方法概述
+	 * （重写方法） save方法概述 保存
 	 * 
 	 * 
 	 * @param obj
@@ -79,36 +86,40 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	 */
 	@Override
 	public int save(UnitInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/** 
-	 * （重写方法）
-	 * findByLoft方法概述
+	/**
+	 * （重写方法） findByLoft方法概述 根据楼盘查询单元
 	 * 
-	 *
+	 * 
 	 * @param page
-	 * @param loftId
+	 * @param loftId 楼盘id
 	 * @return
 	 */
 	@Override
 	public List<UnitInfo> findByLoft(Page page, int loftId) {
-		// TODO Auto-generated method stub
-		return null;
+		String strhql="from UnitInfo where loftInfo.loftId=?";
+		List<UnitInfo> unitInfoList=query(page, strhql, loftId);
+		return unitInfoList;
 	}
 
-	/** 
-	 * （重写方法）
-	 * findAll方法概述
+	/**
+	 * （重写方法） findAll方法概述 查询所有
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @return
 	 */
 	@Override
 	public List<UnitInfo> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		String strhql="from UnitInfo";
+		List<UnitInfo> unitInfoList=query(page, strhql);
+		return unitInfoList;
 	}
 }
