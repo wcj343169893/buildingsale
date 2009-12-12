@@ -62,4 +62,8 @@ public class Page implements Serializable {
 	public void setPageCount(int pageCount) {
 		this.pageCount = pageCount;
 	}
+	
+	public String toString(){
+		return "分页结果：("+this.getPageIndex()+"/"+this.getPageCount()+")[每页显示:"+this.getPageRecordCount()+",共查询到:"+this.getTotalRecordCount()+"]";
+	}
 }

@@ -69,7 +69,7 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public Employee findByid(Integer id) {
-		return (Employee) getByPk(this.getClass(), id);
+		return (Employee) getByPk(Employee.class, id);
 	}
 	/** 
 	 * （重写方法）
@@ -119,6 +119,37 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 		if(list.size()>0)
 			return (Employee) list.get(0);
 		return null;
+	}
+	/** 
+	 * （重写方法）
+	 * findEmployeeByExample方法概述<br/>
+	 * 根据Employee的信息分页查询 
+	 * @param page 分页对象
+	 * @param emp	参考对象
+	 * @return	查询到的Employee对象的集合
+	 */
+	@Override
+	public List<Employee> findEmployeeByExample(Page page, Employee emp) {
+		StringBuffer hql=new StringBuffer("from Employee modle where 1=1 ");
+		if(emp.getEmpName()!=null){
+			hql.append("empName like '%"+emp.getEmpName()+"%'");
+		}
+		if(emp.getEmpNo()!=null){
+			hql.append("empNo like '%"+emp.getEmpNo()+"%'");
+		}
+		if(emp.getEmpSex()!=null){
+			hql.append("empSex ="+emp.getEmpSex());
+		}
+		if(emp.getEmpEmail()!=null){
+			hql.append("empEmail like '%"+emp.getEmpEmail()+"%'");
+		}
+		if(emp.getEmpPid()!=null){
+			hql.append("empPid = '"+emp.getEmpPid()+"'");
+		}
+		if(emp.getEmpAddress()!=null){
+			hql.append("empAddress = '"+emp.getEmpAddress()+"'");
+		}
+		return query(page, hql.toString());
 	}
 	
 }

@@ -38,6 +38,14 @@ public interface IEmployeeDao extends IBaseCRUD<Employee> {
 	List<Employee> findAll(Page page);
 	
 	/**
+	 * findEmployeeByExample方法概述
+	 * 根据员工信息查询符合要求的员工
+	 * @param page	分页条件
+	 * @param emp	员工信息
+	 * @return	员工对象的集合
+	 */
+	List<Employee> findEmployeeByExample(Page page,Employee emp);
+	/**
 	 * 
 	 * findByEmployeeAccount方法概述
 	 * 根据员工账号的道员工信息

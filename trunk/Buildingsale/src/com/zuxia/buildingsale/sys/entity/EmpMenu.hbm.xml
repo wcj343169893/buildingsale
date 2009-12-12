@@ -10,12 +10,12 @@
             <column name="em_id" />
             <generator class="native" />
         </id>
-        <many-to-one name="menuInfo" class="com.zuxia.buildingsale.sys.entity.MenuInfo" fetch="select">
+        <many-to-one name="menuInfo" class="com.zuxia.buildingsale.sys.entity.MenuInfo" fetch="select" lazy="false">
             <column name="menu_id" not-null="true" unique="true">
                 <comment>菜单编号</comment>
             </column>
         </many-to-one>
-        <many-to-one name="employee" class="com.zuxia.buildingsale.sys.entity.Employee" fetch="select">
+        <many-to-one name="employee" class="com.zuxia.buildingsale.sys.entity.Employee" fetch="select" lazy="false">
             <column name="emp_id" not-null="true" unique="true">
                 <comment>员工编号</comment>
             </column>

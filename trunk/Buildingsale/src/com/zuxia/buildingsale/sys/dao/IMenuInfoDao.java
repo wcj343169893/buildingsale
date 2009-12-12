@@ -17,6 +17,7 @@ package com.zuxia.buildingsale.sys.dao;
 import java.util.List;
 
 import com.zuxia.buildingsale.common.IBaseCRUD;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.entity.MenuInfo;
 
 /**
@@ -33,4 +34,8 @@ public interface IMenuInfoDao extends IBaseCRUD<MenuInfo> {
 	 * @return
 	 */
 	List<MenuInfo> findAll();
+	
+	List<MenuInfo> findAll(Page page);
+	
+	
 }
