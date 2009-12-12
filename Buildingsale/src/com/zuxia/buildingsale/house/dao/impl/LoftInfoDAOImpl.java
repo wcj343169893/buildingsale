@@ -14,7 +14,6 @@ import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.ILoftInfoDAO;
 import com.zuxia.buildingsale.house.entity.LoftInfo;
 
-
 /**
  * A data access object (DAO) providing persistence and search support for
  * LoftInfo entities. Transaction control of the save(), update() and delete()
@@ -40,98 +39,114 @@ public class LoftInfoDAOImpl extends BaseDao implements ILoftInfoDAO {
 	public static final String LOFT_TRAFFIC = "loftTraffic";
 	public static final String LOFT_FACILITY = "loftFacility";
 	public static final String LOFT_REMARK = "loftRemark";
-	/** 
-	 * （重写方法）
-	 * delete方法概述
+
+	/**
+	 * （重写方法） delete方法概述 删除
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int delete(LoftInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
-	/** 
-	 * （重写方法）
-	 * findByid方法概述
+
+	/**
+	 * （重写方法） findByid方法概述 根据楼盘id查询
 	 * 
-	 *
+	 * 
 	 * @param id
 	 * @return
 	 */
 	@Override
 	public LoftInfo findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (LoftInfo) getByPk(LoftInfo.class, id);
 	}
-	/** 
-	 * （重写方法）
-	 * merge方法概述
+
+	/**
+	 * （重写方法） merge方法概述 修改
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int merge(LoftInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
-	/** 
-	 * （重写方法）
-	 * save方法概述
+
+	/**
+	 * （重写方法） save方法概述 保存
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int save(LoftInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
-	/** 
-	 * （重写方法）
-	 * findByBuildType方法概述
+
+	/**
+	 * （重写方法） findByBuildType方法概述 根据建筑类型查询
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @param loftBuildType
+	 *            建筑类型
 	 * @return
 	 */
 	@Override
 	public List<LoftInfo> findByBuildType(Page page, int loftBuildType) {
-		// TODO Auto-generated method stub
-		return null;
+		String strhql = "from LoftInfo where dataDictByLoftBuildType.ddId=?";
+		List<LoftInfo> loftInfoList = query(page, strhql, loftBuildType);
+		return loftInfoList;
 	}
-	/** 
-	 * （重写方法）
-	 * findByComtyType方法概述
+
+	/**
+	 * （重写方法） findByComtyType方法概述 物业类型查询
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @param loftComtyType
+	 *            物业类型
 	 * @return
 	 */
 	@Override
 	public List<LoftInfo> findByComtyType(Page page, int loftComtyType) {
-		// TODO Auto-generated method stub
-		return null;
+		String strhql = "from LoftInfo where dataDictByLoftComtyType.ddId=?";
+		List<LoftInfo> loftInfoList = query(page, strhql, loftComtyType);
+		return loftInfoList;
 	}
-	/** 
-	 * （重写方法）
-	 * findAll方法概述
+
+	/**
+	 * （重写方法） findAll方法概述 查询所有
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @return
 	 */
 	@Override
 	public List<LoftInfo> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		String strhql = "from LoftInfo";
+		List<LoftInfo> loftInfoList = query(page, strhql);
+		return loftInfoList;
 	}
 
 }

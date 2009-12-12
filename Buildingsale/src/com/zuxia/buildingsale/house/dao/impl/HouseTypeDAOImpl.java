@@ -11,8 +11,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.zuxia.buildingsale.common.BaseDao;
 import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.IHouseTypeDAO;
+import com.zuxia.buildingsale.house.entity.HouseInfo;
 import com.zuxia.buildingsale.house.entity.HouseType;
-
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -37,69 +37,80 @@ public class HouseTypeDAOImpl extends BaseDao implements IHouseTypeDAO {
 	public static final String HT_TERRACE = "htTerrace";
 	public static final String HT_GARDEN_AREA = "htGardenArea";
 	public static final String HT_IMG = "htImg";
-	/** 
-	 * （重写方法）
-	 * delete方法概述
+
+	/**
+	 * （重写方法） delete方法概述 删除
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int delete(HouseType obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
-	/** 
-	 * （重写方法）
-	 * findByid方法概述
+
+	/**
+	 * （重写方法） findByid方法概述 根据类型id查询
 	 * 
-	 *
+	 * 
 	 * @param id
 	 * @return
 	 */
 	@Override
 	public HouseType findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (HouseType) getByPk(HouseType.class, id);
 	}
-	/** 
-	 * （重写方法）
-	 * merge方法概述
+
+	/**
+	 * （重写方法） merge方法概述 修改
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int merge(HouseType obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
+
 	/** 
-	 * （重写方法）
-	 * save方法概述
+	 * （重写方法） save方法概述 保存
 	 * 
-	 *
+	 * 
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int save(HouseType obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
-	/** 
-	 * （重写方法）
-	 * findAll方法概述
+
+	/**
+	 * （重写方法） findAll方法概述 查询所有
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @return
 	 */
 	@Override
 	public List<HouseType> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		List<HouseType> houseTypeList = query(page, "from HouseType");
+		return houseTypeList;
 	}
 }

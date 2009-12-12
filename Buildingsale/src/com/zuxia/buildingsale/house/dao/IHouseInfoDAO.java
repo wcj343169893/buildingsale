@@ -51,10 +51,10 @@ public interface IHouseInfoDAO extends IBaseCRUD<HouseInfo> {
 	 * 
 	 *
 	 * @param page 分页信息
-	 * @param houseType 房屋状态
+	 * @param houseState 房屋状态
 	 * @return List
 	 */
-	public List<HouseInfo> findByState(Page page ,int houseType);
+	public List<HouseInfo> findByState(Page page ,int houseState);
 	/**
 	 * findAll方法概述 查询所有房屋
 	 * 
