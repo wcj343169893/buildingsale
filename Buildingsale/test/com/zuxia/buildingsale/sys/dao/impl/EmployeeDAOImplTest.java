@@ -18,6 +18,9 @@ import junit.framework.TestCase;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.zuxia.buildingsale.sys.dao.IEmployeeDao;
+import com.zuxia.buildingsale.sys.entity.Employee;
+
 /**
  * EmployeeDAOImplTest¸ÅÒªËµÃ÷
  * 
@@ -27,7 +30,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class EmployeeDAOImplTest extends TestCase{
 	public void testFindAll(){
 		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("classpath:building-framework.xml");
-		EmployeeDAOImpl employeedaoimpl=(EmployeeDAOImpl) context.getBean("EmployeeDAOImpl");
-		System.out.println(employeedaoimpl.findByid(1).getEmpName());
+		IEmployeeDao employeedao=(IEmployeeDao) context.getBean("EmployeeDAOImpl");
+		Employee emp=employeedao.findByid(1);
+		System.out.println(emp.getEmpName());
 	}
 }
