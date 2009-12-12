@@ -207,6 +207,15 @@ public class BaseDao extends HibernateDaoSupport {
 			this.getHibernateTemplate().delete(this.getHibernateTemplate().get(clazz, id[i]));
 		}
 	}
+	
+	/**
+	 * 
+	 * batchDelete方法概述
+	 * 
+	 *
+	 * @param clazz
+	 * @param id
+	 */
     public void batchDelete(Class clazz,int[] id)
     {
     	for(int i=0;i<id.length;i++){
@@ -323,15 +332,14 @@ public class BaseDao extends HibernateDaoSupport {
 	/**  
 	* 功能：根据hql查询记录  
 	*    
-	* @param strhql  
-	* @param name  
-	* @param param  
-	* @return List  
+	* @param strhql  HQL语句
+	* @param name  	字段
+	* @param param  	参数
+	* @return List  	对象的集合
 	*/
 	@SuppressWarnings("unchecked")
 	public List findByNamedParam(String strhql, String name, Object param) {
-		//budong
-		return null;
+		return this.getHibernateTemplate().find(strhql+" where :"+name+"=?",param);
 	}
 
 	/**  
