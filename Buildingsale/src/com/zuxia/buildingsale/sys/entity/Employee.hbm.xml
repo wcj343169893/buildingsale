@@ -45,7 +45,7 @@
                 <comment>省份证编号</comment>
             </column>
         </property>
-        <property name="empSex" type="java.lang.Short">
+        <property name="empSex" type="java.lang.Integer">
             <column name="emp_sex" not-null="true">
                 <comment>员工性别</comment>
             </column>

@@ -23,7 +23,7 @@ public class Employee implements java.io.Serializable {
 	private String empPass;
 	private String empName;
 	private String empPid;
-	private Short empSex;
+	private Integer empSex;
 	private Date empBirthday;
 	private String empTell;
 	private String empAddress;
@@ -42,7 +42,7 @@ public class Employee implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Employee(String empNo, String empAccount, String empPass,
-			String empName, String empPid, Short empSex) {
+			String empName, String empPid, Integer empSex) {
 		this.empNo = empNo;
 		this.empAccount = empAccount;
 		this.empPass = empPass;
@@ -54,7 +54,7 @@ public class Employee implements java.io.Serializable {
 	/** full constructor */
 	public Employee(ShopInfo shopInfo, DataDict dataDict, String empNo,
 			String empAccount, String empPass, String empName, String empPid,
-			Short empSex, Date empBirthday, String empTell, String empAddress,
+			Integer empSex, Date empBirthday, String empTell, String empAddress,
 			String empEmail, String empRemark, Set empMenus, Set empRoles,
 			Set clientInfos, Set dealInfos) {
 		this.shopInfo = shopInfo;
@@ -142,11 +142,11 @@ public class Employee implements java.io.Serializable {
 		this.empPid = empPid;
 	}
 
-	public Short getEmpSex() {
+	public Integer getEmpSex() {
 		return this.empSex;
 	}
 
-	public void setEmpSex(Short empSex) {
+	public void setEmpSex(Integer empSex) {
 		this.empSex = empSex;
 	}
 

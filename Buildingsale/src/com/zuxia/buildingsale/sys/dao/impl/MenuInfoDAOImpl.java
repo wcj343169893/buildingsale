@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.dao.IMenuInfoDao;
 import com.zuxia.buildingsale.sys.entity.MenuInfo;
 
@@ -82,6 +83,19 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	public int save(MenuInfo obj) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	/** 
+	 * （重写方法）
+	 * findAll方法概述
+	 * 
+	 *
+	 * @param page
+	 * @return
+	 */
+	@Override
+	public List<MenuInfo> findAll(Page page) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

@@ -14,10 +14,13 @@
  */
 package com.zuxia.buildingsale.sys.dao.impl;
 
+import java.util.List;
+
 import junit.framework.TestCase;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.dao.IEmployeeDao;
 import com.zuxia.buildingsale.sys.entity.Employee;
 
@@ -29,9 +32,30 @@ import com.zuxia.buildingsale.sys.entity.Employee;
  */
 public class EmployeeDAOImplTest extends TestCase{
 	public void testFindAll(){
+		IEmployeeDao employeedao = getBean();
+		Page page=new Page();
+		List<Employee> list=employeedao.findAll(page);
+		System.out.println(page);
+		for(Employee emp:list){
+			System.out.println(emp.getEmpName()+","+emp.getEmpAccount());
+		}
+	}
+
+	
+	public void testFindByid(){
+		IEmployeeDao employeedao = getBean();
+		System.out.println(employeedao.findByid(1).getEmpName());
+	}
+	
+	/**
+	 * getBean·½·¨¸ÅÊö
+	 * 
+	 *
+	 * @return
+	 */
+	private IEmployeeDao getBean() {
 		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("classpath:building-framework.xml");
 		IEmployeeDao employeedao=(IEmployeeDao) context.getBean("EmployeeDAOImpl");
-		Employee emp=employeedao.findByid(1);
-		System.out.println(emp.getEmpName());
+		return employeedao;
 	}
 }

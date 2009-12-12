@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.dao.IRoleMenuDao;
 import com.zuxia.buildingsale.sys.entity.RoleMenu;
 
@@ -13,19 +14,6 @@ public class RoleMenuDAOImpl extends BaseDao implements IRoleMenuDao{
 	@SuppressWarnings("unused")
 	private static final Log log = LogFactory.getLog(RoleMenuDAOImpl.class);
 
-	/** 
-	 * （重写方法）
-	 * findRoleMenuByRoleId方法概述
-	 * 
-	 *
-	 * @param id
-	 * @return
-	 */
-	@Override
-	public List<RoleMenu> findRoleMenuByRoleId(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/** 
 	 * （重写方法）
@@ -81,6 +69,48 @@ public class RoleMenuDAOImpl extends BaseDao implements IRoleMenuDao{
 	public int save(RoleMenu obj) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	/** 
+	 * （重写方法）
+	 * findAll方法概述
+	 * 
+	 *
+	 * @param page
+	 * @return
+	 */
+	@Override
+	public List<RoleMenu> findAll(Page page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/** 
+	 * （重写方法）
+	 * findByMenuId方法概述
+	 * 
+	 *
+	 * @param menuId
+	 * @return
+	 */
+	@Override
+	public List<RoleMenu> findByMenuId(int menuId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/** 
+	 * （重写方法）
+	 * findByRoleId方法概述
+	 * 
+	 *
+	 * @param roleId
+	 * @return
+	 */
+	@Override
+	public List<RoleMenu> findByRoleId(int roleId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
