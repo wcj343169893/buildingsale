@@ -7,6 +7,11 @@ import org.hibernate.LockMode;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.zuxia.buildingsale.common.BaseDao;
+import com.zuxia.buildingsale.common.Page;
+import com.zuxia.buildingsale.house.dao.ILoftInfoDAO;
+import com.zuxia.buildingsale.house.dao.ILoftShopDAO;
+import com.zuxia.buildingsale.house.entity.LoftInfo;
 import com.zuxia.buildingsale.house.entity.LoftShop;
 
 
@@ -22,122 +27,64 @@ import com.zuxia.buildingsale.house.entity.LoftShop;
  * @author MyEclipse Persistence Tools
  */
 
-public class LoftShopDAOImpl extends HibernateDaoSupport {
+public class LoftShopDAOImpl extends BaseDao implements ILoftShopDAO {
 	private static final Log log = LogFactory.getLog(LoftShopDAOImpl.class);
 
-	// property constants
-
-	protected void initDao() {
-		// do nothing
+	/** 
+	 * （重写方法）
+	 * delete方法概述
+	 * 
+	 *
+	 * @param obj
+	 * @return
+	 */
+	@Override
+	public int delete(LoftShop obj) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public void save(LoftShop transientInstance) {
-		log.debug("saving LoftShop instance");
-		try {
-			getHibernateTemplate().save(transientInstance);
-			log.debug("save successful");
-		} catch (RuntimeException re) {
-			log.error("save failed", re);
-			throw re;
-		}
+	/** 
+	 * （重写方法）
+	 * findByid方法概述
+	 * 
+	 *
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public LoftShop findByid(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public void delete(LoftShop persistentInstance) {
-		log.debug("deleting LoftShop instance");
-		try {
-			getHibernateTemplate().delete(persistentInstance);
-			log.debug("delete successful");
-		} catch (RuntimeException re) {
-			log.error("delete failed", re);
-			throw re;
-		}
+	/** 
+	 * （重写方法）
+	 * merge方法概述
+	 * 
+	 *
+	 * @param obj
+	 * @return
+	 */
+	@Override
+	public int merge(LoftShop obj) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public LoftShop findById(java.lang.Integer id) {
-		log.debug("getting LoftShop instance with id: " + id);
-		try {
-			LoftShop instance = (LoftShop) getHibernateTemplate().get(
-					"com.zuxia.buildingsale.entity.LoftShop", id);
-			return instance;
-		} catch (RuntimeException re) {
-			log.error("get failed", re);
-			throw re;
-		}
+	/** 
+	 * （重写方法）
+	 * save方法概述
+	 * 
+	 *
+	 * @param obj
+	 * @return
+	 */
+	@Override
+	public int save(LoftShop obj) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
-	public List findByExample(LoftShop instance) {
-		log.debug("finding LoftShop instance by example");
-		try {
-			List results = getHibernateTemplate().findByExample(instance);
-			log.debug("find by example successful, result size: "
-					+ results.size());
-			return results;
-		} catch (RuntimeException re) {
-			log.error("find by example failed", re);
-			throw re;
-		}
-	}
-
-	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding LoftShop instance with property: " + propertyName
-				+ ", value: " + value);
-		try {
-			String queryString = "from LoftShop as model where model."
-					+ propertyName + "= ?";
-			return getHibernateTemplate().find(queryString, value);
-		} catch (RuntimeException re) {
-			log.error("find by property name failed", re);
-			throw re;
-		}
-	}
-
-	public List findAll() {
-		log.debug("finding all LoftShop instances");
-		try {
-			String queryString = "from LoftShop";
-			return getHibernateTemplate().find(queryString);
-		} catch (RuntimeException re) {
-			log.error("find all failed", re);
-			throw re;
-		}
-	}
-
-	public LoftShop merge(LoftShop detachedInstance) {
-		log.debug("merging LoftShop instance");
-		try {
-			LoftShop result = (LoftShop) getHibernateTemplate().merge(
-					detachedInstance);
-			log.debug("merge successful");
-			return result;
-		} catch (RuntimeException re) {
-			log.error("merge failed", re);
-			throw re;
-		}
-	}
-
-	public void attachDirty(LoftShop instance) {
-		log.debug("attaching dirty LoftShop instance");
-		try {
-			getHibernateTemplate().saveOrUpdate(instance);
-			log.debug("attach successful");
-		} catch (RuntimeException re) {
-			log.error("attach failed", re);
-			throw re;
-		}
-	}
-
-	public void attachClean(LoftShop instance) {
-		log.debug("attaching clean LoftShop instance");
-		try {
-			getHibernateTemplate().lock(instance, LockMode.NONE);
-			log.debug("attach successful");
-		} catch (RuntimeException re) {
-			log.error("attach failed", re);
-			throw re;
-		}
-	}
-
-	public static LoftShopDAOImpl getFromApplicationContext(ApplicationContext ctx) {
-		return (LoftShopDAOImpl) ctx.getBean("LoftShopDAO");
-	}
+	
 }
