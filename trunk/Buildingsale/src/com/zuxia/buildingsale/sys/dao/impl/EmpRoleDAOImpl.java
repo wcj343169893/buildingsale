@@ -23,8 +23,12 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public int delete(EmpRole obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/** 
@@ -37,8 +41,7 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public EmpRole findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (EmpRole) getByPk(EmpRole.class, id);
 	}
 
 	/** 
@@ -51,8 +54,12 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public int merge(EmpRole obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/** 
@@ -65,8 +72,12 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public int save(EmpRole obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/** 
@@ -79,8 +90,8 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public List<EmpRole> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		List<EmpRole> list=query(page,"from EmpRole");
+		return list;
 	}
 
 	/** 
@@ -93,8 +104,8 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public List<EmpRole> findByEmpId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<EmpRole> list=find("from EmpRole model where model.employee.empId=?", id);
+		return list;
 	}
 
 	/** 
@@ -107,11 +118,7 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	 */
 	@Override
 	public List<EmpRole> findByRoleId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<EmpRole> list=find("from EmpRole model where model.roleInfo.roleId=?", id);
+		return list;
 	}
-
-	// property constants
-
-	
 }

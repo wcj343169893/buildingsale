@@ -54,4 +54,13 @@ public interface IEmployeeDao extends IBaseCRUD<Employee> {
 	 * @return	员工信息
 	 */
 	Employee findByEmployeeAccount(String account);
+	
+	/**
+	 * 
+	 * isExistAccount方法概述
+	 * 判断用户账户是否存在
+	 * @param accoutn 用户账户
+	 * @return 
+	 */
+	boolean isExistAccount(String account);
 }
