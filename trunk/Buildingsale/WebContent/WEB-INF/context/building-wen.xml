@@ -4,4 +4,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- Service -->
+	<bean id="HouseInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.HouseInfoServiceImpl">
+		<property name="houseInfoDAO" ref="HouseInfoDAOImpl"/>
+	</bean>
+	<bean id="HouseTypeServiceImpl" class="com.zuxia.buildingsale.house.service.impl.HouseTypeServiceImpl">
+		<property name="houseTypeDAO" ref="HouseTypeDAOImpl"/>
+	</bean>
+	<bean id="LoftInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.LoftInfoServiceImpl">
+		<property name="loftInfoDAO" ref="LoftInfoDAOImpl"/>
+	</bean>
+	<bean id="ShopInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.ShopInfoServiceImpl">
+		<property name="shopInfoDAO" ref="ShopInfoDAOImpl"/>
+	</bean>
+	<bean id="UnitInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.UnitInfoServiceImpl">
+	<property name="unitInfoDAO" ref="UnitInfoDAOImpl"/>
+	</bean>
+	<!-- action -->
 </beans>
