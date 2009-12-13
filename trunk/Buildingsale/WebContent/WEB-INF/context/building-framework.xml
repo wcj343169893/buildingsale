@@ -89,7 +89,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="ShopInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAOImpl">
+	<bean id="ShopInfoDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
