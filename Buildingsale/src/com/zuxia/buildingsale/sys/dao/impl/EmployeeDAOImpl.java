@@ -130,24 +130,30 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public List<Employee> findEmployeeByExample(Page page, Employee emp) {
-		StringBuffer hql=new StringBuffer("from Employee modle where 1=1 ");
+		StringBuffer hql=new StringBuffer("from Employee model where 1=1 ");
+		if(emp.getEmpAccount()!=null){
+			hql.append("and model.empAccount like '%"+emp.getEmpAccount()+"%'");
+		}
 		if(emp.getEmpName()!=null){
-			hql.append("empName like '%"+emp.getEmpName()+"%'");
+			hql.append("and model.empName like '%"+emp.getEmpName()+"%'");
 		}
 		if(emp.getEmpNo()!=null){
-			hql.append("empNo like '%"+emp.getEmpNo()+"%'");
+			hql.append("and model.empNo like '%"+emp.getEmpNo()+"%'");
 		}
 		if(emp.getEmpSex()!=null){
-			hql.append("empSex ="+emp.getEmpSex());
+			hql.append("and model.empSex ="+emp.getEmpSex());
 		}
 		if(emp.getEmpEmail()!=null){
-			hql.append("empEmail like '%"+emp.getEmpEmail()+"%'");
+			hql.append("and model.empEmail like '%"+emp.getEmpEmail()+"%'");
 		}
 		if(emp.getEmpPid()!=null){
-			hql.append("empPid = '"+emp.getEmpPid()+"'");
+			hql.append("and model.empPid = '"+emp.getEmpPid()+"'");
 		}
 		if(emp.getEmpAddress()!=null){
-			hql.append("empAddress = '"+emp.getEmpAddress()+"'");
+			hql.append("and model.empAddress = '"+emp.getEmpAddress()+"'");
+		}
+		if(emp.getEmpPass()!=null){
+			hql.append("and model.empPass='"+emp.getEmpPass()+"'");
 		}
 		return query(page, hql.toString());
 	}
@@ -161,7 +167,7 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public boolean isExistAccount(String account) {
-		int result=getTotalCount("select count(*) from Employee where account=?", account);
+		int result=getTotalCount("from Employee where empAccount=?", account);
 		if(result==0)
 			return false;
 		return true;
