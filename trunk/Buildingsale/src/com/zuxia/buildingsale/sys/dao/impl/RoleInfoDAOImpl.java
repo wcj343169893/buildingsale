@@ -46,7 +46,7 @@ public class RoleInfoDAOImpl extends BaseDao implements IRoleInfoDao {
 	@Override
 	public int delete(RoleInfo obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

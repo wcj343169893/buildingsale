@@ -42,7 +42,7 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	@Override
 	public int delete(MenuInfo obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			log.info("É¾³ý½ÇÉ«ÐÅÏ¢Ê§°Ü");

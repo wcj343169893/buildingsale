@@ -53,7 +53,7 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	@Override
 	public int delete(Employee obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

@@ -25,7 +25,7 @@ public class EmpMenuDAOImpl extends BaseDao implements IEmpMenuDao {
 	@Override
 	public int delete(EmpMenu obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

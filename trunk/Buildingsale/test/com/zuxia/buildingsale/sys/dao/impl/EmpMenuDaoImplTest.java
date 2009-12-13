@@ -55,6 +55,17 @@ public class EmpMenuDaoImplTest extends TestCase {
 	
 	/**
 	 * 
+	 * testDelete方法概述
+	 * 删除测试
+	 *
+	 */
+	public void testDelete(){
+		IEmpMenuDao dao=getBean();
+		assertEquals(dao.delete(dao.findByid(1)),1);
+	}
+	
+	/**
+	 * 
 	 * testFindAll方法概述
 	 * 查看员工权限测试
 	 *
