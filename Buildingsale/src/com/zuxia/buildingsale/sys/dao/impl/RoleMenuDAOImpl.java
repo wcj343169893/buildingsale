@@ -15,102 +15,54 @@ public class RoleMenuDAOImpl extends BaseDao implements IRoleMenuDao{
 	private static final Log log = LogFactory.getLog(RoleMenuDAOImpl.class);
 
 
-	/** 
-	 * （重写方法）
-	 * delete方法概述
-	 * 
-	 *
-	 * @param obj
-	 * @return
-	 */
-	@Override
+
 	public int delete(RoleMenu obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/** 
-	 * （重写方法）
-	 * findByid方法概述
-	 * 
-	 *
-	 * @param id
-	 * @return
-	 */
-	@Override
+
 	public RoleMenu findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (RoleMenu) getByPk(RoleMenu.class, id);
 	}
 
-	/** 
-	 * （重写方法）
-	 * merge方法概述
-	 * 
-	 *
-	 * @param obj
-	 * @return
-	 */
-	@Override
+
 	public int merge(RoleMenu obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/** 
-	 * （重写方法）
-	 * save方法概述
-	 * 
-	 *
-	 * @param obj
-	 * @return
-	 */
-	@Override
+
 	public int save(RoleMenu obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
-	/** 
-	 * （重写方法）
-	 * findAll方法概述
-	 * 
-	 *
-	 * @param page
-	 * @return
-	 */
-	@Override
+
 	public List<RoleMenu> findAll(Page page) {
-		// TODO Auto-generated method stub
-		return null;
+		return query(page,"from RoleMenu order by rmId asc");
 	}
 
-	/** 
-	 * （重写方法）
-	 * findByMenuId方法概述
-	 * 
-	 *
-	 * @param menuId
-	 * @return
-	 */
-	@Override
+
 	public List<RoleMenu> findByMenuId(int menuId) {
-		// TODO Auto-generated method stub
-		return null;
+		return find("from RoleMenu model where model.menuInfo.menuId=?", menuId);
 	}
 
-	/** 
-	 * （重写方法）
-	 * findByRoleId方法概述
-	 * 
-	 *
-	 * @param roleId
-	 * @return
-	 */
-	@Override
+
 	public List<RoleMenu> findByRoleId(int roleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return find("from RoleMenu model where model.roleInfo.roleId=?", roleId);
 	}
 
 	

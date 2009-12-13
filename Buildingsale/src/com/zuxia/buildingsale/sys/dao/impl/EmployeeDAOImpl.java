@@ -151,5 +151,20 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 		}
 		return query(page, hql.toString());
 	}
+	/** 
+	 * （重写方法）
+	 * isExistAccount方法概述
+	 * 
+	 *
+	 * @param accoutn
+	 * @return
+	 */
+	@Override
+	public boolean isExistAccount(String account) {
+		int result=getTotalCount("select count(*) from Employee where account=?", account);
+		if(result==0)
+			return false;
+		return true;
+	}
 	
 }

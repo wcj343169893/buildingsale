@@ -8,7 +8,7 @@ import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.dao.IMenuInfoDao;
 import com.zuxia.buildingsale.sys.entity.MenuInfo;
 
-
+@SuppressWarnings("unchecked")
 public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	private static final Log log = LogFactory.getLog(MenuInfoDAOImpl.class);
 	// property constants
@@ -29,8 +29,7 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	 */
 	@Override
 	public List<MenuInfo> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return find("from MenuInfo order by menuNo asc");
 	}
 	/** 
 	 * （重写方法）
@@ -42,8 +41,13 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	 */
 	@Override
 	public int delete(MenuInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			delete(obj);
+			return 1;
+		} catch (Exception e) {
+			log.info("删除角色信息失败");
+			return 0;
+		}
 	}
 	/** 
 	 * （重写方法）
@@ -55,34 +59,39 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	 */
 	@Override
 	public MenuInfo findByid(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (MenuInfo) getByPk(MenuInfo.class, id);
 	}
 	/** 
 	 * （重写方法）
 	 * merge方法概述
-	 * 
-	 *
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int merge(MenuInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			update(obj);
+			log.info("修改角色信息");
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 	/** 
 	 * （重写方法）
 	 * save方法概述
-	 * 
-	 *
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public int save(MenuInfo obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			insert(obj);
+			log.info("添加新的角色信息");
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 	/** 
 	 * （重写方法）
@@ -94,8 +103,53 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 	 */
 	@Override
 	public List<MenuInfo> findAll(Page page) {
-		// TODO Auto-generated method stub
+		List<MenuInfo> list=query(page,"from MenuInfo order by menuNo asc");
+		return list;
+	}
+	/** 
+	 * （重写方法）
+	 * findByMenuInfoName方法概述
+	 * 
+	 *
+	 * @param name
+	 * @return
+	 */
+	@Override
+	public MenuInfo findByMenuInfoName(String name) {
+		List<MenuInfo> list=find("from MenuInfo where menuName=?", name);
+		if(list.size()>0){
+			return list.get(0);
+		}
 		return null;
+	}
+	/** 
+	 * （重写方法）
+	 * findByMenuInfoNo方法概述
+	 * 
+	 *
+	 * @param no
+	 * @return
+	 */
+	@Override
+	public MenuInfo findByMenuInfoNo(String no) {
+		List<MenuInfo> list=find("from MenuInfo where menuNo=?", no);
+		if(list.size()>0){
+			return list.get(0);
+		}
+		return null;
+	}
+	/** 
+	 * （重写方法）
+	 * findByMenuInfoParent方法概述
+	 * 
+	 *
+	 * @param no
+	 * @return
+	 */
+	@Override
+	public List<MenuInfo> findByMenuInfoParent(String no) {
+		List<MenuInfo> list=find("from MenuInfo where menuParent=?", no);
+		return list;
 	}
 
 	
