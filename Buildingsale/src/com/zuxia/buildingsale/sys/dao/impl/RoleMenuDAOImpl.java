@@ -18,7 +18,7 @@ public class RoleMenuDAOImpl extends BaseDao implements IRoleMenuDao{
 
 	public int delete(RoleMenu obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

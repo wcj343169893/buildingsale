@@ -24,7 +24,7 @@ public class EmpRoleDAOImpl extends BaseDao implements IEmpRoleDao{
 	@Override
 	public int delete(EmpRole obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

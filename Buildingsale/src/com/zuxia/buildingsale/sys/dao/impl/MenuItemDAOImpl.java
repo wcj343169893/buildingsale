@@ -20,7 +20,7 @@ public class MenuItemDAOImpl extends BaseDao implements IMenuItemDao {
 	@Override
 	public int delete(MenuItem obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
