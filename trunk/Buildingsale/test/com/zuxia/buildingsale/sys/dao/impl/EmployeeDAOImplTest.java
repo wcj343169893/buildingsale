@@ -41,7 +41,36 @@ public class EmployeeDAOImplTest extends TestCase{
 		}
 	}
 
+	public void testFindEmployeeByExample(){
+		IEmployeeDao employeedao = getBean();
+		Page page=new Page();
+		Employee example=new Employee();
+		example.setEmpName("杜");
+		example.setEmpPid("123123123123123123");
+		List<Employee> list=employeedao.findEmployeeByExample(page, example);
+		System.out.println(page);
+		for(Employee emp:list){
+			System.out.println(emp.getEmpName()+","+emp.getEmpAccount());
+		}
+		assertNotNull("查到了用户的信息", list);
+	}
 	
+	/**
+	 * 
+	 * testIsExistAccount方法概述
+	 * 测试账号是否存在
+	 */
+	public  void testIsExistAccount(){
+		IEmployeeDao employeedao = getBean();
+		assertTrue(employeedao.isExistAccount("xingba"));
+	}
+	
+	/**
+	 * 
+	 * testFindByid方法概述
+	 * 根据id得到账户
+	 *
+	 */
 	public void testFindByid(){
 		IEmployeeDao employeedao = getBean();
 		System.out.println(employeedao.findByid(1).getEmpName());
