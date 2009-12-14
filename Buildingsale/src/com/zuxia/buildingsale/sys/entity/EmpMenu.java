@@ -50,4 +50,11 @@ public class EmpMenu implements java.io.Serializable {
 		this.employee = employee;
 	}
 
+	@Override
+	public String toString() {
+		return "EmpMenu [emId=" + emId + ", employee=" + employee.getEmpAccount()
+				+ ", menuInfo=" + menuInfo.getMenuName() + "]";
+	}
+	
+
 }

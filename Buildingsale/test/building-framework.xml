@@ -164,11 +164,17 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	
-	
+
+
 	<!-- Service -->
-	<bean id="EmployeeServiceImpl" class="com.zuxia.buildingsale.sys.service.impl.EmployeeServiceImpl">
-	<property name="employeedao" ref="EmployeeDAOImpl"/>
-</bean>
+	<bean id="EmployeeServiceImpl"
+		class="com.zuxia.buildingsale.sys.service.impl.EmployeeServiceImpl">
+		<property name="employeedao" ref="EmployeeDAOImpl" />
+	</bean>
+	<bean id="MenuServiceImpl" class="com.zuxia.buildingsale.sys.service.impl.MenuServiceImpl">
+		<property name="empmenudao" ref="EmpMenuDAOImpl" />
+		<property name="rolemenudao" ref="RoleMenuDAOImpl" />
+		<property name="emproledao" ref="EmpRoleDAOImpl"/>
+	</bean>
 
 </beans>

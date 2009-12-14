@@ -30,6 +30,11 @@ public class RoleServiceImpl implements IRoleService {
 	
 	@Override
 	public int addEmployeeRole(int empid, int roleid) {
+		if(isRole(empid, roleid)){
+			System.out.println("关系已经存在");
+			return 0;
+		}
+		//添加新的EmpRole对象
 		EmpRole emprole=new EmpRole();
 		Employee emp=new Employee();
 		emp.setEmpId(empid);

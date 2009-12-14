@@ -45,20 +45,20 @@ public interface IMenuService {
 	int addEmployeeMenu(int empid,int[] menuid);
 	/**
 	 * 
-	 * deleteRoleMenu方法概述
-	 * 删除角色菜单
+	 * updateRoleMenu方法概述
+	 * 修改角色菜单
 	 * @param roleMenuId 角色目录id
 	 * @return 状态信息(1,成功,0,失败)	
 	 */
-	int deleteRoleMenu(int roleMenuId[]);
+	int updateRoleMenu(int roleid,int menuIds[]);
 	/**
 	 * 
-	 * deleteEmpMenu方法概述
-	 * 删除员工菜单
+	 * updateEmpMenu方法概述
+	 * 修改员工菜单
 	 * @param empmenuId 员工角色id
 	 * @return 状态信息(1,成功,0,失败)	
 	 */
-	int deleteEmpMenu(int empmenuId[]);
+	int updateEmpMenu(int empid,int menuIds[]);
 	/**
 	 * 
 	 * findByEmpId方法概述
