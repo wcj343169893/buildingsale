@@ -1,7 +1,9 @@
 package com.zuxia.buildingsale.business.entity;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.zuxia.buildingsale.sys.entity.Employee;
@@ -27,155 +29,271 @@ public class ClientInfo implements java.io.Serializable {
 	private String clientPid;
 	private Timestamp clientTime;
 	private String clientRemark;
-	private Set dealInfos = new HashSet(0);
+	private List<DealInfo> dealInfos = new ArrayList<DealInfo>();
 
-	// Constructors
-
-	/** default constructor */
-	public ClientInfo() {
-	}
-
-	/** minimal constructor */
-	public ClientInfo(String clientName, Short clientSex, String clientTell1,
-			Timestamp clientTime) {
-		this.clientName = clientName;
-		this.clientSex = clientSex;
-		this.clientTell1 = clientTell1;
-		this.clientTime = clientTime;
-	}
-
-	/** full constructor */
-	public ClientInfo(DataDict dataDict, Employee employee, String clientName,
-			Short clientSex, String clientTell1, String clientTell2,
-			String clientTell3, String clientEmail, String clientAddress,
-			String clientPid, Timestamp clientTime, String clientRemark,
-			Set dealInfos) {
-		this.dataDict = dataDict;
-		this.employee = employee;
-		this.clientName = clientName;
-		this.clientSex = clientSex;
-		this.clientTell1 = clientTell1;
-		this.clientTell2 = clientTell2;
-		this.clientTell3 = clientTell3;
-		this.clientEmail = clientEmail;
-		this.clientAddress = clientAddress;
-		this.clientPid = clientPid;
-		this.clientTime = clientTime;
-		this.clientRemark = clientRemark;
-		this.dealInfos = dealInfos;
-	}
-
-	// Property accessors
-
+	/**
+	 * clientId属性的get方法
+	 * 
+	 * @return the clientId
+	 */
 	public Integer getClientId() {
-		return this.clientId;
+		return clientId;
 	}
 
+	/**
+	 * clientId属性的set方法
+	 * 
+	 * @param clientId
+	 *            the clientId to set
+	 */
 	public void setClientId(Integer clientId) {
 		this.clientId = clientId;
 	}
 
+	/**
+	 * dataDict属性的get方法
+	 * 
+	 * @return the dataDict
+	 */
 	public DataDict getDataDict() {
-		return this.dataDict;
+		return dataDict;
 	}
 
+	/**
+	 * dataDict属性的set方法
+	 * 
+	 * @param dataDict
+	 *            the dataDict to set
+	 */
 	public void setDataDict(DataDict dataDict) {
 		this.dataDict = dataDict;
 	}
 
+	/**
+	 * employee属性的get方法
+	 * 
+	 * @return the employee
+	 */
 	public Employee getEmployee() {
-		return this.employee;
+		return employee;
 	}
 
+	/**
+	 * employee属性的set方法
+	 * 
+	 * @param employee
+	 *            the employee to set
+	 */
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
 
+	/**
+	 * clientName属性的get方法
+	 * 
+	 * @return the clientName
+	 */
 	public String getClientName() {
-		return this.clientName;
+		return clientName;
 	}
 
+	/**
+	 * clientName属性的set方法
+	 * 
+	 * @param clientName
+	 *            the clientName to set
+	 */
 	public void setClientName(String clientName) {
 		this.clientName = clientName;
 	}
 
+	/**
+	 * clientSex属性的get方法
+	 * 
+	 * @return the clientSex
+	 */
 	public Short getClientSex() {
-		return this.clientSex;
+		return clientSex;
 	}
 
+	/**
+	 * clientSex属性的set方法
+	 * 
+	 * @param clientSex
+	 *            the clientSex to set
+	 */
 	public void setClientSex(Short clientSex) {
 		this.clientSex = clientSex;
 	}
 
+	/**
+	 * clientTell1属性的get方法
+	 * 
+	 * @return the clientTell1
+	 */
 	public String getClientTell1() {
-		return this.clientTell1;
+		return clientTell1;
 	}
 
+	/**
+	 * clientTell1属性的set方法
+	 * 
+	 * @param clientTell1
+	 *            the clientTell1 to set
+	 */
 	public void setClientTell1(String clientTell1) {
 		this.clientTell1 = clientTell1;
 	}
 
+	/**
+	 * clientTell2属性的get方法
+	 * 
+	 * @return the clientTell2
+	 */
 	public String getClientTell2() {
-		return this.clientTell2;
+		return clientTell2;
 	}
 
+	/**
+	 * clientTell2属性的set方法
+	 * 
+	 * @param clientTell2
+	 *            the clientTell2 to set
+	 */
 	public void setClientTell2(String clientTell2) {
 		this.clientTell2 = clientTell2;
 	}
 
+	/**
+	 * clientTell3属性的get方法
+	 * 
+	 * @return the clientTell3
+	 */
 	public String getClientTell3() {
-		return this.clientTell3;
+		return clientTell3;
 	}
 
+	/**
+	 * clientTell3属性的set方法
+	 * 
+	 * @param clientTell3
+	 *            the clientTell3 to set
+	 */
 	public void setClientTell3(String clientTell3) {
 		this.clientTell3 = clientTell3;
 	}
 
+	/**
+	 * clientEmail属性的get方法
+	 * 
+	 * @return the clientEmail
+	 */
 	public String getClientEmail() {
-		return this.clientEmail;
+		return clientEmail;
 	}
 
+	/**
+	 * clientEmail属性的set方法
+	 * 
+	 * @param clientEmail
+	 *            the clientEmail to set
+	 */
 	public void setClientEmail(String clientEmail) {
 		this.clientEmail = clientEmail;
 	}
 
+	/**
+	 * clientAddress属性的get方法
+	 * 
+	 * @return the clientAddress
+	 */
 	public String getClientAddress() {
-		return this.clientAddress;
+		return clientAddress;
 	}
 
+	/**
+	 * clientAddress属性的set方法
+	 * 
+	 * @param clientAddress
+	 *            the clientAddress to set
+	 */
 	public void setClientAddress(String clientAddress) {
 		this.clientAddress = clientAddress;
 	}
 
+	/**
+	 * clientPid属性的get方法
+	 * 
+	 * @return the clientPid
+	 */
 	public String getClientPid() {
-		return this.clientPid;
+		return clientPid;
 	}
 
+	/**
+	 * clientPid属性的set方法
+	 * 
+	 * @param clientPid
+	 *            the clientPid to set
+	 */
 	public void setClientPid(String clientPid) {
 		this.clientPid = clientPid;
 	}
 
+	/**
+	 * clientTime属性的get方法
+	 * 
+	 * @return the clientTime
+	 */
 	public Timestamp getClientTime() {
-		return this.clientTime;
+		return clientTime;
 	}
 
+	/**
+	 * clientTime属性的set方法
+	 * 
+	 * @param clientTime
+	 *            the clientTime to set
+	 */
 	public void setClientTime(Timestamp clientTime) {
 		this.clientTime = clientTime;
 	}
 
+	/**
+	 * clientRemark属性的get方法
+	 * 
+	 * @return the clientRemark
+	 */
 	public String getClientRemark() {
-		return this.clientRemark;
+		return clientRemark;
 	}
 
+	/**
+	 * clientRemark属性的set方法
+	 * 
+	 * @param clientRemark
+	 *            the clientRemark to set
+	 */
 	public void setClientRemark(String clientRemark) {
 		this.clientRemark = clientRemark;
 	}
 
-	public Set getDealInfos() {
-		return this.dealInfos;
+	/**
+	 * dealInfos属性的get方法
+	 * 
+	 * @return the dealInfos
+	 */
+	public List<DealInfo> getDealInfos() {
+		return dealInfos;
 	}
 
-	public void setDealInfos(Set dealInfos) {
+	/**
+	 * dealInfos属性的set方法
+	 * 
+	 * @param dealInfos
+	 *            the dealInfos to set
+	 */
+	public void setDealInfos(List<DealInfo> dealInfos) {
 		this.dealInfos = dealInfos;
 	}
 
