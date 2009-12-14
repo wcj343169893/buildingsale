@@ -49,5 +49,10 @@ public class RoleMenu implements java.io.Serializable {
 	public void setRoleInfo(RoleInfo roleInfo) {
 		this.roleInfo = roleInfo;
 	}
+	
+	@Override
+	public String toString() {
+		return this.rmId+",RoleMenu [menuInfo=" + menuInfo.getMenuId()+","+menuInfo.getMenuName() + ", roleInfo=" + roleInfo.getRoleId()+","+roleInfo.getRoleName() + "]";
+	}
 
 }

@@ -381,7 +381,7 @@ public class BaseDao extends HibernateDaoSupport {
 		//得到记录总数
 		int totalcount=getTotalCount(strhql);
 		//设置page对象的记录总数
-		page.setPage(totalcount);	
+		page.setPage(totalcount);
 		List list=null;
 		//创建查询
 		Query query = this.getSession().createQuery(strhql);
@@ -392,7 +392,6 @@ public class BaseDao extends HibernateDaoSupport {
 			query.setMaxResults(page.getPageRecordCount());
 		}
 		list = query.list();
-		
 		return list;
 	}
 
