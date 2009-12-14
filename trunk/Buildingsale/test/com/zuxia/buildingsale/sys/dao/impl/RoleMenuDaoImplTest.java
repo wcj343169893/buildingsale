@@ -42,9 +42,9 @@ public class RoleMenuDaoImplTest extends TestCase {
 	public void testFindAll() {
 		IRoleMenuDao rolemenudao = getBean();
 		Page page = new Page();
-		page.setPageRecordCount(11);
-		List<RoleMenu> list = rolemenudao.findAll(page);
+		page.setPageRecordCount(10);
 		for (int i = 0; i < page.getPageCount(); i++) {
+			List<RoleMenu> list = rolemenudao.findAll(page);
 			System.out.println(page);
 			for (RoleMenu rolemenu : list) {
 				System.out.println(rolemenu);
