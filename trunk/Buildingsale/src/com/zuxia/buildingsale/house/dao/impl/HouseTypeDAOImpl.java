@@ -48,7 +48,7 @@ public class HouseTypeDAOImpl extends BaseDao implements IHouseTypeDAO {
 	@Override
 	public int delete(HouseType obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -77,7 +77,7 @@ public class HouseTypeDAOImpl extends BaseDao implements IHouseTypeDAO {
 	@Override
 	public int merge(HouseType obj) {
 		try {
-			update(obj);
+			super.update(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -94,7 +94,7 @@ public class HouseTypeDAOImpl extends BaseDao implements IHouseTypeDAO {
 	@Override
 	public int save(HouseType obj) {
 		try {
-			insert(obj);
+			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

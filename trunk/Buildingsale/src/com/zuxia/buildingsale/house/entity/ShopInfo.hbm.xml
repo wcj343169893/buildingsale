@@ -50,21 +50,15 @@
                 <comment>备注</comment>
             </column>
         </property>
-        <set name="employees" inverse="true">
-            <key>
-                <column name="shop_id" unique="true">
-                    <comment>id编号(自动增长)</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.sys.entity.Employee" />
-        </set>
-        <set name="loftShops" inverse="true">
-            <key>
-                <column name="shop_id" not-null="true" unique="true">
-                    <comment>引用shop_info的shop_id</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.house.entity.LoftShop" />
-        </set>
+        <!-- 一个销售点的多个员工 -->
+        <bag name="employees">
+        	<key column="shop_id"></key>
+        	<one-to-many class="com.zuxia.buildingsale.sys.entity.Employee"/>
+        </bag>
+        <!-- 销售点  楼盘 多对多 -->
+        <bag name="loftInfos" table="loft_shop">
+        	<key column="shop_id"></key>
+        	<many-to-many class="com.zuxia.buildingsale.house.entity.LoftInfo" column="loft_id"></many-to-many>
+        </bag>
     </class>
 </hibernate-mapping>

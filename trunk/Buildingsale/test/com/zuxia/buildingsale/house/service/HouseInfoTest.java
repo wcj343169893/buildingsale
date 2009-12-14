@@ -12,7 +12,7 @@
  *  zcq100 chaojun
  *******************************************************************************
  */
-package com.zuxia.buildingsale.house.test;
+package com.zuxia.buildingsale.house.service;
 
 import java.util.List;
 
@@ -46,10 +46,12 @@ public class HouseInfoTest extends TestCase {
 
 	public void testFindByType() {
 		IHouseInfoDAO houseInfoDAO = getHouseInfoDAO();
-		System.out.println(houseInfoDAO);
 		List<HouseInfo> houseInfoList = houseInfoDAO.findByType(new Page(), 1);
 		for (HouseInfo houseInfo : houseInfoList) {
-			System.out.println(houseInfo.getHouseNo());
+			System.out.println("房屋类型:" + houseInfo.getHouseType().getHtName()
+					+ " 房屋id:" + houseInfo.getHouseId() + "  房屋号码:"
+					+ houseInfo.getHouseNo() + "  单元:"
+					+ houseInfo.getUnitInfo().getUnitName());
 		}
 	}
 
@@ -58,8 +60,13 @@ public class HouseInfoTest extends TestCase {
 		System.out.println(houseInfoDAO);
 		List<HouseInfo> houseInfoList = houseInfoDAO.findAll(new Page());
 		for (HouseInfo houseInfo : houseInfoList) {
-			System.out.println(houseInfo.getHouseId()+"---"+houseInfo.getHouseNo());
+			System.out.println("房屋类型:" + houseInfo.getHouseType().getHtName()
+					+ " 房屋id:" + houseInfo.getHouseId() + "  房屋号码:"
+					+ houseInfo.getHouseNo() + "  单元:"
+					+ houseInfo.getUnitInfo().getUnitName() + " 楼盘:"
+					+ houseInfo.getUnitInfo().getLoftInfo().getLoftName());
 		}
+		System.out.println("*****************");
 	}
 
 	public static IHouseInfoDAO getHouseInfoDAO() {

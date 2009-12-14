@@ -41,7 +41,7 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	@Override
 	public int delete(UnitInfo obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -70,7 +70,7 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	@Override
 	public int merge(UnitInfo obj) {
 		try {
-			update(obj);
+			super.update(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -87,7 +87,7 @@ public class UnitInfoDAOImpl extends BaseDao implements IUnitInfoDAO {
 	@Override
 	public int save(UnitInfo obj) {
 		try {
-			insert(obj);
+			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

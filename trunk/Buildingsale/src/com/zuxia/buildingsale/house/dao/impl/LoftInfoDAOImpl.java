@@ -50,7 +50,7 @@ public class LoftInfoDAOImpl extends BaseDao implements ILoftInfoDAO {
 	@Override
 	public int delete(LoftInfo obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -79,7 +79,7 @@ public class LoftInfoDAOImpl extends BaseDao implements ILoftInfoDAO {
 	@Override
 	public int merge(LoftInfo obj) {
 		try {
-			update(obj);
+			super.update(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -96,7 +96,7 @@ public class LoftInfoDAOImpl extends BaseDao implements ILoftInfoDAO {
 	@Override
 	public int save(LoftInfo obj) {
 		try {
-			insert(obj);
+			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

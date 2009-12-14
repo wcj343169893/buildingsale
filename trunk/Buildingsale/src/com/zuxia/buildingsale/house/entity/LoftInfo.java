@@ -1,16 +1,17 @@
 package com.zuxia.buildingsale.house.entity;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.zuxia.buildingsale.business.entity.DataDict;
 
-
 /**
  * LoftInfo概要说明 楼盘信息
  * 
- *
+ * 
  * @author zcq100 chaojun
  */
 public class LoftInfo implements java.io.Serializable {
@@ -33,197 +34,348 @@ public class LoftInfo implements java.io.Serializable {
 	private String loftTraffic;
 	private String loftFacility;
 	private String loftRemark;
-	private Set loftShops = new HashSet(0);
-	private Set unitInfos = new HashSet(0);
+	private List<ShopInfo> shopInfos = new ArrayList<ShopInfo>();
+	private List<UnitInfo> unitInfos = new ArrayList<UnitInfo>();
 
-	// Constructors
-
-	/** default constructor */
-	public LoftInfo() {
-	}
-
-	/** minimal constructor */
-	public LoftInfo(DataDict dataDictByLoftComtyType,
-			DataDict dataDictByLoftBuildType, String loftNo, String loftName,
-			String loftZone, String loftAddress) {
-		this.dataDictByLoftComtyType = dataDictByLoftComtyType;
-		this.dataDictByLoftBuildType = dataDictByLoftBuildType;
-		this.loftNo = loftNo;
-		this.loftName = loftName;
-		this.loftZone = loftZone;
-		this.loftAddress = loftAddress;
-	}
-
-	/** full constructor */
-	public LoftInfo(DataDict dataDictByLoftComtyType,
-			DataDict dataDictByLoftBuildType, String loftNo, String loftName,
-			String loftZone, String loftAddress, Double loftPrice,
-			Timestamp loftBeginTime, Timestamp loftShellOutTime,
-			Timestamp loftFinishTime, Double lloftCapacity, Double loftGreen,
-			String loftTraffic, String loftFacility, String loftRemark,
-			Set loftShops, Set unitInfos) {
-		this.dataDictByLoftComtyType = dataDictByLoftComtyType;
-		this.dataDictByLoftBuildType = dataDictByLoftBuildType;
-		this.loftNo = loftNo;
-		this.loftName = loftName;
-		this.loftZone = loftZone;
-		this.loftAddress = loftAddress;
-		this.loftPrice = loftPrice;
-		this.loftBeginTime = loftBeginTime;
-		this.loftShellOutTime = loftShellOutTime;
-		this.loftFinishTime = loftFinishTime;
-		this.lloftCapacity = lloftCapacity;
-		this.loftGreen = loftGreen;
-		this.loftTraffic = loftTraffic;
-		this.loftFacility = loftFacility;
-		this.loftRemark = loftRemark;
-		this.loftShops = loftShops;
-		this.unitInfos = unitInfos;
-	}
-
-	// Property accessors
-
+	/**
+	 * loftId属性的get方法
+	 * 
+	 * @return the loftId
+	 */
 	public Integer getLoftId() {
-		return this.loftId;
+		return loftId;
 	}
 
+	/**
+	 * loftId属性的set方法
+	 * 
+	 * @param loftId
+	 *            the loftId to set
+	 */
 	public void setLoftId(Integer loftId) {
 		this.loftId = loftId;
 	}
 
+	/**
+	 * dataDictByLoftComtyType属性的get方法
+	 * 
+	 * @return the dataDictByLoftComtyType
+	 */
 	public DataDict getDataDictByLoftComtyType() {
-		return this.dataDictByLoftComtyType;
+		return dataDictByLoftComtyType;
 	}
 
+	/**
+	 * dataDictByLoftComtyType属性的set方法
+	 * 
+	 * @param dataDictByLoftComtyType
+	 *            the dataDictByLoftComtyType to set
+	 */
 	public void setDataDictByLoftComtyType(DataDict dataDictByLoftComtyType) {
 		this.dataDictByLoftComtyType = dataDictByLoftComtyType;
 	}
 
+	/**
+	 * dataDictByLoftBuildType属性的get方法
+	 * 
+	 * @return the dataDictByLoftBuildType
+	 */
 	public DataDict getDataDictByLoftBuildType() {
-		return this.dataDictByLoftBuildType;
+		return dataDictByLoftBuildType;
 	}
 
+	/**
+	 * dataDictByLoftBuildType属性的set方法
+	 * 
+	 * @param dataDictByLoftBuildType
+	 *            the dataDictByLoftBuildType to set
+	 */
 	public void setDataDictByLoftBuildType(DataDict dataDictByLoftBuildType) {
 		this.dataDictByLoftBuildType = dataDictByLoftBuildType;
 	}
 
+	/**
+	 * loftNo属性的get方法
+	 * 
+	 * @return the loftNo
+	 */
 	public String getLoftNo() {
-		return this.loftNo;
+		return loftNo;
 	}
 
+	/**
+	 * loftNo属性的set方法
+	 * 
+	 * @param loftNo
+	 *            the loftNo to set
+	 */
 	public void setLoftNo(String loftNo) {
 		this.loftNo = loftNo;
 	}
 
+	/**
+	 * loftName属性的get方法
+	 * 
+	 * @return the loftName
+	 */
 	public String getLoftName() {
-		return this.loftName;
+		return loftName;
 	}
 
+	/**
+	 * loftName属性的set方法
+	 * 
+	 * @param loftName
+	 *            the loftName to set
+	 */
 	public void setLoftName(String loftName) {
 		this.loftName = loftName;
 	}
 
+	/**
+	 * loftZone属性的get方法
+	 * 
+	 * @return the loftZone
+	 */
 	public String getLoftZone() {
-		return this.loftZone;
+		return loftZone;
 	}
 
+	/**
+	 * loftZone属性的set方法
+	 * 
+	 * @param loftZone
+	 *            the loftZone to set
+	 */
 	public void setLoftZone(String loftZone) {
 		this.loftZone = loftZone;
 	}
 
+	/**
+	 * loftAddress属性的get方法
+	 * 
+	 * @return the loftAddress
+	 */
 	public String getLoftAddress() {
-		return this.loftAddress;
+		return loftAddress;
 	}
 
+	/**
+	 * loftAddress属性的set方法
+	 * 
+	 * @param loftAddress
+	 *            the loftAddress to set
+	 */
 	public void setLoftAddress(String loftAddress) {
 		this.loftAddress = loftAddress;
 	}
 
+	/**
+	 * loftPrice属性的get方法
+	 * 
+	 * @return the loftPrice
+	 */
 	public Double getLoftPrice() {
-		return this.loftPrice;
+		return loftPrice;
 	}
 
+	/**
+	 * loftPrice属性的set方法
+	 * 
+	 * @param loftPrice
+	 *            the loftPrice to set
+	 */
 	public void setLoftPrice(Double loftPrice) {
 		this.loftPrice = loftPrice;
 	}
 
+	/**
+	 * loftBeginTime属性的get方法
+	 * 
+	 * @return the loftBeginTime
+	 */
 	public Timestamp getLoftBeginTime() {
-		return this.loftBeginTime;
+		return loftBeginTime;
 	}
 
+	/**
+	 * loftBeginTime属性的set方法
+	 * 
+	 * @param loftBeginTime
+	 *            the loftBeginTime to set
+	 */
 	public void setLoftBeginTime(Timestamp loftBeginTime) {
 		this.loftBeginTime = loftBeginTime;
 	}
 
+	/**
+	 * loftShellOutTime属性的get方法
+	 * 
+	 * @return the loftShellOutTime
+	 */
 	public Timestamp getLoftShellOutTime() {
-		return this.loftShellOutTime;
+		return loftShellOutTime;
 	}
 
+	/**
+	 * loftShellOutTime属性的set方法
+	 * 
+	 * @param loftShellOutTime
+	 *            the loftShellOutTime to set
+	 */
 	public void setLoftShellOutTime(Timestamp loftShellOutTime) {
 		this.loftShellOutTime = loftShellOutTime;
 	}
 
+	/**
+	 * loftFinishTime属性的get方法
+	 * 
+	 * @return the loftFinishTime
+	 */
 	public Timestamp getLoftFinishTime() {
-		return this.loftFinishTime;
+		return loftFinishTime;
 	}
 
+	/**
+	 * loftFinishTime属性的set方法
+	 * 
+	 * @param loftFinishTime
+	 *            the loftFinishTime to set
+	 */
 	public void setLoftFinishTime(Timestamp loftFinishTime) {
 		this.loftFinishTime = loftFinishTime;
 	}
 
+	/**
+	 * lloftCapacity属性的get方法
+	 * 
+	 * @return the lloftCapacity
+	 */
 	public Double getLloftCapacity() {
-		return this.lloftCapacity;
+		return lloftCapacity;
 	}
 
+	/**
+	 * lloftCapacity属性的set方法
+	 * 
+	 * @param lloftCapacity
+	 *            the lloftCapacity to set
+	 */
 	public void setLloftCapacity(Double lloftCapacity) {
 		this.lloftCapacity = lloftCapacity;
 	}
 
+	/**
+	 * loftGreen属性的get方法
+	 * 
+	 * @return the loftGreen
+	 */
 	public Double getLoftGreen() {
-		return this.loftGreen;
+		return loftGreen;
 	}
 
+	/**
+	 * loftGreen属性的set方法
+	 * 
+	 * @param loftGreen
+	 *            the loftGreen to set
+	 */
 	public void setLoftGreen(Double loftGreen) {
 		this.loftGreen = loftGreen;
 	}
 
+	/**
+	 * loftTraffic属性的get方法
+	 * 
+	 * @return the loftTraffic
+	 */
 	public String getLoftTraffic() {
-		return this.loftTraffic;
+		return loftTraffic;
 	}
 
+	/**
+	 * loftTraffic属性的set方法
+	 * 
+	 * @param loftTraffic
+	 *            the loftTraffic to set
+	 */
 	public void setLoftTraffic(String loftTraffic) {
 		this.loftTraffic = loftTraffic;
 	}
 
+	/**
+	 * loftFacility属性的get方法
+	 * 
+	 * @return the loftFacility
+	 */
 	public String getLoftFacility() {
-		return this.loftFacility;
+		return loftFacility;
 	}
 
+	/**
+	 * loftFacility属性的set方法
+	 * 
+	 * @param loftFacility
+	 *            the loftFacility to set
+	 */
 	public void setLoftFacility(String loftFacility) {
 		this.loftFacility = loftFacility;
 	}
 
+	/**
+	 * loftRemark属性的get方法
+	 * 
+	 * @return the loftRemark
+	 */
 	public String getLoftRemark() {
-		return this.loftRemark;
+		return loftRemark;
 	}
 
+	/**
+	 * loftRemark属性的set方法
+	 * 
+	 * @param loftRemark
+	 *            the loftRemark to set
+	 */
 	public void setLoftRemark(String loftRemark) {
 		this.loftRemark = loftRemark;
 	}
 
-	public Set getLoftShops() {
-		return this.loftShops;
+	/**
+	 * shopInfos属性的get方法
+	 * 
+	 * @return the shopInfos
+	 */
+	public List<ShopInfo> getShopInfos() {
+		return shopInfos;
 	}
 
-	public void setLoftShops(Set loftShops) {
-		this.loftShops = loftShops;
+	/**
+	 * shopInfos属性的set方法
+	 * 
+	 * @param shopInfos
+	 *            the shopInfos to set
+	 */
+	public void setShopInfos(List<ShopInfo> shopInfos) {
+		this.shopInfos = shopInfos;
 	}
 
-	public Set getUnitInfos() {
-		return this.unitInfos;
+	/**
+	 * unitInfos属性的get方法
+	 * 
+	 * @return the unitInfos
+	 */
+	public List<UnitInfo> getUnitInfos() {
+		return unitInfos;
 	}
 
-	public void setUnitInfos(Set unitInfos) {
+	/**
+	 * unitInfos属性的set方法
+	 * 
+	 * @param unitInfos
+	 *            the unitInfos to set
+	 */
+	public void setUnitInfos(List<UnitInfo> unitInfos) {
 		this.unitInfos = unitInfos;
 	}
 

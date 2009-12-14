@@ -79,7 +79,7 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	@Override
 	public int delete(HouseInfo obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -108,7 +108,7 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	@Override
 	public int merge(HouseInfo obj) {
 		try {
-			update(obj);
+			super.update(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -125,7 +125,7 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 	@Override
 	public int save(HouseInfo obj) {
 		try {
-			insert(obj);
+			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

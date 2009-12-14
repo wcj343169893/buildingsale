@@ -1,6 +1,7 @@
 package com.zuxia.buildingsale.house.entity;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -20,100 +21,119 @@ public class UnitInfo implements java.io.Serializable {
 	private Integer unitHouseNumber;
 	private Integer unitFloorNumber;
 	private Integer unitTerm;
-	private Set houseInfos = new HashSet(0);
-
-	// Constructors
-
-	/** default constructor */
-	public UnitInfo() {
-	}
-
-	/** minimal constructor */
-	public UnitInfo(String unitNo, String unitName, Integer unitHouseNumber,
-			Integer unitFloorNumber) {
-		this.unitNo = unitNo;
-		this.unitName = unitName;
-		this.unitHouseNumber = unitHouseNumber;
-		this.unitFloorNumber = unitFloorNumber;
-	}
-
-	/** full constructor */
-	public UnitInfo(LoftInfo loftInfo, String unitNo, String unitName,
-			Integer unitHouseNumber, Integer unitFloorNumber, Integer unitTerm,
-			Set houseInfos) {
-		this.loftInfo = loftInfo;
-		this.unitNo = unitNo;
-		this.unitName = unitName;
-		this.unitHouseNumber = unitHouseNumber;
-		this.unitFloorNumber = unitFloorNumber;
-		this.unitTerm = unitTerm;
-		this.houseInfos = houseInfos;
-	}
-
-	// Property accessors
-
+	private List<HouseInfo> houseInfos=new ArrayList<HouseInfo>();
+	/**
+	 * unitId属性的get方法
+	 * @return the unitId
+	 */
 	public Integer getUnitId() {
-		return this.unitId;
+		return unitId;
 	}
-
+	/**
+	 * unitId属性的set方法
+	 * @param unitId the unitId to set
+	 */
 	public void setUnitId(Integer unitId) {
 		this.unitId = unitId;
 	}
-
+	/**
+	 * loftInfo属性的get方法
+	 * @return the loftInfo
+	 */
 	public LoftInfo getLoftInfo() {
-		return this.loftInfo;
+		return loftInfo;
 	}
-
+	/**
+	 * loftInfo属性的set方法
+	 * @param loftInfo the loftInfo to set
+	 */
 	public void setLoftInfo(LoftInfo loftInfo) {
 		this.loftInfo = loftInfo;
 	}
-
+	/**
+	 * unitNo属性的get方法
+	 * @return the unitNo
+	 */
 	public String getUnitNo() {
-		return this.unitNo;
+		return unitNo;
 	}
-
+	/**
+	 * unitNo属性的set方法
+	 * @param unitNo the unitNo to set
+	 */
 	public void setUnitNo(String unitNo) {
 		this.unitNo = unitNo;
 	}
-
+	/**
+	 * unitName属性的get方法
+	 * @return the unitName
+	 */
 	public String getUnitName() {
-		return this.unitName;
+		return unitName;
 	}
-
+	/**
+	 * unitName属性的set方法
+	 * @param unitName the unitName to set
+	 */
 	public void setUnitName(String unitName) {
 		this.unitName = unitName;
 	}
-
+	/**
+	 * unitHouseNumber属性的get方法
+	 * @return the unitHouseNumber
+	 */
 	public Integer getUnitHouseNumber() {
-		return this.unitHouseNumber;
+		return unitHouseNumber;
 	}
-
+	/**
+	 * unitHouseNumber属性的set方法
+	 * @param unitHouseNumber the unitHouseNumber to set
+	 */
 	public void setUnitHouseNumber(Integer unitHouseNumber) {
 		this.unitHouseNumber = unitHouseNumber;
 	}
-
+	/**
+	 * unitFloorNumber属性的get方法
+	 * @return the unitFloorNumber
+	 */
 	public Integer getUnitFloorNumber() {
-		return this.unitFloorNumber;
+		return unitFloorNumber;
 	}
-
+	/**
+	 * unitFloorNumber属性的set方法
+	 * @param unitFloorNumber the unitFloorNumber to set
+	 */
 	public void setUnitFloorNumber(Integer unitFloorNumber) {
 		this.unitFloorNumber = unitFloorNumber;
 	}
-
+	/**
+	 * unitTerm属性的get方法
+	 * @return the unitTerm
+	 */
 	public Integer getUnitTerm() {
-		return this.unitTerm;
+		return unitTerm;
 	}
-
+	/**
+	 * unitTerm属性的set方法
+	 * @param unitTerm the unitTerm to set
+	 */
 	public void setUnitTerm(Integer unitTerm) {
 		this.unitTerm = unitTerm;
 	}
-
-	public Set getHouseInfos() {
-		return this.houseInfos;
+	/**
+	 * houseInfos属性的get方法
+	 * @return the houseInfos
+	 */
+	public List<HouseInfo> getHouseInfos() {
+		return houseInfos;
 	}
-
-	public void setHouseInfos(Set houseInfos) {
+	/**
+	 * houseInfos属性的set方法
+	 * @param houseInfos the houseInfos to set
+	 */
+	public void setHouseInfos(List<HouseInfo> houseInfos) {
 		this.houseInfos = houseInfos;
 	}
+
 
 }
