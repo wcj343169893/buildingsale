@@ -77,6 +77,7 @@ public class EmpMenuDAOImpl extends BaseDao implements IEmpMenuDao {
 			insert(obj);
 			return 1;
 		} catch (Exception e) {
+			log.info("添加员工菜单信息失败");
 			return 0;
 		}
 	}
