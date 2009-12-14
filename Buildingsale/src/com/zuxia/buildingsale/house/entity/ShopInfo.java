@@ -1,12 +1,14 @@
 package com.zuxia.buildingsale.house.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.zuxia.buildingsale.sys.entity.Employee;
 
 /**
  * ShopInfo概要说明 售楼部信息
  * 
- *
+ * 
  * @author zcq100 chaojun
  */
 public class ShopInfo implements java.io.Serializable {
@@ -22,128 +24,171 @@ public class ShopInfo implements java.io.Serializable {
 	private String shopTellThree;
 	private String shopTellFour;
 	private String shopRemark;
-	private Set employees = new HashSet(0);
-	private Set loftShops = new HashSet(0);
-
-	// Constructors
-
-	/** default constructor */
-	public ShopInfo() {
-	}
-
-	/** minimal constructor */
-	public ShopInfo(String shopNo, String shopName, String shopAddress,
-			String shopTellOne) {
-		this.shopNo = shopNo;
-		this.shopName = shopName;
-		this.shopAddress = shopAddress;
-		this.shopTellOne = shopTellOne;
-	}
-
-	/** full constructor */
-	public ShopInfo(String shopNo, String shopName, String shopAddress,
-			String shopTellOne, String shopTellTwo, String shopTellThree,
-			String shopTellFour, String shopRemark, Set employees, Set loftShops) {
-		this.shopNo = shopNo;
-		this.shopName = shopName;
-		this.shopAddress = shopAddress;
-		this.shopTellOne = shopTellOne;
-		this.shopTellTwo = shopTellTwo;
-		this.shopTellThree = shopTellThree;
-		this.shopTellFour = shopTellFour;
-		this.shopRemark = shopRemark;
-		this.employees = employees;
-		this.loftShops = loftShops;
-	}
-
-	// Property accessors
-
+	/**
+	 * employees属性概述
+	 *  员工
+	 */
+	private List<Employee> employees = new ArrayList<Employee>();
+	/**
+	 * loftShops属性概述
+	 * 	楼盘
+	 */
+	private List<LoftInfo> loftInfos = new ArrayList<LoftInfo>();
+	/**
+	 * shopId属性的get方法
+	 * @return the shopId
+	 */
 	public Integer getShopId() {
-		return this.shopId;
+		return shopId;
 	}
-
+	/**
+	 * shopId属性的set方法
+	 * @param shopId the shopId to set
+	 */
 	public void setShopId(Integer shopId) {
 		this.shopId = shopId;
 	}
-
+	/**
+	 * shopNo属性的get方法
+	 * @return the shopNo
+	 */
 	public String getShopNo() {
-		return this.shopNo;
+		return shopNo;
 	}
-
+	/**
+	 * shopNo属性的set方法
+	 * @param shopNo the shopNo to set
+	 */
 	public void setShopNo(String shopNo) {
 		this.shopNo = shopNo;
 	}
-
+	/**
+	 * shopName属性的get方法
+	 * @return the shopName
+	 */
 	public String getShopName() {
-		return this.shopName;
+		return shopName;
 	}
-
+	/**
+	 * shopName属性的set方法
+	 * @param shopName the shopName to set
+	 */
 	public void setShopName(String shopName) {
 		this.shopName = shopName;
 	}
-
+	/**
+	 * shopAddress属性的get方法
+	 * @return the shopAddress
+	 */
 	public String getShopAddress() {
-		return this.shopAddress;
+		return shopAddress;
 	}
-
+	/**
+	 * shopAddress属性的set方法
+	 * @param shopAddress the shopAddress to set
+	 */
 	public void setShopAddress(String shopAddress) {
 		this.shopAddress = shopAddress;
 	}
-
+	/**
+	 * shopTellOne属性的get方法
+	 * @return the shopTellOne
+	 */
 	public String getShopTellOne() {
-		return this.shopTellOne;
+		return shopTellOne;
 	}
-
+	/**
+	 * shopTellOne属性的set方法
+	 * @param shopTellOne the shopTellOne to set
+	 */
 	public void setShopTellOne(String shopTellOne) {
 		this.shopTellOne = shopTellOne;
 	}
-
+	/**
+	 * shopTellTwo属性的get方法
+	 * @return the shopTellTwo
+	 */
 	public String getShopTellTwo() {
-		return this.shopTellTwo;
+		return shopTellTwo;
 	}
-
+	/**
+	 * shopTellTwo属性的set方法
+	 * @param shopTellTwo the shopTellTwo to set
+	 */
 	public void setShopTellTwo(String shopTellTwo) {
 		this.shopTellTwo = shopTellTwo;
 	}
-
+	/**
+	 * shopTellThree属性的get方法
+	 * @return the shopTellThree
+	 */
 	public String getShopTellThree() {
-		return this.shopTellThree;
+		return shopTellThree;
 	}
-
+	/**
+	 * shopTellThree属性的set方法
+	 * @param shopTellThree the shopTellThree to set
+	 */
 	public void setShopTellThree(String shopTellThree) {
 		this.shopTellThree = shopTellThree;
 	}
-
+	/**
+	 * shopTellFour属性的get方法
+	 * @return the shopTellFour
+	 */
 	public String getShopTellFour() {
-		return this.shopTellFour;
+		return shopTellFour;
 	}
-
+	/**
+	 * shopTellFour属性的set方法
+	 * @param shopTellFour the shopTellFour to set
+	 */
 	public void setShopTellFour(String shopTellFour) {
 		this.shopTellFour = shopTellFour;
 	}
-
+	/**
+	 * shopRemark属性的get方法
+	 * @return the shopRemark
+	 */
 	public String getShopRemark() {
-		return this.shopRemark;
+		return shopRemark;
 	}
-
+	/**
+	 * shopRemark属性的set方法
+	 * @param shopRemark the shopRemark to set
+	 */
 	public void setShopRemark(String shopRemark) {
 		this.shopRemark = shopRemark;
 	}
-
-	public Set getEmployees() {
-		return this.employees;
+	/**
+	 * employees属性的get方法
+	 * @return the employees
+	 */
+	public List<Employee> getEmployees() {
+		return employees;
 	}
-
-	public void setEmployees(Set employees) {
+	/**
+	 * employees属性的set方法
+	 * @param employees the employees to set
+	 */
+	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
-
-	public Set getLoftShops() {
-		return this.loftShops;
+	/**
+	 * loftInfos属性的get方法
+	 * @return the loftInfos
+	 */
+	public List<LoftInfo> getLoftInfos() {
+		return loftInfos;
+	}
+	/**
+	 * loftInfos属性的set方法
+	 * @param loftInfos the loftInfos to set
+	 */
+	public void setLoftInfos(List<LoftInfo> loftInfos) {
+		this.loftInfos = loftInfos;
 	}
 
-	public void setLoftShops(Set loftShops) {
-		this.loftShops = loftShops;
-	}
+	
 
 }

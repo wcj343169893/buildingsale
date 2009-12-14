@@ -59,8 +59,7 @@ public class HouseInfoServiceImpl implements IHouseInfoService {
 
 	@Override
 	public int deleteHouseInfo(int houseId) {
-		// TODO Auto-generated method stub
-		return 0;
+		return houseInfoDAO.delete(houseInfoDAO.findByid(houseId));
 	}
 
 	@Override

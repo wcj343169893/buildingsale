@@ -10,15 +10,7 @@
             <column name="ls_id" />
             <generator class="native" />
         </id>
-        <many-to-one name="shopInfo" class="com.zuxia.buildingsale.house.entity.ShopInfo" fetch="select">
-            <column name="shop_id" not-null="true" unique="true">
-                <comment>引用shop_info的shop_id</comment>
-            </column>
-        </many-to-one>
-        <many-to-one name="loftInfo" class="com.zuxia.buildingsale.house.entity.LoftInfo" fetch="select">
-            <column name="loft_id" not-null="true" unique="true">
-                <comment>引用loft_info表的loft_id</comment>
-            </column>
-        </many-to-one>
+       <property name="loftInfo" column="loft_id"></property>
+       <property name="shopInfo" column="shop_id"></property>
     </class>
 </hibernate-mapping>

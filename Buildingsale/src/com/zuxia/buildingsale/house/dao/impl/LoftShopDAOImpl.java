@@ -39,7 +39,7 @@ public class LoftShopDAOImpl extends BaseDao implements ILoftShopDAO {
 	@Override
 	public int delete(LoftShop obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -68,7 +68,7 @@ public class LoftShopDAOImpl extends BaseDao implements ILoftShopDAO {
 	@Override
 	public int merge(LoftShop obj) {
 		try {
-			update(obj);
+			super.update(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -85,7 +85,7 @@ public class LoftShopDAOImpl extends BaseDao implements ILoftShopDAO {
 	@Override
 	public int save(LoftShop obj) {
 		try {
-			insert(obj);
+			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

@@ -47,7 +47,7 @@ public class ShopInfoDAOImpl extends BaseDao implements IShopInfoDAO {
 	@Override
 	public int delete(ShopInfo obj) {
 		try {
-			delete(obj);
+			super.delete(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -76,7 +76,7 @@ public class ShopInfoDAOImpl extends BaseDao implements IShopInfoDAO {
 	@Override
 	public int merge(ShopInfo obj) {
 		try {
-			update(obj);
+			super.update(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;
@@ -93,7 +93,7 @@ public class ShopInfoDAOImpl extends BaseDao implements IShopInfoDAO {
 	@Override
 	public int save(ShopInfo obj) {
 		try {
-			insert(obj);
+			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
 			return 0;

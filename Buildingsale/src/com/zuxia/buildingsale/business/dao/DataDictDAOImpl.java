@@ -58,7 +58,7 @@ public class DataDictDAOImpl extends HibernateDaoSupport {
 		log.debug("getting DataDict instance with id: " + id);
 		try {
 			DataDict instance = (DataDict) getHibernateTemplate().get(
-					"com.zuxia.buildingsale.entity.DataDict", id);
+					"com.zuxia.buildingsale.business.entity.DataDict", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
