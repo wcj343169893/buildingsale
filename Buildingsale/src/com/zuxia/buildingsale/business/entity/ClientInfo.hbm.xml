@@ -70,13 +70,13 @@
                 <comment>备注</comment>
             </column>
         </property>
-        <set name="dealInfos" inverse="true">
+        <bag name="dealInfos" inverse="true">
             <key>
                 <column name="client_id" not-null="true" unique="true">
                     <comment>客户编号(引用client_info的client_id)</comment>
                 </column>
             </key>
             <one-to-many class="com.zuxia.buildingsale.business.entity.DealInfo" />
-        </set>
+        </bag>
     </class>
 </hibernate-mapping>
