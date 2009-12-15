@@ -41,7 +41,7 @@ public class DataDictDAOImpl extends BaseDao implements IDataDictDAO {
 	@Override
 	public DataDict findByid(Integer id) {
 		DataDict dataDict = (DataDict) super.getByPk(DataDict.class, id);
-		return null;
+		return dataDict;
 	}
 
 	@Override

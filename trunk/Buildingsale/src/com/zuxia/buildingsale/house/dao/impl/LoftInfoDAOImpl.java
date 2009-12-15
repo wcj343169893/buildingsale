@@ -66,7 +66,8 @@ public class LoftInfoDAOImpl extends BaseDao implements ILoftInfoDAO {
 	 */
 	@Override
 	public LoftInfo findByid(Integer id) {
-		return (LoftInfo) getByPk(LoftInfo.class, id);
+		LoftInfo loftInfo=(LoftInfo) getByPk(LoftInfo.class, id);
+		return loftInfo;
 	}
 
 	/**
@@ -99,6 +100,7 @@ public class LoftInfoDAOImpl extends BaseDao implements ILoftInfoDAO {
 			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return 0;
 		}
 	}
