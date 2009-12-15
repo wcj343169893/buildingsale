@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>编辑-->楼盘信息</title>
+  <script type="text/javascript" language="javascript"
+	src="../ixedit/js/jquery-plus-jquery-ui.js"></script>
+<script type="text/javascript" language="javascript"
+	src="../ixedit/js/ixedit_cn.js"></script>
+<link rel="stylesheet" type="text/css" href="../ixedit/css/ixedit.css" />
+<link rel="stylesheet" type="text/css" href="../ixedit/css/ui-sui.css" />
+<style type="text/css">
+	#loft table{
+		border-right: 1px solid #6BB3ED;
+		border-bottom: 1px solid #00A8EC;
+		width: 800px;
+		border-collapse:collapse; 
+		font-size: 14px;
+	}
+	#loft table td{
+		border-left: 1px solid #00A8EC;
+		border-top: 1px solid #00A8EC;
+		padding: 0px;
+	}
+	#loft{
+		background-color: #D3E7FC;
+		width: 800px;
+	}
+</style>
+ </HEAD>
+ <BODY>
+ <div id="loft">
+ <form action="">
+<table>
+	<thead>
+		<tr>
+			<td>编辑-->楼盘信息</td>
+			<td></td>
+			<td></td>
+			<td id="bk"><button id="save">保存</button>
+			<button id="back">返回</button>
+			</td>
+		</tr>
+	</thead>
+	<tr>
+		<td>编号:</td>
+		<td><input type="text" class="class1" name="loftNo" /></td>
+		<td>名称:</td>
+		<td><input type="text" class="class2" name="loftName" /></td>
+	</tr>
+	<tr>
+		<td>物业类型:</td>
+		<td><select>
+			<option>普通住房</option><option>经济房</option>
+		</select></td>
+		<td>建筑类型:</td>
+		<td><select id="">
+			<option>高层</option><option>低层</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>动工时间:</td>
+		<td><input type="text" size="10" class="times" name="beginTime" /></td>
+		<td>开盘时间:</td>
+		<td><input type="text" size="10" class="times" name="shellOutTime" /></td>
+	</tr>
+	<tr>
+		<td>交房时间:</td>
+		<td><input type="text" size="10" class="times" name="finishTime" /></td>
+		<td>均价:</td>
+		<td><input type="text" size="8" class="price" name="price"/>元平方米</td>
+	</tr>
+	<tr>
+		<td>区域:</td>
+		<td><input type="text" class="area" name="area" /></td>
+		<td>地址:</td>
+		<td><input type="text" class="address" name="address" /></td>
+	</tr>
+	<tr>
+		<td>容积率:</td>
+		<td><input type="text" class="area" name="area" /></td>
+		<td>绿化率:</td>
+		<td><input type="text" class="address" name="address" /></td>
+	</tr>
+	<tr>
+		<td>交通路线:</td>
+		<td colspan="3"><textarea cols="50" class="area" name="area"></textarea></td>
+	</tr>
+	<tr>
+		<td>配套设施:</td>
+		<td colspan="3"><textarea cols="50" class="area" name="area"></textarea></td>
+	</tr>
+	<tr>
+		<td>备注信息:</td>
+		<td colspan="3"><textarea cols="50" class="area" name="area"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="4" style="text-align: center"><input type="submit"
+			value="确认新建" /></td>
+	</tr>
+</table>
+</form>
+</div>
+</BODY>
+</HTML>
