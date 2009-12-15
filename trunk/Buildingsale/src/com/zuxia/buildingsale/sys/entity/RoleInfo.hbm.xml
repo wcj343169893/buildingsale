@@ -17,21 +17,13 @@
                 <comment>备注</comment>
             </column>
         </property>
-        <set name="roleMenus" inverse="true">
-            <key>
-                <column name="role_id" not-null="true" unique="true">
-                    <comment>角色编号</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.sys.entity.RoleMenu" />
-        </set>
-        <set name="empRoles" inverse="true">
-            <key>
-                <column name="role_id" not-null="true" unique="true">
-                    <comment>角色编号</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.sys.entity.EmpRole" />
-        </set>
+       <bag name="menus" table="role_menu">
+       <key column="role_id" />
+       <many-to-many class="com.zuxia.buildingsale.sys.entity.MenuInfo" column="menu_id"/>
+       </bag>
+       <bag name="employees" table="employee">
+       <key column="role_id"/>
+       <many-to-many class="com.zuxia.buildingsale.sys.entity.Employee" column="emp_id"></many-to-many>
+       </bag>
     </class>
 </hibernate-mapping>
