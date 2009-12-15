@@ -15,6 +15,7 @@ package com.zuxia.buildingsale.sys.service;
 
 import java.util.List;
 
+import com.zuxia.buildingsale.sys.dto.RoleMenuDto;
 import com.zuxia.buildingsale.sys.entity.Employee;
 import com.zuxia.buildingsale.sys.entity.MenuInfo;
 import com.zuxia.buildingsale.sys.entity.RoleInfo;
@@ -67,6 +68,16 @@ public interface IMenuService {
 	 * @return	菜单信息的集合
 	 */
 	List<MenuInfo> findByEmpId(int id);
+
+	/**
+	 * 
+	 * findAllRoleMenu方法概述
+	 * 得到所有的角色菜单权限信息
+	 *
+	 * @return
+	 */
+	List<RoleMenuDto> findAllRoleMenu();
+	
 	/**
 	 * 
 	 * findByRoleId方法概述

@@ -50,29 +50,20 @@
                 <comment>菜单备注</comment>
             </column>
         </property>
-        <set name="empMenus" inverse="true">
-            <key>
-                <column name="menu_id" not-null="true" unique="true">
-                    <comment>菜单编号</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.sys.entity.EmpMenu" />
-        </set>
-        <set name="menuItems" inverse="true">
-            <key>
-                <column name="menu_id" unique="true">
-                    <comment>引用menu_info的menu_id</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.sys.entity.MenuItem" />
-        </set>
-        <set name="roleMenus" inverse="true">
-            <key>
-                <column name="menu_id" not-null="true" unique="true">
-                    <comment>目录编号</comment>
-                </column>
-            </key>
-            <one-to-many class="com.zuxia.buildingsale.sys.entity.RoleMenu" />
-        </set>
+        
+        <!-- 员工信息 -->
+		<bag name="employees" table="emp_menu">
+		<key column="emp_id"/>
+		<many-to-many class="com.zuxia.buildingsale.sys.entity.MenuInfo" column="menu_id"/>
+		</bag>
+        
+        <!-- 引用menu_info的menu_id -->
+        <one-to-one name="menuitem" class="com.zuxia.buildingsale.sys.entity.MenuItem"/>
+        
+        <!-- 角色信息 -->
+        <bag name="roles" table="role_menu">
+        <key column="role_id" />
+        <many-to-many class="com.zuxia.buildingsale.sys.entity.MenuInfo" column="menu_id"/>
+        </bag>
     </class>
 </hibernate-mapping>

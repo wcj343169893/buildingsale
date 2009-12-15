@@ -8,6 +8,11 @@ public class MenuItem implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * serialVersionUID Ù–‘∏≈ ˆ
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer miId;
 	private MenuInfo menuInfo;
 	private String miUrl;
