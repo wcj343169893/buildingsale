@@ -1,0 +1,15 @@
+body{
+	margin:0px;
+}
+body,table,th,td,span,div{
+	font-size:12px;
+}
+img{
+	border:0px;
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}

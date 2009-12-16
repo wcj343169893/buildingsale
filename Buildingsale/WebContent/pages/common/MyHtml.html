@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style media="print"> .Noprint { DISPLAY: none }
+		 .PageNext { PAGE-BREAK-AFTER: always }
+		 .tdp { BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid }
+	     .tabp { BORDER-RIGHT: #000000 2px solid; BORDER-TOP: #000000 2px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid }
+	     .NOPRINT { FONT-SIZE: 9pt; FONT-FAMILY: "宋体" }
+		</style>
+		<style type="text/css">
+		.fontlittle { FONT-SIZE: 9pt; FONT-FAMILY: 宋体 }
+	    .font { FONT-SIZE: 9pt; LINE-HEIGHT: 11pt; FONT-FAMILY: 宋体 }
+	    .font9 { FONT-SIZE: 9pt; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.font11 { FONT-SIZE: 11pt; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.fonth { FONT-SIZE: 9pt; COLOR: #676767; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.font105 { FONT-SIZE: 10.5pt; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.fontlittleb { FONT-WEIGHT: bold; FONT-SIZE: 9pt; FONT-FAMILY: 宋体 }
+		.fontb { FONT-WEIGHT: bold; FONT-SIZE: 9pt; LINE-HEIGHT: 11pt; FONT-FAMILY: 宋体 }
+		.font9b { FONT-WEIGHT: bold; FONT-SIZE: 9pt; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.font11b { FONT-WEIGHT: bold; FONT-SIZE: 11pt; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.fonthb { FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #676767; LINE-HEIGHT: 13pt; FONT-FAMILY: 宋体 }
+		.font105b { FONT-WEIGHT: bold; FONT-SIZE: 10.5pt; LINE-HEIGHT: 14pt; FONT-FAMILY: 宋体 }
+		.eng8 { FONT-SIZE: 8pt; LINE-HEIGHT: 10pt; FONT-FAMILY: Arial }
+		.eng9 { FONT-SIZE: 9pt; LINE-HEIGHT: 11pt; FONT-FAMILY: Arial }
+		.eng105 { FONT-SIZE: 10.5pt; LINE-HEIGHT: 13pt; FONT-FAMILY: Arial }
+		.eng11 { FONT-SIZE: 11pt; LINE-HEIGHT: 15pt; FONT-FAMILY: Arial }
+		.engv { FONT-SIZE: 9pt; LINE-HEIGHT: 11pt; FONT-FAMILY: Verdana }
+		.eng8b { FONT-WEIGHT: bold; FONT-SIZE: 8pt; LINE-HEIGHT: 10pt; FONT-FAMILY: Arial }
+		.eng9b { FONT-WEIGHT: bold; FONT-SIZE: 9pt; LINE-HEIGHT: 11pt; FONT-FAMILY: Arial }
+		.eng105b { FONT-WEIGHT: bold; FONT-SIZE: 10.5pt; LINE-HEIGHT: 13pt; FONT-FAMILY: Arial }
+		.eng11b { FONT-WEIGHT: bold; FONT-SIZE: 11pt; LINE-HEIGHT: 15pt; FONT-FAMILY: Arial }
+		.engvb { FONT-WEIGHT: bold; FONT-SIZE: 9pt; LINE-HEIGHT: 11pt; FONT-FAMILY: Verdana }
+	    TABLE { FONT-SIZE: 12px; MARGIN: 0px; LINE-HEIGHT: 20px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none }
+	    BLOCKQUOTE { MARGIN: 6px 5px }
+		A:link { COLOR: #000000; TEXT-DECORATION: none }
+		A:visited { COLOR: #000000; TEXT-DECORATION: none }
+		A:hover { COLOR: #000080; TEXT-DECORATION: underline }
+		BODY { FONT-SIZE: 14px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none }
+		.inputnoborder { BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; COLOR: #008080; BORDER-RIGHT-WIDTH: 0px }
+		.inputborder { BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 9pt; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #000000; BORDER-TOP-COLOR: #000000; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #000000 }
+		.inputbold { FONT-WEIGHT: bold; FONT-SIZE: 9pt }
+		</style>
+		<SCRIPT>
+		<!--
+
+		var Pic01=new Image();
+			Pic01.src="../images/ArrowToleftOut.gif";
+		var Pic02=new Image();
+			Pic02.src="../images/ArrowToleftOver.gif";
+		var Pic03=new Image();
+			Pic03.src="../images/ArrowToRightOut.gif";
+		var Pic04=new Image();
+			Pic04.src="../images/ArrowToRightOver.gif";
+
+		var HideStatus=false;
+		function PicOver()
+		{
+			if (!HideStatus) 
+			{
+				document.getElementById("PicArrow").src = "../images/ArrowToRightOver.gif";
+			}
+			else
+			{
+				document.getElementById("PicArrow").src = "../images/ArrowToleftOver.gif";
+			}
+		}
+
+		function PicOut()
+		{
+			if (!HideStatus) 
+			{
+				document.getElementById("PicArrow").src = "../images/ArrowToLeftOut.gif";
+			}
+			else
+			{
+				document.getElementById("PicArrow").src = "../images/ArrowToRightOut.gif";
+			}
+		}
+
+		function HideMenu()
+		{
+			if (!HideStatus) 
+			{
+				parent.ListframeSet.cols="0,13,*";
+				document.getElementById("PicArrow").alt="点击此处展开目录树";
+				HideStatus=true;
+				PicOut();
+			}
+			else
+			{
+				parent.ListframeSet.cols="200,13,*";
+				document.getElementById("PicArrow").alt="点击此处隐藏目录树";
+				HideStatus=false;
+				PicOver();
+			}
+		}
+
+		function HideMenuShowArticle()
+		{
+			if (!HideStatus) 
+			{
+				parent.forumFrameSet.cols="0,13,*";
+				document.getElementById("PicArrow").alt="点击此处展开目录树";
+				HideStatus=true;
+				PicOut();
+			}
+		}
+		//-->
+		</SCRIPT>
+</head>
+<body oncontextmenu="return false;" MS_POSITIONING="GridLayout" onclick="HideMenu();"
+		bgColor="#B6D9F6" leftMargin="0" topMargin="0" class="Noprint">
+		<form id="Form1" method="post">
+			<TABLE class="tableborder01" id="AutoNumber1" style="BORDER-COLLAPSE: collapse" height="100%"
+				cellSpacing="0" cellPadding="0" width="17" border="0">
+				<TBODY>
+					<TR>
+						<TD width="1" bgColor="#5c6d81"></TD>
+						<TD align="center" style="width: 14px"><FONT color="#ffffff"><BR><BR><BR><BR><BR><BR>点<BR>
+								击<BR>
+								此<BR>
+								处<BR>
+								<IMG onmouseover="PicOver();" onmouseout="PicOut();" alt="点击此处隐藏目录树" src="../images/ArrowToLeftOut.gif"
+									border="0" name="PicArrow" id="PicArrow">隐<BR>
+								藏<BR>
+								或<BR>
+								展<BR>
+								开<BR>
+								目<BR>
+								录<BR>
+								树</FONT></TD>
+						<TD width="1" bgColor="#5c6d81"></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
+		</form>
+	</body>
+</html>>

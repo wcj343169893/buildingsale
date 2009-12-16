@@ -1,0 +1,14 @@
+.txt{
+	height:17px; 
+	border:solid 1px #bbbbbb; 
+}
+.but{
+	font-size:12px;
+	background-image:url('../images/button.jpg'); 
+	border:0px; 
+	height:18px; 
+	width:50px; 
+	padding-top:2px; 
+	color:#FFFFFF; 
+	cursor:hand;
+}
