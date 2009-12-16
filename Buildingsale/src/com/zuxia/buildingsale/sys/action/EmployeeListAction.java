@@ -13,6 +13,7 @@
  */
 package com.zuxia.buildingsale.sys.action;
 
+import com.jsptags.navigation.pager.PagerTag;
 import com.zuxia.buildingsale.common.MyAction;
 import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.service.IEmployeeService;
@@ -30,14 +31,19 @@ public class EmployeeListAction extends MyAction{
 	 */
 	private static final long serialVersionUID = 1L;
 	private IEmployeeService employeeservice;
+	private PagerTag pager;
 	
 	@Override
 	public String execute() {
 		init();
 		Page page=new Page();
+		try {
+			int index=Integer.valueOf(request.getParameter("pageNo"));
+			page.setPageIndex(index);
+		} catch (Exception e) {
+		}
 		request.setAttribute("employeelist", employeeservice.findAllEmployee(page));
 		request.setAttribute("page", page);
-		System.out.println(page);
 		return SUCCESS;
 	}
 
@@ -48,4 +54,13 @@ public class EmployeeListAction extends MyAction{
 	public void setEmployeeservice(IEmployeeService employeeservice) {
 		this.employeeservice = employeeservice;
 	}
+
+	public void setPager(PagerTag pager) {
+		this.pager = pager;
+	}
+
+	
+
+
+	
 }

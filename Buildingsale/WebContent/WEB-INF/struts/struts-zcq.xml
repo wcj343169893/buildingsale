@@ -9,5 +9,9 @@
             <param name="inputName">inputStream</param>      
        </result>   
     </action>  
+    <!-- EmplistAction -->
+    <action name="employeeList" class="EmployeeListAction">
+    <result>/sys/emplist.jsp</result>
+    </action>
 </package>
 </struts>
