@@ -58,8 +58,11 @@
 		</bag>
         
         <!-- 引用menu_info的menu_id -->
-        <one-to-one name="menuitem" class="com.zuxia.buildingsale.sys.entity.MenuItem"/>
-        
+		<bag name="menuitems" table="menu_item" lazy="false">
+		<key column="menu_id"/>
+		<one-to-many class="com.zuxia.buildingsale.sys.entity.MenuItem"/>
+		</bag>
+		        
         <!-- 角色信息 -->
         <bag name="roles" table="role_menu">
         <key column="role_id" />
