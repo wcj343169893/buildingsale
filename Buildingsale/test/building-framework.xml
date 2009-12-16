@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-
-
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+           
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property>
@@ -32,16 +34,10 @@
 					com/zuxia/buildingsale/sys/entity/MenuInfo.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/sys/entity/RoleMenu.hbm.xml
-				</value>
-				<value>
 					com/zuxia/buildingsale/business/entity/DataDict.hbm.xml
 				</value>
 				<value>
 					com/zuxia/buildingsale/business/entity/DealInfo.hbm.xml
-				</value>
-				<value>
-					com/zuxia/buildingsale/sys/entity/EmpRole.hbm.xml
 				</value>
 				<value>
 					com/zuxia/buildingsale/sys/entity/Employee.hbm.xml
@@ -62,9 +58,6 @@
 					com/zuxia/buildingsale/house/entity/HouseType.hbm.xml
 				</value>
 				<value>
-					com/zuxia/buildingsale/sys/entity/EmpMenu.hbm.xml
-				</value>
-				<value>
 					com/zuxia/buildingsale/house/entity/HouseInfo.hbm.xml
 				</value>
 				<value>
@@ -79,17 +72,35 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="ShopInfoDAO" class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAOImpl">
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<!-- 事物管理 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="merge*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:advisor pointcut="execution(* com.zuxia.buildingsale.*.dao.impl.*.*(..))"
+			advice-ref="txAdvice" />
+	</aop:config>
+	
+	
+	
+	<bean id="ShopInfoDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.ShopInfoDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="MenuInfoDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.MenuInfoDAOImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="RoleMenuDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.RoleMenuDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -100,11 +111,6 @@
 		</property>
 	</bean>
 	<bean id="DealInfoDAOImpl" class="com.zuxia.buildingsale.business.dao.impl.DealInfoDAOImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	<bean id="EmpRoleDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.EmpRoleDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -139,11 +145,6 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="EmpMenuDAOImpl" class="com.zuxia.buildingsale.sys.dao.impl.EmpMenuDAOImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
 	<bean id="HouseInfoDAOImpl" class="com.zuxia.buildingsale.house.dao.impl.HouseInfoDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -170,11 +171,6 @@
 	<bean id="EmployeeServiceImpl"
 		class="com.zuxia.buildingsale.sys.service.impl.EmployeeServiceImpl">
 		<property name="employeedao" ref="EmployeeDAOImpl" />
-	</bean>
-	<bean id="MenuServiceImpl" class="com.zuxia.buildingsale.sys.service.impl.MenuServiceImpl">
-		<property name="empmenudao" ref="EmpMenuDAOImpl" />
-		<property name="rolemenudao" ref="RoleMenuDAOImpl" />
-		<property name="emproledao" ref="EmpRoleDAOImpl"/>
 	</bean>
 
 </beans>
