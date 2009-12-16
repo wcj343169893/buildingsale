@@ -12,10 +12,6 @@
  *******************************************************************************
  */
 package com.zuxia.buildingsale.sys.service.impl;
-
-import java.util.List;
-import com.zuxia.buildingsale.sys.entity.Employee;
-import com.zuxia.buildingsale.sys.entity.RoleInfo;
 import com.zuxia.buildingsale.sys.service.IRoleService;
 
 /**
