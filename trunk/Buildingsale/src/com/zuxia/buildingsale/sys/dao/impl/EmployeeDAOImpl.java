@@ -40,7 +40,7 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public List<Employee> findAll(Page page) {
-		return query(page, "from Employee modle1 order by modle1.empNo asc");
+		return query(page, "from Employee modle1 order by modle1.empId asc");
 	}
 	/** 
 	 * £®÷ÿ–¥∑Ω∑®£©
