@@ -144,6 +144,13 @@ public class Employee implements java.io.Serializable {
 	public void setMenus(List<MenuInfo> menus) {
 		this.menus = menus;
 	}
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName
+				+ ", empAccount=" + empAccount + ", clientInfos=" + clientInfos
+				+ ", dealinfos=" + dealinfos + ", roles=" + roles
+				+ ", shopInfo=" + shopInfo + "]";
+	}
 
 
 	

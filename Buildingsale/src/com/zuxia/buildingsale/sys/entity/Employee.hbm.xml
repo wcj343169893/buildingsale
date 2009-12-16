@@ -73,22 +73,22 @@
                 <comment>备注</comment>
             </column>
         </property>
-		<bag name="menus" table="Emp_Menu">
+		<bag name="menus" table="Emp_Menu" lazy="false">
 			<!-- 员工编号 -->
 			<key column="emp_id"/>
 			<many-to-many class="com.zuxia.buildingsale.sys.entity.MenuInfo" column="menu_id"/>
 		</bag>
-       <bag name="roles" table="emp_role">
+       <bag name="roles" table="emp_role" lazy="false">
 	       <key column="emp_id"/>
 	       	<!-- 员工角色集合 -->
 	       <many-to-many class="com.zuxia.buildingsale.sys.entity.RoleInfo" column="role_id"/>
        </bag>
- 		<bag name="clientInfos" table="client_info">
+ 		<bag name="clientInfos" table="client_info" lazy="false">
 	 		<!-- 客户员工 -->
 	 		<key column="emp_id"/>
 	 		<one-to-many class="com.zuxia.buildingsale.business.entity.ClientInfo"/>
  		</bag>
-        <bag name="dealinfos" table="deal_info">
+        <bag name="dealinfos" table="deal_info" lazy="false">
 	        <!-- 员工 业绩信息 -->
 	        <key column="emp_id" />
 	        <one-to-many class="com.zuxia.buildingsale.business.entity.DealInfo"/>

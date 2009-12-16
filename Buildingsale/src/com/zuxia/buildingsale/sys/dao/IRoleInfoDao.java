@@ -45,5 +45,4 @@ public interface IRoleInfoDao extends IBaseCRUD<RoleInfo> {
 	 * @return
 	 */
 	List<RoleInfo> findAll();
-	
 }

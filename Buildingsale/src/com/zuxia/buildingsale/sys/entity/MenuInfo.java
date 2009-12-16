@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * MenuInfo¸ÅÒªËµÃ÷
+ * 
+ *
+ * @author Administrator
+ */
 public class MenuInfo implements java.io.Serializable {
 
 	/**
@@ -20,7 +26,7 @@ public class MenuInfo implements java.io.Serializable {
 	private String menuImg;
 	private String menuDesc;
 	private String menuRemark;
-	private MenuItem menuitem;
+	private List<MenuItem> menuitems=new ArrayList<MenuItem>();
 	private List<RoleInfo> roles= new ArrayList<RoleInfo>();
 	private List<Employee> employees = new ArrayList<Employee>();
 	public Integer getMenuId() {
@@ -77,11 +83,12 @@ public class MenuInfo implements java.io.Serializable {
 	public void setMenuRemark(String menuRemark) {
 		this.menuRemark = menuRemark;
 	}
-	public MenuItem getMenuitem() {
-		return menuitem;
+	
+	public List<MenuItem> getMenuitems() {
+		return menuitems;
 	}
-	public void setMenuitem(MenuItem menuitem) {
-		this.menuitem = menuitem;
+	public void setMenuitems(List<MenuItem> menuitems) {
+		this.menuitems = menuitems;
 	}
 	public List<RoleInfo> getRoles() {
 		return roles;
