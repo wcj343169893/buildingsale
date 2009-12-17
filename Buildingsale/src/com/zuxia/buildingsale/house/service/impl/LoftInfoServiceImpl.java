@@ -16,6 +16,8 @@ package com.zuxia.buildingsale.house.service.impl;
 
 import java.util.List;
 
+import com.zuxia.buildingsale.business.dao.IDataDictDAO;
+import com.zuxia.buildingsale.business.entity.DataDict;
 import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.dao.ILoftInfoDAO;
 import com.zuxia.buildingsale.house.entity.LoftInfo;
@@ -31,6 +33,7 @@ import com.zuxia.buildingsale.sys.entity.Employee;
  */
 public class LoftInfoServiceImpl implements ILoftInfoService {
 	private ILoftInfoDAO loftInfoDAO;
+	private IDataDictDAO dataDictDAO;
 
 	/**
 	 * loftInfoDAO属性的get方法
@@ -51,10 +54,46 @@ public class LoftInfoServiceImpl implements ILoftInfoService {
 		this.loftInfoDAO = loftInfoDAO;
 	}
 
+	/**
+	 * dataDictDAO属性的get方法
+	 * 
+	 * @return the dataDictDAO
+	 */
+	public IDataDictDAO getDataDictDAO() {
+		return dataDictDAO;
+	}
+
+	/**
+	 * dataDictDAO属性的set方法
+	 * 
+	 * @param dataDictDAO
+	 *            the dataDictDAO to set
+	 */
+	public void setDataDictDAO(IDataDictDAO dataDictDAO) {
+		this.dataDictDAO = dataDictDAO;
+	}
+
 	@Override
 	public int addLoftInfo(LoftInfoForm loftInfoForm, Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+		LoftInfo loftInfo = new LoftInfo();
+		loftInfo.setLoftNo(loftInfoForm.getLoftNo());
+		loftInfo.setLoftName(loftInfoForm.getLoftName());
+		loftInfo.setLoftBeginTime(loftInfoForm.getBeginTime());
+		loftInfo.setLoftShellOutTime(loftInfoForm.getShellOutTime());
+		loftInfo.setLoftFinishTime(loftInfoForm.getFinishTime());
+		loftInfo.setLoftPrice(loftInfoForm.getPrice());
+		loftInfo.setLoftZone(loftInfoForm.getZone());
+		loftInfo.setLoftAddress(loftInfoForm.getAddress());
+		loftInfo.setLoftFacility(loftInfoForm.getFacility());
+		loftInfo.setLoftGreen(loftInfoForm.getGreen());
+		loftInfo.setLoftTraffic(loftInfoForm.getTraffic());
+		loftInfo.setLoftRemark(loftInfoForm.getRemark());
+		loftInfo.setLoftCapacity(loftInfoForm.getCapacity());
+		loftInfo.setDataDictByLoftBuildType(dataDictDAO.findByid(loftInfoForm
+				.getBuildTypeId()));
+		loftInfo.setDataDictByLoftComtyType(dataDictDAO.findByid(loftInfoForm
+				.getComptyTypeId()));
+		return loftInfoDAO.save(loftInfo);
 	}
 
 	@Override
@@ -81,6 +120,21 @@ public class LoftInfoServiceImpl implements ILoftInfoService {
 	@Override
 	public List<LoftInfo> findByComtyType(Page page, int loftComtyType) {
 		return loftInfoDAO.findByComtyType(page, loftComtyType);
+	}
+
+	@Override
+	public LoftInfo findById(int loftId) {
+		return loftInfoDAO.findByid(loftId);
+	}
+
+	@Override
+	public List<DataDict> getComtyBuildType() {
+		return dataDictDAO.findByDictType(new Page(), 4);
+	}
+
+	@Override
+	public List<DataDict> getComtyType() {
+		return dataDictDAO.findByDictType(new Page(), 3);
 	}
 
 }

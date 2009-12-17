@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<!-- Service -->
-	<bean id="HouseInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.HouseInfoServiceImpl">
-		<property name="houseInfoDAO" ref="HouseInfoDAOImpl"/>
+	<bean id="HouseInfoServiceImpl"
+		class="com.zuxia.buildingsale.house.service.impl.HouseInfoServiceImpl">
+		<property name="houseInfoDAO" ref="HouseInfoDAOImpl" />
 	</bean>
-	<bean id="HouseTypeServiceImpl" class="com.zuxia.buildingsale.house.service.impl.HouseTypeServiceImpl">
-		<property name="houseTypeDAO" ref="HouseTypeDAOImpl"/>
+	<bean id="HouseTypeServiceImpl"
+		class="com.zuxia.buildingsale.house.service.impl.HouseTypeServiceImpl">
+		<property name="houseTypeDAO" ref="HouseTypeDAOImpl" />
 	</bean>
-	<bean id="LoftInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.LoftInfoServiceImpl">
-		<property name="loftInfoDAO" ref="LoftInfoDAOImpl"/>
+	<bean id="LoftInfoServiceImpl"
+		class="com.zuxia.buildingsale.house.service.impl.LoftInfoServiceImpl">
+		<property name="loftInfoDAO" ref="LoftInfoDAOImpl" />
+		<property name="dataDictDAO" ref="DataDictDAOImpl" />
 	</bean>
-	<bean id="ShopInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.ShopInfoServiceImpl">
-		<property name="shopInfoDAO" ref="ShopInfoDAOImpl"/>
+	<bean id="ShopInfoServiceImpl"
+		class="com.zuxia.buildingsale.house.service.impl.ShopInfoServiceImpl">
+		<property name="shopInfoDAO" ref="ShopInfoDAOImpl" />
 	</bean>
-	<bean id="UnitInfoServiceImpl" class="com.zuxia.buildingsale.house.service.impl.UnitInfoServiceImpl">
-	<property name="unitInfoDAO" ref="UnitInfoDAOImpl"/>
+	<bean id="UnitInfoServiceImpl"
+		class="com.zuxia.buildingsale.house.service.impl.UnitInfoServiceImpl">
+		<property name="unitInfoDAO" ref="UnitInfoDAOImpl" />
 	</bean>
+
+	<!-- form -->
+	<bean id="LoftInfoForm" class="com.zuxia.buildingsale.house.form.LoftInfoForm"></bean>
+
 	<!-- action -->
+	<bean id="LoftAction" class="com.zuxia.buildingsale.house.action.LoftInfoAction">
+		<property name="loftInfoService" ref="LoftInfoServiceImpl" />
+		<property name="loftInfoForm" ref="LoftInfoForm"/>
+	</bean>
+	<bean id="HouseTypeAction" class="com.zuxia.buildingsale.house.action.HouseTypeAction">
+		<property name="houseTypeService" ref="HouseTypeServiceImpl" />
+	</bean>
+
 </beans>

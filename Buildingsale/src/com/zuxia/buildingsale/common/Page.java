@@ -2,13 +2,34 @@ package com.zuxia.buildingsale.common;
 
 import java.io.Serializable;
 
+/**
+ * Page概要说明 分页信息
+ *
+ * @author chaojun
+ */
 @SuppressWarnings("serial")
 public class Page implements Serializable {
 
-	private int pageRecordCount = 20;// 每页显示的记录数量(默认值)
-	private int pageIndex = 1;// 当前页码
-	private int totalRecordCount = 0;// 总记录数
-	private int pageCount = 1;// 总的页面数量
+	/**
+	 * pageRecordCount属性概述 每页显示的记录数量(默认值20) 
+	 * 
+	 */
+	private int pageRecordCount = 20;
+	/**
+	 * pageIndex属性概述 当前页码(默认值1)
+	 * 
+	 */
+	private int pageIndex = 1;
+	/**
+	 * totalRecordCount属性概述 总记录数(默认值0)
+	 * 
+	 */
+	private int totalRecordCount = 0;
+	/**
+	 * pageCount属性概述 总的页面数量(默认值1)
+	 * 
+	 */
+	private int pageCount = 1;
 
 	public void setPage(int totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
@@ -31,18 +52,42 @@ public class Page implements Serializable {
 		}
 	}
 
+	/**
+	 * getPageRecordCount方法概述 每页显示的记录数量(默认值20) 
+	 * 
+	 *
+	 * @return
+	 */
 	public int getPageRecordCount() {
 		return pageRecordCount;
 	}
 
+	/**
+	 * setPageRecordCount方法概述 每页显示的记录数量(默认值20) 
+	 * 
+	 *
+	 * @param pageRecordCount
+	 */
 	public void setPageRecordCount(int pageRecordCount) {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	/**
+	 * getPageIndex方法概述  当前页码(默认值1)
+	 * 
+	 *
+	 * @return
+	 */
 	public int getPageIndex() {
 		return pageIndex;
 	}
 
+	/** 
+	 * setPageIndex方法概述  当前页码(默认值1)
+	 * 
+	 *
+	 * @param pageIndex
+	 */
 	public void setPageIndex(int pageIndex) {
 		this.pageIndex = pageIndex;
 	}

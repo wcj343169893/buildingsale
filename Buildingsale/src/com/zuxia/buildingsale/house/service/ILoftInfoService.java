@@ -16,6 +16,7 @@ package com.zuxia.buildingsale.house.service;
 
 import java.util.List;
 
+import com.zuxia.buildingsale.business.entity.DataDict;
 import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.house.entity.LoftInfo;
 import com.zuxia.buildingsale.house.form.LoftInfoForm;
@@ -67,4 +68,28 @@ public interface ILoftInfoService {
 	public int deleteLoftInfo(int loftInfoId);
 
 	public int editLoftInfo(LoftInfoForm loftInfoForm, Employee employee);
+
+	/**
+	 * findById方法概述 根据楼盘id查询
+	 * 
+	 * 
+	 * @return
+	 */
+	public LoftInfo findById(int loftId);
+
+	/**
+	 * getComtyType方法概述 获取物业类型
+	 * 
+	 * 
+	 * @return
+	 */
+	public List<DataDict> getComtyType();
+
+	/**
+	 * getComtyBuildType方法概述 获取建筑类型
+	 * 
+	 * 
+	 * @return
+	 */
+	public List<DataDict> getComtyBuildType();
 }

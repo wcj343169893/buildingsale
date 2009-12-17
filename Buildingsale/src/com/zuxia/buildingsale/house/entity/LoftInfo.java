@@ -2,9 +2,8 @@ package com.zuxia.buildingsale.house.entity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import com.zuxia.buildingsale.business.entity.DataDict;
 
@@ -26,10 +25,10 @@ public class LoftInfo implements java.io.Serializable {
 	private String loftZone;
 	private String loftAddress;
 	private Double loftPrice;
-	private Timestamp loftBeginTime;
-	private Timestamp loftShellOutTime;
-	private Timestamp loftFinishTime;
-	private Double lloftCapacity;
+	private Date loftBeginTime;
+	private Date loftShellOutTime;
+	private Date loftFinishTime;
+	private Double loftCapacity;
 	private Double loftGreen;
 	private String loftTraffic;
 	private String loftFacility;
@@ -194,7 +193,7 @@ public class LoftInfo implements java.io.Serializable {
 	 * 
 	 * @return the loftBeginTime
 	 */
-	public Timestamp getLoftBeginTime() {
+	public Date getLoftBeginTime() {
 		return loftBeginTime;
 	}
 
@@ -204,7 +203,7 @@ public class LoftInfo implements java.io.Serializable {
 	 * @param loftBeginTime
 	 *            the loftBeginTime to set
 	 */
-	public void setLoftBeginTime(Timestamp loftBeginTime) {
+	public void setLoftBeginTime(Date loftBeginTime) {
 		this.loftBeginTime = loftBeginTime;
 	}
 
@@ -213,7 +212,7 @@ public class LoftInfo implements java.io.Serializable {
 	 * 
 	 * @return the loftShellOutTime
 	 */
-	public Timestamp getLoftShellOutTime() {
+	public Date getLoftShellOutTime() {
 		return loftShellOutTime;
 	}
 
@@ -223,7 +222,7 @@ public class LoftInfo implements java.io.Serializable {
 	 * @param loftShellOutTime
 	 *            the loftShellOutTime to set
 	 */
-	public void setLoftShellOutTime(Timestamp loftShellOutTime) {
+	public void setLoftShellOutTime(Date loftShellOutTime) {
 		this.loftShellOutTime = loftShellOutTime;
 	}
 
@@ -232,7 +231,7 @@ public class LoftInfo implements java.io.Serializable {
 	 * 
 	 * @return the loftFinishTime
 	 */
-	public Timestamp getLoftFinishTime() {
+	public Date getLoftFinishTime() {
 		return loftFinishTime;
 	}
 
@@ -242,27 +241,27 @@ public class LoftInfo implements java.io.Serializable {
 	 * @param loftFinishTime
 	 *            the loftFinishTime to set
 	 */
-	public void setLoftFinishTime(Timestamp loftFinishTime) {
+	public void setLoftFinishTime(Date loftFinishTime) {
 		this.loftFinishTime = loftFinishTime;
 	}
 
 	/**
-	 * lloftCapacity属性的get方法
+	 * loftCapacity属性的get方法
 	 * 
-	 * @return the lloftCapacity
+	 * @return the loftCapacity
 	 */
-	public Double getLloftCapacity() {
-		return lloftCapacity;
+	public Double getLoftCapacity() {
+		return loftCapacity;
 	}
 
 	/**
-	 * lloftCapacity属性的set方法
+	 * loftCapacity属性的set方法
 	 * 
-	 * @param lloftCapacity
-	 *            the lloftCapacity to set
+	 * @param loftCapacity
+	 *            the loftCapacity to set
 	 */
-	public void setLloftCapacity(Double lloftCapacity) {
-		this.lloftCapacity = lloftCapacity;
+	public void setLoftCapacity(Double loftCapacity) {
+		this.loftCapacity = loftCapacity;
 	}
 
 	/**

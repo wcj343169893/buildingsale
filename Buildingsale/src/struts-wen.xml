@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd" >
+<struts>
+	<package name="house" namespace="/house" extends="struts-default">
+		<!-- 楼盘 -->
+		<action name="*loft" class="LoftAction" method="{1}">
+			<result name="scan">/house/scanloft.jsp</result>
+			<result name="look">/house/lookloft.jsp</result>
+			<result name="edit">/house/lookloft.jsp</result>
+			<result name="add">/house/lookloft.jsp</result>
+			<result name="addInit">/house/newloft.jsp</result>
+			<result name="delete">/house/lookloft.jsp</result>
+		</action>
+		<!-- 房屋类型 -->
+		<action name="*houseType" class="HouseTypeAction" method="{1}">
+			<result name="scan">/house/scanhousetype.jsp</result>
+			<result name="look">/house/scanhousetype.jsp</result>
+			<result name="add">/house/scanhousetype.jsp</result>
+			<result name="edit">/house/scanhousetype.jsp</result>
+			<result name="delete">/house/scanhousetype.jsp</result>
+		</action>
+	</package>
+</struts>

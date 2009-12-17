@@ -6,7 +6,7 @@
 	-->
 <hibernate-mapping>
 	<class name="com.zuxia.buildingsale.house.entity.HouseType"
-		table="house_type" catalog="loupan">
+		table="house_type">
 		<id name="htId" type="java.lang.Integer">
 			<column name="ht_id" />
 			<generator class="native" />
