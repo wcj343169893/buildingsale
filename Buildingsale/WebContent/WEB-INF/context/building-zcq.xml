@@ -7,14 +7,20 @@
 	<property name="employeeservice" ref="EmployeeServiceImpl"/>
 	</bean>
 	
+	<bean id="EmployeeSearchAction" class="com.zuxia.buildingsale.sys.action.EmployeeSearchAction">
+		<property name="employeeservice" ref="EmployeeServiceImpl"/>
+	</bean>
 	
-	
+	<bean id="EmployeeAction" class="com.zuxia.buildingsale.sys.action.EmployeeAction">
+		<property name="employeeservice" ref="EmployeeServiceImpl"/>
+	</bean>
 	
 	<!-- Service Layer -->
 	<bean id="EmployeeServiceImpl"
 		class="com.zuxia.buildingsale.sys.service.impl.EmployeeServiceImpl">
 		<property name="employeedao" ref="EmployeeDAOImpl" />
 	</bean>
+	
 	
 	
 </beans>

@@ -93,4 +93,14 @@ public interface IEmployeeService {
 	 * @return
 	 */
 	List<Employee> findAllEmployee(Page page);
+	
+	/**
+	 * 
+	 * isExistsAccount方法概述
+	 * 账号是否存在
+	 *
+	 * @param account
+	 * @return
+	 */
+	public boolean isExistsAccount(String account);
 }
