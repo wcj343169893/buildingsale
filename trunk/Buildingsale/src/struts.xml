@@ -10,8 +10,19 @@
 			</result>
 		</action>
 		<!-- EmplistAction -->
-		<action name="employeeList" class="EmployeeListAction">
-			<result>/sys/emplist.jsp</result>
+		<action name="EmployeeList" class="EmployeeListAction">
+			<result>/sys/employee-list.jsp</result>
+		</action>
+		<!-- 员工查找 -->
+		<action name="EmployeeSearch" class="EmployeeSearchAction">
+			<result>/sys/employee-list.jsp</result>
+		</action>
+		<!-- 员工CRUD -->
+		<action name="*-*" class="{1}Action" method="{2}">
+			<result name="employee.input">/sys/employee-input.jsp</result>
+			<result name="employee.view">/sys/employee-input.jsp</result>
+			<result name="employee.home" type="redirectAction">/sys/Employee-view?id=${id}</result>
+			<result name="employee.list" type="redirectAction">EmployeeList</result>
 		</action>
 	</package>
 </struts>

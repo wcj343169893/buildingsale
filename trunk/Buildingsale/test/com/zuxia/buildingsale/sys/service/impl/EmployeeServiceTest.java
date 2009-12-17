@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.zuxia.buildingsale.business.entity.DataDict;
 import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.dao.IEmployeeDao;
 import com.zuxia.buildingsale.sys.entity.Employee;
@@ -37,6 +38,27 @@ public class EmployeeServiceTest extends TestCase {
 		for(Employee emp:list){
 			System.out.println(emp);
 		}
+	}
+	
+	public void testAddEmployee(){
+		IEmployeeService employeeservice=getBean();
+		Employee emp=new Employee();
+		emp.setEmpAccount("zcq");
+		emp.setEmpName("xiaozhang");
+		emp.setEmpNo("xxxxxxxxx");
+		emp.setEmpPass("123456");
+		emp.setEmpPid("123456789098765432");
+		emp.setEmpSex(1);
+		DataDict dd=new DataDict();
+		dd.setDdId(13);
+		emp.setEmpState(dd);
+		employeeservice.addEmployee(emp);
+		
+	}
+	
+	public void testDeleteEmployee(){
+		IEmployeeService employeeservice=getBean();
+		employeeservice.deleteEmployee(1);
 	}
 	
 	private IEmployeeService getBean() {

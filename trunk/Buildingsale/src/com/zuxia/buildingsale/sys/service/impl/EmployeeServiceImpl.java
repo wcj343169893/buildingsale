@@ -30,13 +30,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	
 	@Override
 	public int addEmployee(Employee emp) {
-		emp.setEmpNo("LH_S001_R00");
 		int result=employeedao.save(emp);
-		if(result==1){
-			Employee employee=employeedao.findByEmployeeAccount(emp.getEmpAccount());
-			employee.setEmpNo("LH_S001_R00"+employee.getEmpId());
-			employeedao.merge(employee);
-		}
 		return result;
 	}
 
@@ -86,6 +80,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 	public void setEmployeedao(IEmployeeDao employeedao) {
 		this.employeedao = employeedao;
+	}
+
+	@Override
+	public boolean isExistsAccount(String account) {
+		return employeedao.isExistAccount(account);
 	}
 
 	

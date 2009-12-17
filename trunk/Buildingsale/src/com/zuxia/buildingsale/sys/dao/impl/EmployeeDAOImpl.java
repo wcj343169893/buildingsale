@@ -130,31 +130,38 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	 */
 	@Override
 	public List<Employee> findEmployeeByExample(Page page, Employee emp) {
-		StringBuffer hql=new StringBuffer("from Employee model where 1=1 ");
+		StringBuffer hql=new StringBuffer("from Employee model where 1=1");
 		if(emp.getEmpAccount()!=null){
-			hql.append("and model.empAccount like '%"+emp.getEmpAccount()+"%'");
+			hql.append(" and model.empAccount like '%"+emp.getEmpAccount()+"%'");
 		}
 		if(emp.getEmpName()!=null){
-			hql.append("and model.empName like '%"+emp.getEmpName()+"%'");
+			hql.append(" and model.empName like '%"+emp.getEmpName()+"%'");
 		}
 		if(emp.getEmpNo()!=null){
-			hql.append("and model.empNo like '%"+emp.getEmpNo()+"%'");
+			hql.append(" and model.empNo like '%"+emp.getEmpNo()+"%'");
 		}
 		if(emp.getEmpSex()!=null){
-			hql.append("and model.empSex ="+emp.getEmpSex());
+			hql.append(" and model.empSex ="+emp.getEmpSex());
 		}
 		if(emp.getEmpEmail()!=null){
-			hql.append("and model.empEmail like '%"+emp.getEmpEmail()+"%'");
+			hql.append(" and model.empEmail like '%"+emp.getEmpEmail()+"%'");
 		}
 		if(emp.getEmpPid()!=null){
-			hql.append("and model.empPid = '"+emp.getEmpPid()+"'");
+			hql.append(" and model.empPid = '"+emp.getEmpPid()+"'");
 		}
 		if(emp.getEmpAddress()!=null){
-			hql.append("and model.empAddress = '"+emp.getEmpAddress()+"'");
+			hql.append(" and model.empAddress like '%"+emp.getEmpAddress()+"%'");
 		}
 		if(emp.getEmpPass()!=null){
-			hql.append("and model.empPass='"+emp.getEmpPass()+"'");
+			hql.append(" and model.empPass='"+emp.getEmpPass()+"'");
 		}
+		if(emp.getEmpState()!=null){
+			hql.append(" and model.empState.ddId="+emp.getEmpState().getDdId());
+		}
+		if(emp.getShopInfo()!=null){
+			hql.append(" and model.ShopInfo.shopId="+emp.getShopInfo().getShopId());
+		}
+		log.info(hql);
 		return query(page, hql.toString());
 	}
 	/** 
