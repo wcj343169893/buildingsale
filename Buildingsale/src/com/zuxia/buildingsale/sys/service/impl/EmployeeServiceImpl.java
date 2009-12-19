@@ -17,6 +17,8 @@ import java.util.List;
 import com.zuxia.buildingsale.common.Page;
 import com.zuxia.buildingsale.sys.dao.IEmployeeDao;
 import com.zuxia.buildingsale.sys.entity.Employee;
+import com.zuxia.buildingsale.sys.entity.MenuInfo;
+import com.zuxia.buildingsale.sys.entity.RoleInfo;
 import com.zuxia.buildingsale.sys.service.IEmployeeService;
 
 /**
@@ -85,6 +87,34 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	@Override
 	public boolean isExistsAccount(String account) {
 		return employeedao.isExistAccount(account);
+	}
+
+	@Override
+	public boolean updateMenu(int empid, int[] menuids) {
+		Employee emp=employeedao.findByid(empid);
+		emp.getMenus().clear();
+		for(int menuid:menuids){
+			MenuInfo mi=new MenuInfo();
+			mi.setMenuId(menuid);
+			emp.getMenus().add(mi);
+		}
+		if(1==employeedao.merge(emp))
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean updateRole(int empid, int[] roles) {
+		Employee emp=employeedao.findByid(empid);
+		emp.getRoles().clear();
+		for(int roleid:roles){
+			RoleInfo ri=new RoleInfo();
+			ri.setRoleId(roleid);
+			emp.getRoles().add(ri);
+		}
+		if(1==employeedao.merge(emp))
+			return true;
+		return false;
 	}
 
 	

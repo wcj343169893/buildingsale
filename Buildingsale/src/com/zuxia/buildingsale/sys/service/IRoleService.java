@@ -13,6 +13,10 @@
  */
 package com.zuxia.buildingsale.sys.service;
 
+import java.util.List;
+
+import com.zuxia.buildingsale.sys.entity.RoleInfo;
+
 /**
  * IRoleService概要说明
  * 
@@ -22,29 +26,35 @@ package com.zuxia.buildingsale.sys.service;
 public interface IRoleService {
 	/**
 	 * 
-	 * addEmployeeRole方法概述
-	 * 给员工添加角色
-	 * @param empid 员工编号
-	 * @param roleid 角色编号
-	 * @return 状态信息(1,成功,0,失败)	
+	 * addRole方法概述
+	 * 
+	 *
+	 * @param role
+	 * @return
 	 */
-	int addEmployeeRole(int empid,int roleid);
+	boolean addRole(RoleInfo role);
+	
 	/**
 	 * 
-	 * deleleEmployeeRole方法概述
-	 * 删除角色组中的员工
-	 * @param empid 员工编号
-	 * @param roleid 角色编号	
-	 * @return 状态信息(1,成功,0,失败)	
+	 * deleteRole方法概述
+	 * 
+	 *
+	 * @param id
+	 * @return
 	 */
-	int deleleEmployeeRole(int empid,int roleid);
+	boolean deleteRole(int id);
+	
 	/**
 	 * 
-	 * isRole方法概述
-	 * 判断员工是否属于某角色
-	 * @param empid	员工编号
-	 * @param roleid	角色编号
-	 * @return	(是/否)
+	 * findAll方法概述
+	 * 
+	 *
+	 * @return
 	 */
-	boolean isRole(int empid,int roleid);
+	List<RoleInfo> findAll();
+	
+	
+	boolean updateMenu(int roleid,int[] menuids);
+	
+	
 }

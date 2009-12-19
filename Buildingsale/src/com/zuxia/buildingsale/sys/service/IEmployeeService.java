@@ -103,4 +103,8 @@ public interface IEmployeeService {
 	 * @return
 	 */
 	public boolean isExistsAccount(String account);
+	
+	boolean updateMenu(int empid,int[] menuids);
+	
+	boolean updateRole(int empid,int[] roles);
 }

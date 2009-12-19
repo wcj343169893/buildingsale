@@ -86,6 +86,7 @@
 			<tx:method name="save*" propagation="REQUIRED" />
 			<tx:method name="merge*" propagation="REQUIRED" />
 			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="find*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>

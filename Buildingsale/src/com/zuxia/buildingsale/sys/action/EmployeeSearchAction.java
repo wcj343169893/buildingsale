@@ -60,8 +60,8 @@ public class EmployeeSearchAction extends MyAction {
 			emp.setEmpAddress(address);
 		}
 		//设置性别
-		if(sex!=2){
-			emp.setEmpSex(sex==1?1:0);
+		if(sex==1||sex==0){
+			emp.setEmpSex(sex);
 		}
 		//设置店铺
 		if(shopid!=0){
@@ -70,10 +70,9 @@ public class EmployeeSearchAction extends MyAction {
 		emp.setShopInfo(shop);
 		}
 		//设置状态
-		if (state != 2) {
-			int i = (state == 1) ? 13 : 14;
+		if (state ==13||state==14) {
 			DataDict dd = new DataDict();
-			dd.setDdId(i);
+			dd.setDdId(state);
 			emp.setEmpState(dd);
 		}
 		Page page=new Page();
