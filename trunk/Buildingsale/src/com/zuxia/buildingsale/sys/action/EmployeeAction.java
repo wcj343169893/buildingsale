@@ -39,6 +39,10 @@ public class EmployeeAction implements ModelDriven<Employee>,Preparable{
 		return "employee.view";
 	}
 	
+	public String edit(){
+		return "employee.input";
+	}
+	
 	
 	/**
 	 * 
@@ -54,7 +58,7 @@ public class EmployeeAction implements ModelDriven<Employee>,Preparable{
 			employeeservice.addEmployee(emp);
 			return "employee.list";
 		}
-		return "employee.input";
+		return "employee.home";
 	}
 	
 	/**

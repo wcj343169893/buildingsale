@@ -172,5 +172,9 @@
 		class="com.zuxia.buildingsale.sys.service.impl.EmployeeServiceImpl">
 		<property name="employeedao" ref="EmployeeDAOImpl" />
 	</bean>
+	
+	<bean id="MenuInfoService" class="com.zuxia.buildingsale.sys.service.impl.MenuInfoServiceImpl">
+		<property name="menuinfodao" ref="MenuInfoDAOImpl"/>
+	</bean>
 
 </beans>

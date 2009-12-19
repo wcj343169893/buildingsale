@@ -23,9 +23,10 @@
 		<!-- 员工CRUD -->
 		<action name="*-*" class="{1}Action" method="{2}">
 			<result name="employee.input">/sys/employee-input.jsp</result>
-			<result name="employee.view">/sys/employee-input.jsp</result>
-			<result name="employee.home" type="redirectAction">/sys/Employee-view?id=${id}</result>
+			<result name="employee.view">/sys/employee-view.jsp</result>
+			<result name="employee.home" type="redirectAction">Employee-view?id=${id}</result>
 			<result name="employee.list" type="redirectAction">EmployeeList</result>
+			<interceptor-ref name="paramsPrepareParamsStack" />
 		</action>
 	</package>
 </struts>

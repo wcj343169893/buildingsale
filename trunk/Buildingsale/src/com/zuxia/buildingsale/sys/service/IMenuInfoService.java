@@ -15,6 +15,7 @@ package com.zuxia.buildingsale.sys.service;
 import java.util.List;
 
 import com.zuxia.buildingsale.common.Page;
+import com.zuxia.buildingsale.sys.dto.MenuDto;
 import com.zuxia.buildingsale.sys.entity.MenuInfo;
 
 /**
@@ -24,43 +25,9 @@ import com.zuxia.buildingsale.sys.entity.MenuInfo;
  * @author zcq100
  */
 public interface IMenuInfoService {
-	/**
-	 * 
-	 * addMenuInfo方法概述
-	 * 
-	 *
-	 * @param menuinfo
-	 * @return
-	 */
-	int addMenuInfo(MenuInfo menuinfo);
 	
-	/**
-	 * 
-	 * deleteMenuInfoByid方法概述
-	 * 
-	 *
-	 * @param id
-	 * @return
-	 */
-	int deleteMenuInfoByid(int id);
-	
-	/**
-	 * 
-	 * updateMenuInfo方法概述
-	 * 
-	 *
-	 * @param menuinfo
-	 * @return
-	 */
-	int updateMenuInfo(MenuInfo menuinfo);
-	
-	/**
-	 * 
-	 * findAllMenuInfo方法概述
-	 * 
-	 *
-	 * @param page
-	 * @return
-	 */
-	List<MenuInfo> findAllMenuInfo(Page page);
+	boolean addMenu(MenuInfo menu);
+	boolean deleteMenu(int id);
+	List<MenuDto> findMenus();
+	List<MenuInfo> findMenus(Page page);
 }

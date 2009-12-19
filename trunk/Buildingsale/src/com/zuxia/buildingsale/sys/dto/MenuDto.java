@@ -26,6 +26,7 @@ import com.zuxia.buildingsale.sys.entity.MenuInfo;
 public class MenuDto {
 	MenuInfo level1;   //一级菜单
 	List<MenuInfo> level2;//子级菜单
+	
 	public MenuInfo getLevel1() {
 		return level1;
 	}

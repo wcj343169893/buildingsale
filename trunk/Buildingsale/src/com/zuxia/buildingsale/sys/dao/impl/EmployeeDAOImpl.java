@@ -54,8 +54,10 @@ public  class EmployeeDAOImpl extends BaseDao implements IEmployeeDao{
 	public int delete(Employee obj) {
 		try {
 			super.delete(obj);
+			getHibernateTemplate().flush();
 			return 1;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return 0;
 		}
 	}

@@ -2,13 +2,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
-<script type="../script/jquery-1.3.2.js"></script>
+<script type="js/jquery-1.3.2.js"></script>
+<script type="js/jquery-ui-1.7.2.custom.min.js"></script>
 <link rel="stylesheet" href="../style/style.css" />
+<link rel="stylesheet" href="css/ui-sui.css" />
 </head>
 <body>
 <form action="Employee-update.action" method="post">
@@ -24,7 +27,7 @@
 					</td>
 					<td align="right" style="padding-top:5px;">
 						<input type="submit" value="保存" class="tab_but" />
-						<input type="button" value="返回" class="tab_but" onclick="to('~empaction!selAll.action');"/>
+						<input type="button" value="返回" class="tab_but" onclick="history.back();"/>
 					</td>
 				</tr>
 			</table>
@@ -45,7 +48,7 @@
 					  		<td width="18">  <img src="../images\tab\exclamation.png" alt="该编号不可用" id="del" style="display: none;"/>
 					  		<img src="../images\tab\accept.png" alt="该编号可用" id="ye" style="display: none;"/></td>
 					  	</tr>
-					  </table>						
+					  </table>
 					</td>
 					<td align="right" width="100">所属售房部：</td>	
 					<td>
@@ -82,7 +85,7 @@
 					</td>
 					<td align="right" width="100">生日：</td>	
 					<td>
-						<input type="text" name="empBirthday" value="${empBirthday}" id="ebo" style="width:90px;" />
+						<input type="text" name="empBirthday" value="<fmt:formatDate value='${empBirthday}' pattern="yyyy-MM-dd"/>" id="ebo" style="width:90px;" />
 					</td>
 				</tr>
 				<tr>
@@ -123,5 +126,10 @@
 	</tr>
 </table>
 </form>
+<script>
+if(window.jQuery){jQuery(function(){
+		(function(){ jQuery('#ebo').bind('click', function(event, ui){var target = jQuery('#ebo'); target.datepicker({dateFormat:'mm/dd/yy',dayNamesMin:['日', '一', '二', '三', '四', '五', '六'],dayNamesShort:['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],monthNames:['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],monthNamesShort:['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],showButtonPanel: true,currentText: '本月',closeText: '关闭'})});})();
+	})};
+</script>
 </body>
 </html>

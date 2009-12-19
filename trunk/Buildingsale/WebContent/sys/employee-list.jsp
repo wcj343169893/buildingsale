@@ -2,9 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="pg" uri="/WEB-INF/lib/pager-taglib.jar"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@taglib prefix="zcq" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="zcq" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,16 +14,23 @@
 </head>
 <body>
 <h1>员工信息</h1>
-<form action="EmployeeSearch.action" method="post">
-账号:<input type="text" name="account" value="${account }"/>&nbsp;
-姓名:<input type="text" name="name" value="${name }"/>&nbsp;
-性别:<select name="sex"><option value="2" selected="selected">请选择</option><option value="1">男</option><option value="0">女</option> </select>&nbsp;
-地址:<input type="text" name="address" value="${address }"/>&nbsp;
-店铺:<select name="shopid"><option value="0" selected="selected">请选择</option></select>&nbsp;
-状态:<select name="state"><option value="2" selected="selected">请选择</option><option value="1">在职</option><option value="0">离职</option> </select>&nbsp;
-<input type="submit" value="查询"/>&nbsp;
-<input type="button" value="全部" onclick="location.href='EmployeeList.action'"/>
-</form>
+<form action="EmployeeSearch.action" method="post">账号:<input
+	type="text" name="account" value="${account }" />&nbsp; 姓名:<input
+	type="text" name="name" value="${name }" />&nbsp; 性别:<select name="sex">
+	<option value="2" selected="selected">请选择</option>
+	<option value="1" <c:if test="${sex==1}">selected="selected"</c:if>>男</option>
+	<option value="0" <c:if test="${sex==0}">selected="selected"</c:if>>女</option>
+</select>&nbsp; 地址:<input type="text" name="address" value="${address }" />&nbsp;
+店铺:<select name="shopid">
+	<option value="0">请选择</option>
+</select>&nbsp; 
+状态:<select name="state">
+	<option value="0">请选择</option>
+	<option value="13" <c:if test="${state==13}">selected="selected"</c:if>>在职</option>
+	<option value="14" <c:if test="${state==14}">selected="selected"</c:if>>离职</option>
+</select>&nbsp; <c:if test="state==13"></c:if> <input type="submit" value="查询" />&nbsp;
+<input type="button" value="全部"
+	onclick="location.href='EmployeeList.action'" /></form>
 <table width="100%">
 	<tr>
 		<td>id</td>
@@ -42,17 +49,20 @@
 	<c:forEach var="emp" items="${requestScope.employeelist}">
 		<tr>
 			<td>${emp.empId }</td>
-			<td>${emp.empNo }</td>
+			<td><a href="Employee-view.action?id=${emp.empId }">${emp.empNo
+			}</a></td>
 			<td>${emp.empAccount }</td>
 			<td>${emp.empName }</td>
 			<td>${emp.empPid}</td>
-			<td>${emp.empSex }</td>
-			<td><fmt:formatDate value="${emp.empBirthday }" pattern="yyyy-MM-dd"/></td>
+			<td><c:if test="${emp.empSex==1}">男</c:if> <c:if test="${emp.empSex==0}">女</c:if></td>
+			<td><fmt:formatDate value="${emp.empBirthday }"
+				pattern="yyyy-MM-dd" /></td>
 			<td>${emp.empTell }</td>
 			<td>${emp.empAddress }</td>
 			<td>${emp.empEmail }</td>
 			<td>${emp.empRemark }</td>
-			<td><a href="Employee-view.action?id=${emp.empId }">修改</a>&nbsp; <a href="Employee-delete.action?id=${emp.empId }">删除</a></td>
+			<td><a href="Employee-edit.action?id=${emp.empId }">修改</a>&nbsp;
+			<a href="Employee-delete.action?id=${emp.empId }">删除</a></td>
 		</tr>
 	</c:forEach>
 </table>
@@ -78,7 +88,7 @@
 				}
 			%>
 		</pg:pages> <pg:next>&nbsp;<a href="<%=pageUrl%>">[下一页 &gt;&gt;]</a>
-		</pg:next> <br/>
+		</pg:next> <br />
 		</font>
 	</pg:index>
 </pg:pager>

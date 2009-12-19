@@ -152,5 +152,6 @@ public class MenuInfoDAOImpl extends BaseDao implements IMenuInfoDao{
 		return list;
 	}
 
+
 	
 }

@@ -53,12 +53,17 @@ public class EmployeeServiceTest extends TestCase {
 		dd.setDdId(13);
 		emp.setEmpState(dd);
 		employeeservice.addEmployee(emp);
-		
 	}
 	
 	public void testDeleteEmployee(){
 		IEmployeeService employeeservice=getBean();
 		employeeservice.deleteEmployee(1);
+	}
+	
+	
+	public void testUpdateMenu(){
+		IEmployeeService employeeservice=getBean();
+		employeeservice.updateMenu(2, new int[]{1,2,3,4,5});
 	}
 	
 	private IEmployeeService getBean() {
