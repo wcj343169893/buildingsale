@@ -10,16 +10,27 @@ public interface IDataDictDAO extends IBaseCRUD<DataDict> {
 	/**
 	 * findByDictType方法概述 根据字典类型查询字典
 	 * 
-	 *
+	 * 
 	 * @param page
-	 * @param dictType 字典类型
+	 * @param dictType
+	 *            字典类型
 	 * @return
 	 */
 	public List<DataDict> findByDictType(Page page, int dictType);
+
+	/**
+	 * findByDictType方法概述  根据字典类型查询字典
+	 * 
+	 *
+	 * @param dictType
+	 * @return
+	 */
+	public List<DataDict> findByDictType(int dictType);
+
 	/**
 	 * findAll方法概述 查询所有的字典信息
 	 * 
-	 *
+	 * 
 	 * @param page
 	 * @return
 	 */

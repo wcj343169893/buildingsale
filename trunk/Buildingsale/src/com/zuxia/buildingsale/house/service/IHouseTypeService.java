@@ -37,6 +37,8 @@ public interface IHouseTypeService {
 	 */
 	public List<HouseType> findAll(Page page);
 
+	public List<HouseType> findAll();
+
 	public int addHouseType(HouseTypeForm houseTypeForm, Employee employee);
 
 	public int deleteHouseType(int houseTypeId);

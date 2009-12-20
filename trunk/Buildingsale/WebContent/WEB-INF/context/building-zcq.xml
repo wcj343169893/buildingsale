@@ -22,7 +22,7 @@
 	</bean>
 	
 	<bean id="MenuInfoService" class="com.zuxia.buildingsale.sys.service.impl.MenuInfoServiceImpl">
-		<property name="menuinfodao" ref="HouseInfoDAOImpl"/>
+		<property name="menuinfodao" ref="MenuInfoDAOImpl"/>
 	</bean>
 	
 	

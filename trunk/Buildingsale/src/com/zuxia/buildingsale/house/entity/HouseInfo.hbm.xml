@@ -18,7 +18,7 @@
 			</column>
 		</many-to-one>
 		<many-to-one name="unitInfo"
-			class="com.zuxia.buildingsale.house.entity.UnitInfo" fetch="select">
+			class="com.zuxia.buildingsale.house.entity.UnitInfo">
 			<column name="unit_id" unique="true">
 				<comment>单元(引用unit_info表的unit_id)</comment>
 			</column>

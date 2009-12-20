@@ -84,7 +84,7 @@ public class HouseTypeDAOImpl extends BaseDao implements IHouseTypeDAO {
 		}
 	}
 
-	/** 
+	/**
 	 * （重写方法） save方法概述 保存
 	 * 
 	 * 
@@ -111,6 +111,12 @@ public class HouseTypeDAOImpl extends BaseDao implements IHouseTypeDAO {
 	@Override
 	public List<HouseType> findAll(Page page) {
 		List<HouseType> houseTypeList = query(page, "from HouseType");
+		return houseTypeList;
+	}
+
+	@Override
+	public List<HouseType> findAll() {
+		List<HouseType> houseTypeList = super.find("from HouseType");
 		return houseTypeList;
 	}
 }

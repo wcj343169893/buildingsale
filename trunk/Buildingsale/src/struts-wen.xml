@@ -19,5 +19,16 @@
 			<result name="edit">/house/scanhousetype.jsp</result>
 			<result name="delete">/house/scanhousetype.jsp</result>
 		</action>
+		<!-- 单元 -->
+		<action name="*unit" class="UnitInfoAction" method="{1}">
+			<result name="scan">/house/scanunit.jsp</result>
+			<result name="look">/house/lookunit.jsp</result>
+			<result name="add">/house/</result>
+			<result name="addInit">/house/newunit.jsp</result>
+			<result name="edit">/house/editunit.jsp</result>
+			<result name="delete">/house/</result>
+			<result name="success">/house/success.jsp</result>
+			<result name="error">/house/error.jsp</result>
+		</action>
 	</package>
 </struts>

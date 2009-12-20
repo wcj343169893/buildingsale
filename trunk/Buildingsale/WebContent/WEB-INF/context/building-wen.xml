@@ -23,18 +23,32 @@
 	<bean id="UnitInfoServiceImpl"
 		class="com.zuxia.buildingsale.house.service.impl.UnitInfoServiceImpl">
 		<property name="unitInfoDAO" ref="UnitInfoDAOImpl" />
+		<property name="dataDictDAO" ref="DataDictDAOImpl" />
+		<property name="houseTypeDAO" ref="HouseTypeDAOImpl" />
+		<property name="loftInfoDAO" ref="LoftInfoDAOImpl" />
+		<property name="houseInfoDAO" ref="HouseInfoDAOImpl" />
 	</bean>
 
 	<!-- form -->
 	<bean id="LoftInfoForm" class="com.zuxia.buildingsale.house.form.LoftInfoForm"></bean>
+	<bean id="HouseInfoForm" class="com.zuxia.buildingsale.house.form.HouseInfoForm"></bean>
+	<bean id="UnitInfoForm" class="com.zuxia.buildingsale.house.form.UnitInfoForm">
+		<property name="hif" ref="HouseInfoForm" />
+	</bean>
 
 	<!-- action -->
 	<bean id="LoftAction" class="com.zuxia.buildingsale.house.action.LoftInfoAction">
 		<property name="loftInfoService" ref="LoftInfoServiceImpl" />
-		<property name="loftInfoForm" ref="LoftInfoForm"/>
+		<property name="loftInfoForm" ref="LoftInfoForm" />
 	</bean>
 	<bean id="HouseTypeAction" class="com.zuxia.buildingsale.house.action.HouseTypeAction">
 		<property name="houseTypeService" ref="HouseTypeServiceImpl" />
+	</bean>
+	<bean id="UnitInfoAction" class="com.zuxia.buildingsale.house.action.UnitInfoAction">
+		<property name="unitInfoService" ref="UnitInfoServiceImpl" />
+		<property name="houseTypeService" ref="HouseTypeServiceImpl" />
+		<property name="loftInfoService" ref="LoftInfoServiceImpl" />
+		<property name="uif" ref="UnitInfoForm" />
 	</bean>
 
 </beans>

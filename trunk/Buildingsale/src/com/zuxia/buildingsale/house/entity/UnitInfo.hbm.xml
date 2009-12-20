@@ -11,7 +11,7 @@
 			<generator class="native" />
 		</id>
 		<many-to-one name="loftInfo"
-			class="com.zuxia.buildingsale.house.entity.LoftInfo" fetch="select">
+			class="com.zuxia.buildingsale.house.entity.LoftInfo">
 			<column name="loft_id" unique="true">
 				<comment>id编号(自动增长)</comment>
 			</column>
@@ -41,7 +41,7 @@
 				<comment>工程期号</comment>
 			</column>
 		</property>
-		<bag name="houseInfos" inverse="true">
+		<bag name="houseInfos" inverse="true" cascade="all">
 			<key>
 				<column name="unit_id" unique="true">
 					<comment>单元(引用unit_info表的unit_id)</comment>

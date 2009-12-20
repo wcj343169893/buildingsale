@@ -11,7 +11,7 @@ import com.zuxia.buildingsale.house.dao.IHouseInfoDAO;
 import com.zuxia.buildingsale.house.entity.HouseInfo;
 
 public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
-	private static final Log log = LogFactory.getLog(HouseInfoDAOImpl.class);
+	//private static final Log log = LogFactory.getLog(HouseInfoDAOImpl.class);
 	// property constants
 	public static final String HOUSE_FLOORS = "houseFloors";
 	public static final String HOUSE_NO = "houseNo";
@@ -128,6 +128,7 @@ public class HouseInfoDAOImpl extends BaseDao implements IHouseInfoDAO {
 			super.insert(obj);
 			return 1;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return 0;
 		}
 	}

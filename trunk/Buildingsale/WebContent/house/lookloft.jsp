@@ -123,7 +123,7 @@
 		</c:forEach>
 		</c:when>
 		<c:otherwise>
-		<tr><td colspan="6">暂无单元<a href="addunit.action?loftId=${loftInfo.loftId }">添加单元</a></td></tr>	
+		<tr><td colspan="6">暂无单元<a href="addInitunit.action?loftId=${loftInfo.loftId }">添加单元</a></td></tr>	
 		</c:otherwise>
 	</c:choose>
 	</tbody>

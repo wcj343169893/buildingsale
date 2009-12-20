@@ -34,4 +34,5 @@ public interface IHouseTypeDAO extends IBaseCRUD<HouseType> {
 	 * @return List
 	 */
 	public List<HouseType> findAll(Page page);
+	public List<HouseType> findAll();
 }
