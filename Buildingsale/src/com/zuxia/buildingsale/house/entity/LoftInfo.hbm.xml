@@ -63,12 +63,12 @@
 			</column>
 		</property>
 		<property name="loftCapacity" type="java.lang.Double">
-			<column name="loft_capacity" precision="3">
+			<column name="loft_capacity" precision="4">
 				<comment>容积率</comment>
 			</column>
 		</property>
 		<property name="loftGreen" type="java.lang.Double">
-			<column name="loft_green" precision="3">
+			<column name="loft_green" precision="4">
 				<comment>绿化率</comment>
 			</column>
 		</property>

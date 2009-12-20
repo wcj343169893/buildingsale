@@ -90,9 +90,9 @@ public class LoftInfoServiceImpl implements ILoftInfoService {
 		loftInfo.setLoftRemark(loftInfoForm.getRemark());
 		loftInfo.setLoftCapacity(loftInfoForm.getCapacity());
 		loftInfo.setDataDictByLoftBuildType(dataDictDAO.findByid(loftInfoForm
-				.getBuildTypeId()));
+				.getBuildTypeId()));//建筑类型
 		loftInfo.setDataDictByLoftComtyType(dataDictDAO.findByid(loftInfoForm
-				.getComptyTypeId()));
+				.getComptyTypeId()));//物业类型
 		return loftInfoDAO.save(loftInfo);
 	}
 

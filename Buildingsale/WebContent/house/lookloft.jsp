@@ -11,7 +11,7 @@
 	#lookloft table{
 		border-right: 1px solid #6BB3ED;
 		border-bottom: 1px solid #00A8EC;
-		width: 800px;
+		width: 600px;
 		border-collapse:collapse; 
 		font-size: 14px;
 		background-color: white;
@@ -20,10 +20,12 @@
 		border-left: 1px solid #00A8EC;
 		border-top: 1px solid #00A8EC;
 		padding: 0px;
+		height: 25px;
 	}
 	#lookloft{
 		background-color: #D3E7FC;
-		width: 800px;
+		width: 600px;
+		text-align: center;
 	}.titles{
 		text-align: right;
 	}
@@ -33,7 +35,7 @@
 </style>
 </head>
 <body>
-<div id="lookloft" style="width: 800px">
+<div id="lookloft" style="width: 620px"> 
 <c:set value="${requestScope.loftInfo }" var="loftInfo"></c:set>
 		<span style="float:left;">查看-->${loftInfo.loftNo }楼盘信息</span><span style="float:right;"><button id="back">返回</button></span>
 <table>
@@ -90,17 +92,17 @@
 		<td colspan="3">${loftInfo.loftRemark}</td>
 	</tr>
 	</tbody>
-	</table>
+	</table><br/>
 	<span style="float:left;">楼盘单元信息</span>
 	<table style="text-align: center;">
 	<thead>
 	<tr>
-		<td>编号</td>
-		<td>名称</td>
-		<td>楼层数</td>
-		<td>房屋(套)每层</td>
-		<td>工程 期号</td>
-		<td>操作</td>
+		<td><strong>编号</strong></td>
+		<td><strong>名称</strong></td>
+		<td><strong>楼层数</strong></td>
+		<td><strong>房屋(套)每层</strong></td>
+		<td><strong>工程 期号</strong></td>
+		<td><strong>操作</strong></td>
 	</tr>
 	</thead>
 	<tbody>
@@ -128,6 +130,7 @@
 	</c:choose>
 	</tbody>
 </table>
+<br/>
 </div>
 </body>
 </html>

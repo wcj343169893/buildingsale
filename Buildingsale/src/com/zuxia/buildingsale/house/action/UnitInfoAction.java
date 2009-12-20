@@ -71,7 +71,7 @@ public class UnitInfoAction extends MyAction {
 	public String add() throws Exception {
 		init();
 		if(unitInfoService.addUnitInfo(uif)>0){
-			return "success";
+			return "add";
 		}
 		return "error";
 	}
