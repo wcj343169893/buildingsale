@@ -78,4 +78,11 @@ public class DataDictDAOImpl extends BaseDao implements IDataDictDAO {
 		return dataDictList;
 	}
 
+	@Override
+	public List<DataDict> findByDictType(int dictType) {
+		String strhql = "from DataDict where dataDictType.ddtId=?";
+		List<DataDict> dataDictList = super.find(strhql, dictType);
+		return dataDictList;
+	}
+
 }

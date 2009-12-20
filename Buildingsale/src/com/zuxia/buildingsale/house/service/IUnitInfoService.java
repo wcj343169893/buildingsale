@@ -17,6 +17,7 @@ package com.zuxia.buildingsale.house.service;
 import java.util.List;
 
 import com.zuxia.buildingsale.common.Page;
+import com.zuxia.buildingsale.house.dto.LookUnitDTO;
 import com.zuxia.buildingsale.house.entity.UnitInfo;
 import com.zuxia.buildingsale.house.form.UnitInfoForm;
 import com.zuxia.buildingsale.sys.entity.Employee;
@@ -50,9 +51,13 @@ public interface IUnitInfoService {
 	 */
 	public List<UnitInfo> findAll(Page page);
 
-	public int addUnitInfo(UnitInfoForm unitInfoForm, Employee employee);
+	public int addUnitInfo(UnitInfoForm unitInfoForm);
 
-	public int editUnitInfo(UnitInfoForm unitInfoForm, Employee employee);
+	public int editUnitInfo(UnitInfoForm unitInfoForm);
 
 	public int deleteUnitInfo(int unitInfoId);
+
+	public UnitInfo findById(int unitId);
+
+	public LookUnitDTO findUnitDTO(int unitId);
 }

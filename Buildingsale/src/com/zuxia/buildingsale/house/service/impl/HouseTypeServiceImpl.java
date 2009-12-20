@@ -73,4 +73,9 @@ public class HouseTypeServiceImpl implements IHouseTypeService {
 		return houseTypeDAO.findAll(page);
 	}
 
+	@Override
+	public List<HouseType> findAll() {
+		return houseTypeDAO.findAll();
+	}
+
 }
