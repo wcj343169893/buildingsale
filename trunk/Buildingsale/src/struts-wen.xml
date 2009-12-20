@@ -6,10 +6,10 @@
 		<action name="*loft" class="LoftAction" method="{1}">
 			<result name="scan">/house/scanloft.jsp</result>
 			<result name="look">/house/lookloft.jsp</result>
-			<result name="edit">/house/lookloft.jsp</result>
-			<result name="add">/house/lookloft.jsp</result>
+			<result name="edit">/house/editloft.jsp</result>
+			<result name="add" type="redirectAction">scanloft</result>
 			<result name="addInit">/house/newloft.jsp</result>
-			<result name="delete">/house/lookloft.jsp</result>
+			<result name="delete" type="redirectAction">scanloft</result>
 		</action>
 		<!-- 房屋类型 -->
 		<action name="*houseType" class="HouseTypeAction" method="{1}">
@@ -23,12 +23,12 @@
 		<action name="*unit" class="UnitInfoAction" method="{1}">
 			<result name="scan">/house/scanunit.jsp</result>
 			<result name="look">/house/lookunit.jsp</result>
-			<result name="add">/house/</result>
+			<result name="add" type="redirectAction">scanloft</result>
 			<result name="addInit">/house/newunit.jsp</result>
 			<result name="edit">/house/editunit.jsp</result>
 			<result name="delete">/house/</result>
-			<result name="success">/house/success.jsp</result>
-			<result name="error">/house/error.jsp</result>
+			<result name="success" type="redirectAction">scanloft</result>
+			<result name="error" type="redirectAction">scanloft</result>
 		</action>
 	</package>
 </struts>
